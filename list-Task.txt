@@ -1,0 +1,32 @@
+@Propose Project: Shop Web
+#Target
+#Week1: ->plan
+        -> explain work style:{
+	+ Work Space:
+	.html -> User Interface
+	.css (framework: NodeJS)-> Design UI, front-end
+	.js -> back-end, handle objects of UI, database manage (PHP)
+	+ Member:
+	- Kim Anh:
+	- Huân:
+	- Giang:
+	- Vinh:
+	- Bằng:
+}
+
+#Week2: -> HomePage, About Website: {
+	+Describe Task:
+}
+
+#Week3 and Week6: -> Shop Manager -> Cart: {
+	+Describe Task:
+} 
+
+#Week7 to Week8: -> Search Box, Sign In and Sign Up{
+	+Describe Task:
+}
+
+#Week9 and #Week10: -> Love, Contact, Database Manager{
+	+Describe Task:
+}
+
