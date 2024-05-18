@@ -1,32 +1,58 @@
-@Propose Project: Shop Web
+@Propose Project: Shop Web -> Buy Objects
 #Target
 #Week1: ->plan
         -> explain work style:{
 	+ Work Space:
-	.html -> User Interface
-	.css (framework: NodeJS)-> Design UI, front-end
-	.js -> back-end, handle objects of UI, database manage (PHP)
+	 - NodeJS: backend;
+	 - Module/Packages .ejs 
+	 - Front end Library:
+		.v.v.
+	 - Database: SQL
 	+ Member:
-	- Kim Anh:
-	- Huân:
-	- Giang:
-	- Vinh:
-	- Bằng:
+	- Kim Anh: Back-End;  
+	- Huân: Back-End
+	- Giang: User Interface -> Report
+	- Vinh: Back-End
+	- Bằng: User Interface
 }
 
 #Week2: -> HomePage, About Website: {
-	+Describe Task:
+	+Describe Task:	
+	- Kim Anh: { move page: onclick()}
+	- Huân: panel-scrollbar: onclick()
+	- Vinh: panel-scrollbar: onclick()
+	- Bằng: -> Create Background Init -> Header -> List button -> move page :onclick(), -> panel-scrollbar:
+	- Giang:-> report
 }
 
-#Week3 and Week6: -> Shop Manager -> Cart: {
+#Week3 and Week5: -> Shop Manager: {
 	+Describe Task:
+	- Kim Anh: 
+	- Huân:
+	- Giang:
+	- Vinh:
+	- Bằng: 
 } 
 
-#Week7 to Week8: -> Search Box, Sign In and Sign Up{
+#Week7 to Week8: (thi giữa kì) -> Cart{
 	+Describe Task:
+	- Kim Anh: 
+	- Huân:
+	- Giang:
+	- Vinh:
+	- Bằng: 
+}
+
+#3 week  -> Search Box, Sign In and Sign Up{
+
 }
 
 #Week9 and #Week10: -> Love, Contact, Database Manager{
 	+Describe Task:
+	- Kim Anh: 
+	- Huân:
+	- Giang:
+	- Vinh:
+	- Bằng: 
 }
 
