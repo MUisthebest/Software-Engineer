@@ -37,31 +37,44 @@ a {
 
 .slide{
   top: 56px;
-  height: 100%;
-  width: 180px;
+  height: 1000px;
+  width: 240px;
   position: absolute;
   background: #94B3FD;
   transition: 0.5s ease;
-  transform: translateX(-180px);
+  transform: translateX(-240px);
 }
 
 ul li{
   list-style: none;
+  position: relative;
 }
 
 ul li a{
-  color:rgb(154, 65, 213);
-  font-weight: 500;
-  padding: 5px 0;
-  display: block;
-  text-transform: capitalize;
+  text-transform: uppercase;
   text-decoration: none;
-  transition: .3s;
+  color: #fff;
+}
+
+ul li::after{
+  content: '';
+  height: 3px;
+  width: 0%;
+  background: #c0d099;
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  transition: .5s;
+}
+
+ul li:hover::after{
+  width: 100%;
 }
 
 ul li a i{
   width: 60px;
   text-align: center;
+  height: 30px;
 }
 
 .hide{
@@ -98,8 +111,8 @@ transform: translateX(0);
 
 
 .container {
-  max-width: 1118px;
   margin-inline: 1.5rem;
+  width: 100%;
 }  
 
 .header {
@@ -107,13 +120,16 @@ transform: translateX(0);
   top: 0;
   left:0;
   width: 100%;
-  background-color: #94B3FD;
+  height: 100%;
+  background-color: wheat;
   box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
   z-index: var(100);
 }
 
 .nav {
   height: 3.5rem;
+  background-color:#94B3FD;
+  width: 100%;
 }
 
 .nav__logo, 
@@ -286,7 +302,7 @@ align-items: center;
   .nav__list {
     height: 100%;
     display: flex;
-    column-gap: 3rem;
+    column-gap: 4.5rem;
   }
   .nav__link{
       height: 100%;

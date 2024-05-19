@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const { getHomePage, getAboutWeb} = require("../controller/menuController");
 
-router.get('/', (req, res) => {
-    res.render("Menu.ejs");
-})
+router.get('/', getHomePage);
+
+router.get('/AboutWebsite', getHomePage);
+
 
 module.exports = router;
