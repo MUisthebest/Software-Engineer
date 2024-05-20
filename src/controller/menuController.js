@@ -3,7 +3,7 @@ const getHomePage = (req, res) => {
 }
 
 const getAboutWeb = (req, res) =>{
-    res.render("AboutWebsitepage.ejs");
+    res.render("Homepage.ejs");
 }
 
 
