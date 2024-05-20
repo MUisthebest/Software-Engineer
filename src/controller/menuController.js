@@ -23,8 +23,12 @@ const getTrendingPage = (req, res) =>{
 }
 
 
+const getLogin = (req, res) =>{
+    res.render("Login.ejs");
+}
+
 
 
 module.exports = {
-    getHomePage, getAboutWeb, getShopFreePage, getShopBuyPage, getLovePage, getTrendingPage
+    getHomePage, getAboutWeb, getShopFreePage, getShopBuyPage, getLovePage, getTrendingPage, getLogin
 }

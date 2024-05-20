@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel = "stylesheet" type = "text/css" href = "/css/AboutWeb-style.css">
+        <link rel = "stylesheet" type = "text/css" href = "/css/HomePage-style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>SHOP TUTORIAL</title>
     </head>
@@ -18,18 +18,20 @@
                <div class="nav__menu" id = "nav-menu">
                 <ul class = "nav__list">
                     <li>
-                        <input type="checkbox" id="check" class="hide">
-                        <label for="check">
-                            <i class="fas fa-arrow-circle-right	 bt_burger" id="arrow"></i>
-                        </label>
-                        <div class="slide">
-                            <ul>
-                                <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
-                                <li><a href="/Trending"><i class="fas fa-fire"></i>Trending</a></li>
-                                <li><a href="#"><i class="fas fa-comment"></i>Messages</a></li>
-                                <li><a href="/Love"><i class="fas fa-heart"></i>Love</a></li>
-                            </ul>
-                        </div>            
+                        <div class="nav__link">
+                            <input type="checkbox" id="check" class="hide">
+                            <label for="check">
+                                <i class="fas fa-arrow-circle-right	 bt_burger" id="arrow"></i>
+                            </label>
+                            <div class="slide">
+                                <ul>
+                                    <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
+                                    <li><a href="/Trending"><i class="fas fa-fire"></i>Trending</a></li>
+                                    <li><a href="#"><i class="fas fa-comment"></i>Messages</a></li>
+                                    <li><a href="/Love"><i class="fas fa-heart"></i>Love</a></li>
+                                </ul>
+                            </div>            
+                        </div>
                     </li>
                     <li><a href="/" class="nav__link"><img src = "/Media/Logo.png" width="40" height="40" alt="SHOP Ú"> SHOP Ú</a></li>
                     <li class="down__item">
@@ -52,13 +54,14 @@
                         </ul>
 
                     </li>
-                    <li><a href="/AboutWebsite" class="nav__link">About Website<i class ="fab fa-angellist	"></i></a></li>   
                     <li>
                         <div class="search-container">
-                            <input type="searchbox" placeholder="Search...">
-                            <img src="/Media/searchButton.png" alt="search icon" id="check_SearchButton">    
+                            <input type="text" placeholder="Search...">
+                            <i class="fas fa-search"></i>
                         </div>   
-                    </li>                 
+                    </li>          
+                    <li><a href="/Login" class="nav__link"><i class ="fas fa-sign-in-alt"></i>Login & Register</a></li>    
+                    <li><a href="/Cart" class="nav__link"><i class ="fas fa-shopping-cart"></i></a></li>            
                 </ul>          
            </div>
             </nav>
