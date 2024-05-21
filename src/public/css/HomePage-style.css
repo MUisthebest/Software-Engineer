@@ -40,7 +40,7 @@
     height: 1000px;
     width: 250px;
     position: absolute;
-    background: #94B3FD;
+    background: #344C64;
     transition: 0.5s ease;
     transform: translateX(-150px);
     z-index: 101;
@@ -55,7 +55,7 @@
     text-transform: uppercase;
     text-decoration: none;
     justify-content: space-between;
-    color: #fff;
+    color: #F7C566;
   }
 
   ul li::after{
@@ -122,7 +122,7 @@
   .container {
     margin-inline: 1.5rem;
     width: 100%;
-    background-color: #94B3FD;
+    background-color: #344C64;
   }  
   
   .header {
@@ -134,11 +134,12 @@
     background-color: #c6cfd0;
     box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
     z-index: var(100);
+    overflow-x: hidden;
   }
-  
+
   .nav {
     height: 3.5rem;
-    background-color:#94B3FD;
+    background-color:#344C64;
     width: 100%;
   }
   
@@ -201,13 +202,13 @@
         z-index: 10;
     }
     .nav {
-      background-color: #94B3FD;  
+      background-color: #344C64;  
       width: 100%;
       z-index: 10;
     }
 
     .container {
-      background-color: #94B3FD;
+      background-color: #344C64;
       width: 100%;
     }
     .nav__menu::-webkit-scrollbar{
@@ -216,7 +217,7 @@
     }
     
     .nav__list{
-        background-color: #94B3FD;
+        background-color: #344C64;
         padding-top: 1rem;
         z-index: 10;
     }
@@ -244,7 +245,8 @@
   
   .nav__link{
     color: #000D6B;
-    background-color: #94B3FD;
+    background-color: #344C64;
+    color: #F7C566;
     font-size: 1.5rem;
     height: 55px;
     font-weight: var(600);
@@ -418,7 +420,7 @@
 
   header article{
     width: 75%;
-    height: 80%;
+    height: 95%;
     margin: 5% 20% 20% 18%;
     border-radius: 0px 10px 10px 0px;
     background-color: #577B8D;
