@@ -1,0 +1,83 @@
+<%-include('head.ejs')%>
+    <body>
+        <header class="header">
+                <nav class="nav container">
+                    <div class="nav__toggle" id="nav-toggle">
+                    <i class="fas fa-bars nav__burger"></i>
+                    <i class="fas fa-window-close nav__close"></i>
+                    </div>
+                </div>
+                <div class="nav__menu" id = "nav-menu">
+                <ul class = "nav__list">
+                    <li>
+                        <div class="nav__link">
+                        <input type="checkbox" id="check" class="hide">
+                        <label for="check">
+                            <i class="fas fa-arrow-circle-right	 bt_burger" id="arrow"></i>
+                        </label>
+                        <div class="slide">
+                            <ul>
+                                <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
+                                <li><a href="/Trending"><i class="fas fa-fire"></i>Trending</a></li>
+                                <li><a href="/Contact"><i class="fas fa-comment"></i>Messages</a></li>
+                                <li><a href="/Love"><i class="fas fa-heart"></i>Love</a></li>
+                            </ul>
+                        </div>
+                        </div>
+                    </li>
+                    <li><a href="/" class="nav__link"><img src = "/Media/Logo.png" width="40" height="40" alt="SHOP Ú"> SHOP Ú</a></li>
+                    <li class="down__item">
+                        <div class="nav__link">
+                        <i class ="fas fa-shopping-bag"></i><p>Shop</p>
+                        </div>
+                        <ul class="dropdown__menu">
+                            <li>
+                                <a href="/Free" class="dropdown__link">
+                                    <i class="fas fa-candy-cane free"></i> <p>Free</p> 
+                                </a>                          
+                            </li>
+                        </ul>
+                        <ul class="dropdown__menu">
+                            <li>
+                                <a href="/Buy" class="dropdown__link">
+                                    <i class="fas fa-money-bill-wave money"></i> <p>Buy</p>
+                                </a>                          
+                            </li>
+                        </ul>
+
+                    </li> 
+                    <li>
+                        <div class="search-container">
+                            <input type="text" placeholder="Search...">
+                            <i class="fas fa-search"></i>
+                        </div>   
+                    </li>    
+                    <li><a href="/Login" class="nav__link"><i class ="fas fa-sign-in-alt"></i>Login & Register</a></li>    
+                    <li><a href="/Cart" class="nav__link"><i class ="fas fa-shopping-cart"></i></a></li>          
+                </ul>          
+            </div>
+            </nav>
+
+                 <% if (filename === "Login.ejs") { %> <%-include('Login.ejs')%>
+                <% } else if (filename === "Homepage.ejs") { %> <%-include('Homepage.ejs')%>
+                <% }
+                    else if (filename === "Freepage.ejs") { %> <%-include('Freepage.ejs')%>
+                <% }
+                else if (filename === "Buypage.ejs") { %> <%-include('Buypage.ejs')%>
+                <% }
+                
+                else if (filename === "Lovepage.ejs") { %> <%-include('Lovepage.ejs')%>
+                <% }
+                else if (filename === "Trendingpage.ejs") { %> <%-include('Trendingpage.ejs')%>
+                <% }
+                else if (filename === "Cartpage.ejs") { %> <%-include('Cartpage.ejs')%>
+                <% }
+                %>
+
+                          
+        </header>
+        <script src ="/js/changeScreen.js"></script>
+        <script src ="/js/handleScrollBar.js"></script>
+    </body>
+</html>
+

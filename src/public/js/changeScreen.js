@@ -12,3 +12,8 @@ const showMenu = (idToggle,Idnav) =>{
  }
 
 showMenu('nav-toggle','nav-menu');
+
+function change(){
+
+    document.querySelector("#re").innerHTML = "Profile";
+}

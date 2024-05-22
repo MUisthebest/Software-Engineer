@@ -1,34 +1,37 @@
+const fs = require("node:fs");
+const ejs = require('ejs');
 const getHomePage = (req, res) => {
-    res.render("Homepage.ejs");
+
+    res.render("Layout.ejs",{filename: "Homepage.ejs"});
 }
 
-const getAboutWeb = (req, res) =>{
-    res.render("AboutWebsitepage.ejs");
-}
 
 const getShopFreePage = (req, res) =>{
-    res.render("Freepage.ejs");
+    res.render("Layout.ejs", {filename: "Freepage.ejs"});
 }
 
 const getShopBuyPage = (req, res) =>{
-    res.render("Buypage.ejs");
+    res.render("Layout.ejs",{filename: "Buypage.ejs"});
 }
 
 const getLovePage = (req, res) =>{
-    res.render("Lovepage.ejs");
+    res.render("Layout.ejs",{filename: "Lovepage.ejs"});
 }
 
 const getTrendingPage = (req, res) =>{
-    res.render("Trendingpage.ejs");
+    res.render("Layout.ejs", {filename: "Trendingpage.ejs"});
 }
 
 
 const getLogin = (req, res) =>{
-    res.render("Login.ejs");
+    res.render("Layout.ejs",{filename: "Login.ejs"});
+}
+
+const getCart = (req, res) =>{
+    res.render("Layout.ejs",{filename: "Cartpage.ejs"});
 }
 
 
-
 module.exports = {
-    getHomePage, getAboutWeb, getShopFreePage, getShopBuyPage, getLovePage, getTrendingPage, getLogin
+    getHomePage, getShopFreePage, getShopBuyPage, getLovePage, getTrendingPage, getLogin, getCart
 }
