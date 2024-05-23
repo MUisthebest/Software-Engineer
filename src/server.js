@@ -9,7 +9,7 @@ const { error } = require('console');
 const app = express();
 const port = process.env.PORT || 8080;
 
-mongoose.connect("mongodb+srv://<user>:<passsword>@sewebapp.xbv0lcv.mongodb.net/EcommerceData") //MongoDB URI
+mongoose.connect("mongodb+srv://admin:admin@sewebapp.xbv0lcv.mongodb.net/EcommerceData") //MongoDB URI
 .then(
     () => console.log("Connect to MongoDB")
 ).catch(

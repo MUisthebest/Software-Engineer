@@ -29,10 +29,10 @@ router.get("/create_user", function (req, res) {
         return res.json({ message: "Please fill in all fields, username and password is required!" })
     }
 
-    if (users.exists({ 'username': username })) {
-        console.log("User already exists")
-        return res.json({ message: "User already exists" })
-    }
+    // if (users.exists({ 'username': username })) {
+    //     console.log("User already exists")
+    //     return res.json({ message: "User already exists" })
+    // }
 
     const newUser = new users({
         username: username,
