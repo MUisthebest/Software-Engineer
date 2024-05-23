@@ -21,7 +21,9 @@ const userSchema = new mongoose.Schema({
     refreshToken: {
         type: String
     },
-    address: String
+    address: {
+        type: String
+    }
 })
 
 module.exports = mongoose.model('users', userSchema);
