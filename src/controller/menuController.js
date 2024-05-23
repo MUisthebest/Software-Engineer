@@ -1,5 +1,6 @@
 const fs = require("node:fs");
 const ejs = require('ejs');
+
 var listOfItems = [];
 const getHomePage = (req, res) => {
 
@@ -36,17 +37,6 @@ const getRegister =(req, res) =>{
     res.render("Layout.ejs",{filename: "Register.ejs"});
 }
 
-const createUser = (req,res) =>{
-    var data = {
-        nameUser: req.body.nameUser,
-        passwordUser: req.body.passwordUser,
-        addressUser: req.body.addressUser
-    };
-    listOfItems.push(data);
-    console.log("p: ", listOfItems);   
-    res.send('create user!');
-}
-
 // const displayDatabase = (req, res) =>{
 //     res.render("Database.ejs",{listItems: listOfItems});
 // }
@@ -54,5 +44,5 @@ const createUser = (req,res) =>{
 
 
 module.exports = {
-    getHomePage, getShopFreePage, getShopBuyPage, getLovePage, getTrendingPage, getLogin, getCart, getRegister, createUser
+    getHomePage, getShopFreePage, getShopBuyPage, getLovePage, getTrendingPage, getLogin, getCart, getRegister
 }
