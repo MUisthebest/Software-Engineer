@@ -1,0 +1,23 @@
+<%-include('head.ejs')%>
+<div class="wrapper">
+    <form action="/create_user" method="post">
+        <h1>Register</h1>
+        <div class="input-box">
+            <input type="text" name="nameUser" placeholder="Username" required>
+            <i class='bx bx-user' ></i>
+        </div>
+        <div class="input-box">
+            <input type="password" name="passwordUser" placeholder="Password" required>
+            <i class='bx bx-lock-alt' ></i>
+        </div>
+        <div class="input-box">
+            <input type="password" placeholder="Confirm password" required>
+            <i class='bx bx-lock-alt' ></i>
+        </div>
+        <div class="input-box">
+            <input type="text" name="addressUser" placeholder="Address" required>
+            <i class='bx bxs-home-heart' ></i>
+        </div>
+        <button type="submit" class="btn_register">Register</button>
+    </form>
+</div>

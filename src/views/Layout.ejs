@@ -72,9 +72,10 @@
                 <% }
                 else if (filename === "Cartpage.ejs") { %> <%-include('Cartpage.ejs')%>
                 <% }
-                %>
-
-                          
+                else if (filename === "Register.ejs") { %> <%-include('Register.ejs')%>
+                <% }
+                else{ }
+                %>                 
         </header>
         <script src ="/js/changeScreen.js"></script>
         <script src ="/js/handleScrollBar.js"></script>

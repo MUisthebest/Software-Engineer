@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getHomePage, getShopFreePage, getShopBuyPage, getLovePage, getTrendingPage, getLogin, getCart } = require("../controller/menuController");
+const { getHomePage, getShopFreePage, getShopBuyPage, getLovePage, getTrendingPage, getLogin, getCart, getRegister, createUser} = require("../controller/menuController");
 
 router.get('/', getHomePage);
 
@@ -16,6 +16,12 @@ router.get('/Buy', getShopBuyPage);
 router.get('/Login', getLogin);
 
 router.get('/Cart',getCart);
+
+router.get('/Register', getRegister);
+
+router.post('/create_user', createUser);
+
+// router.get('/Database', displayDatabase);
 
 
 
