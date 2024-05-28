@@ -192,6 +192,12 @@ transform: translateX(120px);
 }
 
 @media screen and (max-width: 1118px) {
+  :root {
+    --normal-font-size: 1rem;
+    --color-1: #45586b;
+    --color-2: #9AC8CD;
+    --color-3: #F7C566;
+  }
   .nav__menu{
       position: absolute;
       left: 0;

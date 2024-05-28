@@ -1,39 +1,43 @@
-// const express = require('express');
-// const router = express.Router();
-// const users = require("../model/users")
+const { MongoClient } = require('mongodb');
+const {getDb} = require('../configs/mongo');
 
-// router.get("/create_user", function (req, res) {
+async function registerController(req, res) {
+    const user = {
+        name: "Daenerys Targaryen",
+        username: "dany",
+        password: "dracarys",
+        address: {
+            street: "Dragonstone",
+            district: "Crownlands",
+            city: "Valyria",
+            country: "Westeros"
+        },
+        role: {
+            Admin: false,
+            Customer: true
+        }
+    }
 
-//     var username = req.query.username;
-//     var password = req.query.password;
+    const users = await getDb("users");
 
-//     console.log(req.query)
+    if (await users.findOne({ username: user.username })) {
+        console.log("User already exists");
+        return res.json({ message: "User already exists" });
+    }
 
-//     // Check if the user has filled in all fields
-//     if (!username || !password) {
-//         return res.json({ message: "Please fill in all fields, username and password is required!" })
-//     }
+    try {
+        await users.insertOne(user);
+        console.log(user);
+        res.json({ message: "User created successfully!" });
+        console.log("User created successfully!");
+    } catch (error) {
+        res.json({ message: "Something wrong" });
+        console.log(error);
+    }
+}
 
-//     const newUser = new users({
-//         Username: username,
-//         Password: password
-//     })
 
-//     if (users.findOne({ username }).exec()) {
-//         console.log("User already exists")
-//         return res.json({ message: "User already exists" })
-//     }
 
-//     try {
-//         newUser.save();
-//         console.log(newUser)
-//         res.json({ message: "User created successfully!" })
-//         console.log("User created successfully!")
-//     } catch (error) {
-//         res.json({ message: "Something wrong" })
-//         console.log(error)
-//     }
-// });
+module.exports = { registerController }
 
-// module.exports = router
 
