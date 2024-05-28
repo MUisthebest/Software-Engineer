@@ -49,6 +49,12 @@ a {
   z-index: 101;
 }
 
+.slide ul li{
+  list-style: none;
+  position: relative;
+  padding: 20px 0px;
+}
+
 ul li{
   list-style: none;
   position: relative;
@@ -67,7 +73,7 @@ ul li::after{
   width: 0%;
   background: var(--color-2);
   position: absolute;
-  left: 0;
+  left: 8px;
   bottom: 5px;
   transition: .5s;
 }
@@ -604,6 +610,55 @@ header article .game1 .gameBx .card{
   margin-right: 20px;
 }
 
+header article .game1 .gameBx .card img{
+  width: 100%;
+  height: 70%;
+  border-radius: 5px;
+}
+
+header article .game1 .gameBx .card .content{
+  width: 100%;
+  height: 25%;
+  /* border: 1px solid #fff; */
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-3);
+  margin-top: -5px;
+  transition: .5s linear;
+}
+
+header article .game1 .gameBx .card .content .left{
+  color: var(--color-3);
+  transition: .5s linear;
+}
+
+header article .game1 .gameBx .card .content .left h5{
+  font-size: 12px;
+  font-weight: 500;
+  width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+header article .game1 .gameBx .card .content .left p{
+  font-size: 8px;
+  font-weight: 500;
+  width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #494848;
+}
+
+header article .game1 .gameBx .card .content .left h6{
+  font-size: 8px;
+  font-weight: 500;
+  margin-top: 5px;
+  transition: .5s linear;
+
+}
+
 header article .game2{
   position: relative;
   width: 100%;
@@ -758,6 +813,24 @@ text-align: center;
 margin-top: 20px;
 }
 
+.wrapper .location_users{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  left: 20px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+}
+
+.location_users .state{
+  position: relative;
+  padding: 20px 45px 20px 20px;
+  align-items: center;
+}
+
+
+
 .register_link p a{
 color: #fff;
 text-decoration: none;
@@ -822,6 +895,37 @@ margin-bottom: 30px;
   text-align: left;
   background-color: #04AA6D;
   color: white;
+}
+
+.tooltip-text {
+  padding: 6px;
+  background-color: #333;
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  border-radius: 5px;
+  width: 100px;
+  text-align: center;
+  right: -120px;
+  bottom: -7px;
+  visibility: hidden;
+}
+
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  left: -5px;
+  bottom: 10px;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-right: 10px solid #333;
+}
+
+
+a:hover .tooltip-text{
+  visibility: visible;
 }
 
 
