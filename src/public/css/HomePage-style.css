@@ -355,9 +355,9 @@ align-items: center;
 }
 
 @media screen and (max-width: 340px) {
-  .container{
+  /* .container{
       margin-inline: 1rem;
-  }
+  } */
   .nav__link{
       padding-inline: 1rem;
   }
@@ -956,6 +956,131 @@ header .buy_realted_box .buy_box, .realted_box{
 
 header .buy_realted_box .buy_box{
   width: 55%;
+  padding: 0px 20px;
+}
+
+header .buy_realted_box .buy_box .img_product_box {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  margin-top: 20px;
+  transition: .3s linear;
+}
+
+header .buy_realted_box .buy_box .text_box{
+  position: relative;
+  width: 100%;
+  height: 30%;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  margin-top: 20px;
+  transition: .3s linear; 
+}
+
+header .buy_realted_box .buy_box .text_box h4 {
+  margin-top: 30px;
+  margin-left: 20px;
+  color: var(--color-1);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+header .buy_realted_box .purchase_box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  width: 100%;
+}
+
+header .buy_realted_box .purchase_box a{
+  text-decoration: none;
+  padding: 10px 10px;
+  background: #663da6;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-right: 20px;
+  border-radius: 6px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  transition: .2s linear;
+  width: 35%;
+}
+
+header .buy_realted_box .purchase_box a:hover{
+  background: #494848;
+}
+
+
+header .buy_realted_box .purchase_box a i{
+  margin-left: 10%;
+  font-size: 20px;
+  width: 20%;
+  position: relative;
+}
+
+header .buy_realted_box .purchase_box a p{
+  width: 50%;
+  position: relative;
+}
+
+header .buy_realted_box .purchase_box label{
+  text-decoration: none;
+  padding: 0px 0px 0px 20px; 
+  background: #ffffff;
+  color: #000000;
+  font-size: 18px;
+  font-weight: 600;
+  width: 45%;
+  border-radius: 6px;
+  transition: .2s linear;
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-right: 20px;
+}
+
+header .buy_realted_box .purchase_box label p{
+  width: 70%;
+  height: 100%;
+  color: #000000;
+  background-color: #fff;
+}
+
+header .buy_realted_box .purchase_box label label{
+  width: 30%;
+  padding: 10px 0px;
+  background-color: #663da6;
+  border: 1px solid #494848;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0px;
+}
+
+header .buy_realted_box .purchase_box label label i{
+  height: 100%;
+  font-size: 18px;
+  color: white;
+}
+
+header .buy_realted_box .purchase_box .luv{
+  padding: 10px 0px;
+  background: #663da6;
+  width: 8%;
+  margin-right: 5px;
+  justify-content: center;
+}
+
+header .buy_realted_box .purchase_box .luv i{
+  color: #fff;
+}
+
+header .buy_realted_box .purchase_box .luv i:hover{
+  color: #ec45d3;
 }
 
 
