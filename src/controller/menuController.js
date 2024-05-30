@@ -37,6 +37,10 @@ const getRegister =(req, res) =>{
     res.render("Layout.ejs",{filename: "Register.ejs"});
 }
 
+const getBoxItem = (req, res) =>{
+    res.render("Layout.ejs",{filename: "boxItem.ejs"});
+}
+
 // const displayDatabase = (req, res) =>{
 //     res.render("Database.ejs",{listItems: listOfItems});
 // }
@@ -44,5 +48,5 @@ const getRegister =(req, res) =>{
 
 
 module.exports = {
-    getHomePage, getShopFreePage, getShopBuyPage, getLovePage, getTrendingPage, getLogin, getCart, getRegister
+    getHomePage, getShopFreePage, getShopBuyPage, getLovePage, getTrendingPage, getLogin, getCart, getRegister, getBoxItem
 }

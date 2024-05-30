@@ -40,7 +40,7 @@ a {
 
 .slide{
   top: 56px;
-  height: 1000px;
+  height: 1100px;
   width: 250px;
   position: absolute;
   background: var(--color-1);
@@ -129,7 +129,6 @@ transform: translateX(120px);
 
 
 .container {
-  margin-inline: 1.5rem;
   width: 100%;
   background-color: var(--color-1);
 }  
@@ -197,6 +196,20 @@ transform: translateX(120px);
   opacity: 0;
 }
 
+.nav__link{
+  background-color: var(--color-1);
+  color: --color-3;
+  font-size: 1.5rem;
+  height: 55px;
+  font-weight: var(600);
+  padding: 1rem 1rem;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  transition: background-color .3s;
+  z-index: 10;
+}
+
 @media screen and (max-width: 1118px) {
   :root {
     --normal-font-size: 1rem;
@@ -215,7 +228,10 @@ transform: translateX(120px);
       opacity: 0;
       transition: top .4s, opacity .3s;
       z-index: 10;
+      overflow-y: hidden;
+      overflow-x: hidden;
   }
+
   .nav {
     background-color: var(--color-1);  
     width: 100%;
@@ -226,6 +242,7 @@ transform: translateX(120px);
     background-color: var(--color-1);
     width: 100%;
   }
+
   .nav__menu::-webkit-scrollbar{
       width: 0;
       z-index: 10;
@@ -237,41 +254,33 @@ transform: translateX(120px);
       z-index: 10;
   }
 
+  .nav__link{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+
   .article{
       bottom: 50%;
       left: 50%;
       z-index: 0;
   }
 
+
   .slide{
-    transform: translateX(-270px);
+    transform: translateX(-510px);
   }
 
   #check:checked~.slide{
-    transform: translateX(-20px);
+    transform: translateX(-260px);
     }
 
   .search-container{
-    left: 25%;
     width: 600px;
   }
 }
 
 
-
-.nav__link{
-  background-color: var(--color-1);
-  color: --color-3;
-  font-size: 1.5rem;
-  height: 55px;
-  font-weight: var(600);
-  padding: 1rem 1rem;
-  justify-content: space-between;
-  display: flex;
-  align-items: center;
-  transition: background-color .3s;
-  z-index: 10;
-}
 
 
 
@@ -412,20 +421,20 @@ align-items: center;
   transition: .3s;
 }
 
-.search-container {
+.nav__link .search-container {
   width: 500px;
   align-items: center;
   position: relative;
   background: #ffffff;
   height: 3.5;
-  margin: 8px 0 0 0;
+  margin: 3px 0 0 0;
   transition: .5s linear;
   justify-content: space-between;
   border-radius: 10px;
   display: flex;
 }
 
-.search-container input {
+.nav__link .search-container input {
   width: 90%;
   border: none;
   outline: none;
@@ -436,16 +445,16 @@ align-items: center;
   transition: .5s linear;
 }
 
-.search-container input::placeholder {
+.nav__link .search-container input::placeholder {
   color: #577B8D;
   font-size: 12px;
   transition: .5s linear;
 }
 
-.search-container i{
+.nav__link .search-container i{
   position: absolute;
-  right: 2px;
-  top: 65%;
+  right: 5px;
+  top: 60%;
   transform: translateY(-50%);
   height: 30px;
   width: 30px;
@@ -610,13 +619,13 @@ header article .game1 .gameBx .card{
   margin-right: 20px;
 }
 
-header article .game1 .gameBx .card img{
+header article .game1 .gameBx .card a img{
   width: 100%;
   height: 70%;
   border-radius: 5px;
 }
 
-header article .game1 .gameBx .card .content{
+header article .game1 .gameBx .card a .content{
   width: 100%;
   height: 25%;
   /* border: 1px solid #fff; */
@@ -633,7 +642,7 @@ header article .game1 .gameBx .card .content .left{
 }
 
 header article .game1 .gameBx .card .content .left h5{
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 500;
   width: 150px;
   overflow: hidden;
@@ -642,13 +651,13 @@ header article .game1 .gameBx .card .content .left h5{
 }
 
 header article .game1 .gameBx .card .content .left p{
-  font-size: 8px;
+  font-size: 16px;
   font-weight: 500;
   width: 150px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: #494848;
+  color: #000000;
 }
 
 header article .game1 .gameBx .card .content .left h6{
@@ -928,5 +937,25 @@ a:hover .tooltip-text{
   visibility: visible;
 }
 
+header .buy_realted_box{
+  width: 80%;
+  height: 95%;
+  border: 1px solid #fff;
+  margin: 5% 20% 20% 18%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+
+header .buy_realted_box .buy_box, .realted_box{
+  width: 45%;
+  height: 100%;
+  border: 1px solid #fff;
+}
+
+header .buy_realted_box .buy_box{
+  width: 55%;
+}
 
 

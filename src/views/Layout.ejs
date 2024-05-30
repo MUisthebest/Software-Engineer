@@ -47,10 +47,12 @@
                         </ul> -->
                     </li> 
                     <li>
-                        <div class="search-container">
-                            <input type="text" placeholder="Search...">
-                            <i class="fas fa-search"></i>
-                        </div>   
+                        <a class="nav__link">
+                            <div class="search-container">
+                                <input type="text" placeholder="Search...">
+                                <i class="fas fa-search"></i>
+                            </div>   
+                        </a>      
                     </li>    
                     <li><a href="/Login" class="nav__link"><i class ="fas fa-sign-in-alt"></i>Login & Register</a></li>    
                     <li><a href="/Cart" class="nav__link"><i class ="fas fa-shopping-cart"></i></a></li>          
@@ -74,12 +76,13 @@
                 <% }
                 else if (filename === "Register.ejs") { %> <%-include('Register.ejs')%>
                 <% }
+                else if (filename === "boxItem.ejs") { %> <%-include('boxItem.ejs')%>
+                <% }
                 else{ }
                 %>                 
         </header>
         <script src ="/js/changeScreen.js"></script>
-        <script src ="/js/handleScrollBar.js"></script>
-        <script src ="/js/importListUser.js"></script>
     </body>
 </html>
+
 
