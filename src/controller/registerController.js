@@ -1,24 +1,12 @@
 const { MongoClient } = require('mongodb');
 const {getDb} = require('../configs/mongo');
+const express = require('express');
 
-async function registerController(req, res) {
-    const user = {
-        name: "Daenerys Targaryen",
-        username: "dany",
-        password: "dracarys",
-        address: {
-            street: "Dragonstone",
-            district: "Crownlands",
-            city: "Valyria",
-            country: "Westeros"
-        },
-        role: {
-            Admin: false,
-            Customer: true
-        }
-    }
-
+async function registerController(res, user) {
     const users = await getDb("users");
+
+    console.log("Registering user");
+    console.log(user);
 
     if (await users.findOne({ username: user.username })) {
         console.log("User already exists");
@@ -35,8 +23,6 @@ async function registerController(req, res) {
         console.log(error);
     }
 }
-
-
 
 module.exports = { registerController }
 
