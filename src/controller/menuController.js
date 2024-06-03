@@ -41,6 +41,10 @@ const getBoxItem = (req, res) =>{
     res.render("Layout.ejs",{filename: "boxItem.ejs"});
 }
 
+const getAdmin= (req, res) =>{
+    res.render("Admin.ejs");
+}
+
 // const displayDatabase = (req, res) =>{
 //     res.render("Database.ejs",{listItems: listOfItems});
 // }
@@ -48,5 +52,5 @@ const getBoxItem = (req, res) =>{
 
 
 module.exports = {
-    getHomePage, getShopFreePage, getShopBuyPage, getLovePage, getTrendingPage, getLogin, getCart, getRegister, getBoxItem
+    getHomePage, getShopFreePage, getShopBuyPage, getLovePage, getTrendingPage, getLogin, getCart, getRegister, getBoxItem, getAdmin
 }

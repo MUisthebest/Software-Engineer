@@ -383,11 +383,12 @@ align-items: center;
     display: flex;
     column-gap: 4.5rem;
   }
+
   .nav__link{
       height: 100%;
       padding: 0;
       justify-content: center;
-      column-gap: .25rem;
+      column-gap: .05rem;
   }
 
   .dropdown__link{
@@ -916,7 +917,7 @@ margin-bottom: 30px;
   width: 100px;
   text-align: center;
   right: -120px;
-  bottom: -7px;
+  bottom: 15px;
   visibility: hidden;
 }
 
@@ -924,7 +925,7 @@ margin-bottom: 30px;
   content: "";
   position: absolute;
   left: -5px;
-  bottom: 10px;
+  bottom: 8px;
   width: 0;
   height: 0;
   border-top: 7px solid transparent;
