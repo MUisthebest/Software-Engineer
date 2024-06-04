@@ -15,32 +15,25 @@
             <i class='bx bx-lock-alt' ></i>
         </div>
         <div class="input-box">
-            <input type="phone" placeholder="Contact Number" required>
+            <input type="phone" placeholder="Contact Number" name="phone" required>
             <i class='bx bx-phone'></i>
         </div>
         <div class="location_users">
-            <select id="state" aria-label="state" name="state">
-                <option value="" disabled selected  id="Option_Address">Ward</option>
-                <option>Ohio</option>
-                <option>Michigan</option>
-                <option>New York</option>
-                <option>Florida</option>
-              </select>
-            <select id="state" aria-label="state" name="state">
-                <option value="" disabled selected>District</option>
-                <option>Ohio</option>
-                <option>Michigan</option>
-                <option>New York</option>
-                <option>Florida</option>
-              </select>        
-            <select id="state" aria-label="state" name="state">
-                <option value="" disabled selected>City or Province</option>
-                <option>Ohio</option>
-                <option>Michigan</option>
-                <option>New York</option>
-                <option>Florida</option>
-              </select>
-        </div>
-        <button type="submit" class="btn_register" <a href="/users">Register</button>
+            <select id="city" aria-label="state" name="city">
+              <option value="" selected>City/Province</option>
+            </select>
+      
+            <select id="district" aria-label="state" name="district">
+              <option value="" selected>District</option>
+            </select>
+            <select id="ward" aria-label="state" name="ward">
+              <option value="" selected>Ward</option>
+            </select>
+          </div>
+          <button type="submit" class="btn_register">Register</button>
+        </form>
+      </div>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+      <script defer src="/js/importLocation.js"></script> 
     </form>
 </div>

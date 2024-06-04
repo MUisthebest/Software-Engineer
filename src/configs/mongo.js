@@ -21,7 +21,7 @@ async function connectToMongo() {
     try {
         await client.connect();
         console.log("Connected to MongoDB");
-        await client.db("EcommerceData");
+        await client.db("EcommerceData", { enableUtf8Validation: true });
         collection["users"] = client.db("EcommerceData").collection("users");
         collection["products"] = client.db("EcommerceData").collection("products");
         collection["orders"] = client.db("EcommerceData").collection("orders");
