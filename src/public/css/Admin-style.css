@@ -102,7 +102,7 @@ nav .menu_item{
   color: rgb(112, 110, 110);
   font-size: 18px;
   font-weight: 400; 
-  transition: .05s linear;
+  transition: .01s linear;
   align-items: center;
   width: 50px;
   padding-right: 30px;
@@ -120,7 +120,7 @@ nav.close li a .link__name{
 
 
 .Users{
-  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url("../Media/bg-Website.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url("../Media/bg-Website.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -128,7 +128,7 @@ nav.close li a .link__name{
   position: relative;
   left: 15%;
   padding: 12px 6px;
-  transition: .01s linear;
+  transition: .05s ease-in-out;
 }
 
 nav.close ~ .Users{
