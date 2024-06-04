@@ -221,19 +221,19 @@ nav.close ~ .Users .top{
   color: rgb(255, 255, 255);
 }
 
-.Users .Activity .ActivityData{
+.Users .Activity .UserData{
   align-items: center;
   width: 100%;
   justify-content: space-between;
 }
 
-.Activity .ActivityData{
+.Activity .UserData{
   display: flex;
   position: relative;
   margin-top: 60px; 
 }
 
-.ActivityData .box_data{
+.UserData .box_data{
   align-items: center;
   width: 98%;
   position: absolute;
@@ -245,11 +245,11 @@ nav.close ~ .Users .top{
   height: 200px;
 }
 
-.ActivityData .box_data{
+.UserData .box_data{
   overflow-y: scroll;
 }
 
-.ActivityData .box_title{
+.UserData .box_title{
   justify-content: space-between;
   align-items: center;
   position: absolute;
@@ -259,7 +259,7 @@ nav.close ~ .Users .top{
   background-color: antiquewhite;
 }
 
-.ActivityData .box_data .data{
+.UserData .box_data .data{
   flex-direction: column;
   margin: 5px 10px 0 0;
   display: flex;
@@ -270,7 +270,7 @@ nav.close ~ .Users .top{
   height: 100%;
 }
 
-.ActivityData .box_title .data-title{
+.UserData .box_title .data-title{
   font-size: 20px;
   font-weight: 500;
   display: flex;
@@ -283,11 +283,85 @@ nav.close ~ .Users .top{
   border-radius: 10px;
 }
 
-.ActivityData .data .data-list{
+.UserData .data .data-list{
   font-size: 18px;
   font-weight: 400px;
   margin-top: 25px;
   white-space: nowrap;
 }
 
+.Users .Activity .ProductData{
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.Activity .ProductData{
+  display: flex;
+  position: relative;
+  margin-top: 60px; 
+}
+
+.ProductData .box_data{
+  align-items: center;
+  width: 98%;
+  position: absolute;
+  display: flex;
+  margin-top: 20%;
+  background-color: #ffffff;
+  left: 1%;
+  border-radius: 10px;
+  height: 200px;
+}
+
+.ProductData .box_data{
+  overflow-y: scroll;
+}
+
+.ProductData .box_title{
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  display: flex;
+  width: 97%;
+  margin-left: 1%;
+  background-color: antiquewhite;
+}
+
+.ProductData .box_data .data{
+  flex-direction: column;
+  margin: 5px 10px 0 0;
+  display: flex;
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  align-items: center;
+  height: 100%;
+}
+
+.ProductData .box_title .data-title{
+  font-size: 20px;
+  font-weight: 500;
+  display: flex;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #beff69;
+  background-color: rgb(255, 231, 190);
+  border-radius: 10px;
+}
+
+.ProductData .data .data-list{
+  font-size: 18px;
+  font-weight: 400px;
+  margin-top: 25px;
+  white-space: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.ProductData .data .data-list img{
+  height: 20px;
+}
 

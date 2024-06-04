@@ -42,7 +42,19 @@ const getBoxItem = (req, res) =>{
 }
 
 const getAdmin= (req, res) =>{
-    res.render("Admin.ejs");
+    res.render("Admin.ejs",{filename: "User-Admin.ejs"});
+}
+
+const getAdminUser = (req, res) =>{
+    res.render("Admin.ejs",{filename: "User-Admin.ejs"});
+}
+
+const getAdminProduct = (req, res) =>{
+    res.render("Admin.ejs",{filename: "Product-Admin.ejs"});
+}
+
+const getAdminOrder = (req, res) =>{
+    res.render("Admin.ejs",{filename: "Order-Admin.ejs"});
 }
 
 // const displayDatabase = (req, res) =>{
@@ -52,5 +64,5 @@ const getAdmin= (req, res) =>{
 
 
 module.exports = {
-    getHomePage, getShopFreePage, getShopBuyPage, getLovePage, getTrendingPage, getLogin, getCart, getRegister, getBoxItem, getAdmin
+    getHomePage, getShopFreePage, getShopBuyPage, getLovePage, getTrendingPage, getLogin, getCart, getRegister, getBoxItem, getAdmin, getAdminProduct, getAdminUser, getAdminOrder
 }

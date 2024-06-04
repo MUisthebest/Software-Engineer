@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getHomePage, getShopFreePage, getShopBuyPage, getLovePage, getTrendingPage, getLogin, getCart, getRegister, getBoxItem, getAdmin } = require("../controller/menuController");
+const { getHomePage, getShopFreePage, getShopBuyPage, getLovePage, getTrendingPage, getLogin, getCart, getRegister, getBoxItem, getAdmin , getAdminProduct, getAdminUser, getAdminOrder } = require("../controller/menuController");
 const { registerController } = require("../controller/registerController");
 const dotenv = require('dotenv');
 
@@ -23,6 +23,13 @@ router.get('/boxItem', getBoxItem);
 router.get('/Contact', getAdmin);
 
 router.post('Admin/',getAdmin);
+
+router.get('/User_Admin',getAdminUser);
+
+router.get('/Product_Admin',getAdminProduct);
+
+
+router.get('/Order-Admin', getAdminOrder);
 
 router.get("/users", (req, res) => {
     var username = req.query.username;
