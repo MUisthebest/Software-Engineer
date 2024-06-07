@@ -1,5 +1,40 @@
 <%-include('head.ejs')%>
     <body>
+        <nav class="slide-bar">
+            <div class="menu_item">
+                <ul class="nav_link">
+                    <li class="toggle_slide">
+                        <i class="fas fa-bars slidebar-toggle"></i>
+                        <img src = "/Media/Logo.png" width="40" height="40" alt="SHOP Ú">
+                         <span>ELECTRONICS DEFIANT</span>
+                    </li>
+                    <li>
+                        <a href="/">
+                            <i class='bx bxs-home-circle'></i>
+                            <span class="link__name">Home</spaSn>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Trending">
+                            <i class='bx bx-trending-up' ></i>
+                            <span class="link__name">Trending</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Contact">
+                            <i class='bx bxs-contact' ></i>
+                            <span class="link__name">Contact</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Love">
+                            <i class='bx bxs-book-heart' ></i>
+                            <span class="link__name">Wishlist</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
         <header class="header">
                 <nav class="nav container">
                     <div class="nav__toggle" id="nav-toggle">
@@ -8,54 +43,10 @@
                     </div>
                 </div>
                 <div class="nav__menu" id = "nav-menu">
-                <ul class = "nav__list">
-                    <li>
-                        <div class="nav__link">
-                        <input type="checkbox" id="check" class="hide">
-                        <label for="check">
-                            <i class="fas fa-bars bt_burger" id="arrow"></i>
-                        </label>
-                        <div class="slide">
-                            <ul>
-                                <li><a href="/"><i class="fas fa-home"></i>Home <div class="tooltip-text">This is Home!</div></a></li>
-                                <li><a href="/Trending"><i class="fas fa-fire"></i>Trending<div class="tooltip-text">This is Treding!</div></a></li>
-                                <li><a href="/Contact"><i class="fas fa-comment"></i>Contact Us<div class="tooltip-text">This is Contact!</div></a></li>
-                                <li><a href="/Love"><i class="fas fa-heart"></i>Love<div class="tooltip-text">This is Love!</div></a></li>
-                            </ul>
-                        </div>
-                        </div>
-                    </li>
-                    <li><a href="/" class="nav__link"><img src = "/Media/Logo.png" width="40" height="40" alt="SHOP Ú">Electronics Defiant</a></li>
-                    <li><a href="/Buy" class="nav__link"><i class ="fas fa-shopping-bag"></i>Shop</a></li>        
-                    <!-- <li class="down__item">
-                        <div class="nav__link">
-                        
-                        </div> -->
-                        <!-- <ul class="dropdown__menu">
-                            <li>
-                                <a href="/Free" class="dropdown__link">
-                                    <i class="fas fa-candy-cane free"></i> <p>Free</p> 
-                                </a>                          
-                            </li>
-                        </ul>
-                        <ul class="dropdown__menu">
-                            <li>
-                                <a href="/Buy" class="dropdown__link">
-                                    <i class="fas fa-money-bill-wave money"></i> <p>Buy</p>
-                                </a>                          
-                            </li>
-                        </ul> -->
-                    </li> 
-                    <li>
-                        <a class="nav__link">
-                            <div class="search-container">
-                                <input type="text" placeholder="Search...">
-                                <i class="fas fa-search"></i>
-                            </div>   
-                        </a>      
-                    </li>    
-                    <li><a href="/Login" class="nav__link"><i class ="fas fa-sign-in-alt"></i>Login & Register</a></li>    
-                    <li><a href="/Cart" class="nav__link"><i class ="fas fa-shopping-cart"></i></a></li>          
+                <ul class = "nav__list">            
+                    <li><a href="/Buy" class="nav__link"><i class ="fas fa-shopping-bag"></i></a></li>  
+                    <li><a href="/Cart" class="nav__link"><i class ="fas fa-shopping-cart"></i></a></li> 
+                    <li><a href="/Login" class="nav__link"><i class ="fas fa-sign-in-alt"></i></a></li> 
                 </ul>          
             </div>
             </nav>
@@ -82,6 +73,7 @@
                 %>                 
         </header>
         <script src ="/js/changeScreen.js"></script>
+        <script src ="/js/slideBar.js"></script>        
     </body>
 </html>
 

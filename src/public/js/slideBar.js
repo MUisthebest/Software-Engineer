@@ -1,6 +1,5 @@
 slideToggle = document.querySelector(".slidebar-toggle");
-slideBar = document.querySelector("nav");
+slideBar = document.querySelector(".slide-bar");
 slideToggle.addEventListener("click", ()=>{
-    slideBar.classList.toggle("close");
+    slideBar.classList.toggle("hidden");
 })
-
