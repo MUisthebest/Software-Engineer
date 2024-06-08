@@ -17,7 +17,7 @@ const getShopBuyPage = (req, res) =>{
 }
 
 const getLovePage = (req, res) =>{
-    res.render("Lovepage.ejs",{listItems: listOfItems});
+    res.render("Layout.ejs", {filename: "Lovepage.ejs"});
 }
 
 const getTrendingPage = (req, res) =>{

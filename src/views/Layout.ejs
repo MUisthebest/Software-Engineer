@@ -35,7 +35,8 @@
                 </ul>
             </div>
         </nav>
-        <header class="header">
+        <%if (filename == "boxItem.ejs" || filename == "Trendingpage.ejs" || filename === "Lovepage.ejs" || filename == "Homepage.ejs") { %> 
+            <header class="header">
                 <nav class="nav container">
                     <div class="nav__toggle" id="nav-toggle">
                     <i class="fas fa-bars nav__burger"></i>
@@ -43,14 +44,20 @@
                     </div>
                 </div>
                 <div class="nav__menu" id = "nav-menu">
-                <ul class = "nav__list">            
-                    <li><a href="/Buy" class="nav__link"><i class ="fas fa-shopping-bag"></i></a></li>  
-                    <li><a href="/Cart" class="nav__link"><i class ="fas fa-shopping-cart"></i></a></li> 
-                    <li><a href="/Login" class="nav__link"><i class ="fas fa-sign-in-alt"></i></a></li> 
+                <ul class = "nav__list">        
+                    <li>
+                        <a href="/Buy" class="nav__link"><i class ="fas fa-shopping-bag "></i></a>
+                    </li>  
+                    <li>
+                        <a href="/Cart" class="nav__link"><i class ="fas fa-shopping-cart"></i></a>
+                    </li> 
+                    <li>
+                        <a href="/Login" class="nav__link"><i class ="fas fa-sign-in-alt"></i></a>
+                    </li> 
                 </ul>          
             </div>
             </nav>
-
+            <%}%>
                  <% if (filename === "Login.ejs") { %> <%-include('Login.ejs')%>
                 <% } else if (filename === "Homepage.ejs") { %> <%-include('Homepage.ejs')%>
                 <% }
@@ -69,11 +76,19 @@
                 <% }
                 else if (filename === "boxItem.ejs") { %> <%-include('boxItem.ejs')%>
                 <% }
-                else{ }
                 %>                 
         </header>
         <script src ="/js/changeScreen.js"></script>
-        <script src ="/js/slideBar.js"></script>        
+        <script src ="/js/slideBar.js"></script>    
+        <script>
+            let list = document.querySelectorAll('.header .nav__menu .nav__list li');
+            function activeLink(){
+                list.forEach((item) => 
+                    item.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            list .forEach((item) =>  item.addEventListener('click',activeLink))
+        </script>    
     </body>
 </html>
 

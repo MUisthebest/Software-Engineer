@@ -15,7 +15,7 @@ showMenu('nav-toggle','nav-menu');
 
 function change(){
 
-    document.querySelector("#re").innerHTML = "Profile";
+    document.querySelector('.Shop').innerHTML = "<h1>HaHa</h1>";
 }
 
 let cards = document.querySelectorAll('.card');
