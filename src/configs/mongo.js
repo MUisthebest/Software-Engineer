@@ -13,15 +13,15 @@ const { MongoClient } = require('mongodb');
 // }
 
 var collection = {};
+var client;
 
 async function connectToMongo() {
     const uri = process.env.MONGODB_URI;
-    const client = new MongoClient(uri);
+    client = new MongoClient(uri);
 
     try {
         await client.connect();
         console.log("Connected to MongoDB");
-        await client.db("EcommerceData", { enableUtf8Validation: true });
         collection["users"] = client.db("EcommerceData").collection("users");
         collection["products"] = client.db("EcommerceData").collection("products");
         collection["orders"] = client.db("EcommerceData").collection("orders");
@@ -32,8 +32,18 @@ async function connectToMongo() {
 }
 
 async function getDb(name) {
+    if (!collection[name]) {
+        throw new Error(`Collection ${name} is not initialized`);
+    }
     return collection[name];
 }
 
+// async function closeMongoConnection() {
+//     if (client) {
+//         await client.close();
+//         console.log("MongoDB connection closed");
+//     }
+// }
 
-module.exports = { connectToMongo, getDb};
+module.exports = { connectToMongo, getDb };
+
