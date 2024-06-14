@@ -1,9 +1,10 @@
 @media screen and (min-width: 1024px) {
   :root {
     --normal-font-size: 1rem;
-    --color-1: #45586b;
-    --color-2: #9AC8CD;
-    --color-3: #F7C566;
+    --color-1: #3F979B;
+    --color-2: #D3BD9A;
+    --color-3: #000;
+    --color-4: #D3E3FC;
   }
 }
 
@@ -89,17 +90,17 @@ ul{
 .nav__menu .nav__list li.active a i{
   opacity: 1;
   transform: translateY(-8px);
-  background-color: #000;
+  background-color: var(--color-2);
 }
 
 .nav__menu .nav__list li.active a{
-  background-color: #000;
+  background-color: var(--color-2);
 }
 
 .nav__menu .nav__list li.active a i{
   opacity: 1;
   transform: translateY(-8px);
-  background-color: #000;
+  background-color: var(--color-2);
 }
 
 
@@ -107,11 +108,12 @@ ul{
   position: absolute;
   height: 100%;
   width: 150px;
-  background-color: #000;
+  background-color: var(--color-2);
   border-radius: 15px 15px 0 0;
   transition: 0.2s ease-in;
   cursor: pointer;
 }
+
 
 .indicate::before{
   position: absolute;
@@ -121,7 +123,7 @@ ul{
   background: var(--color-1);
   bottom: 0;
   left: -25px;
-  box-shadow: 13px 0 0 #000;
+  box-shadow: 13px 0 0 var(--color-2);
   border-bottom-right-radius: 15px;
 }
 
@@ -133,9 +135,10 @@ ul{
   background: var(--color-1);
   bottom: 0;
   right: -25px;
-  box-shadow: -13px 0 0 #000;
+  box-shadow: -13px 0 0 var(--color-2);
   border-bottom-left-radius: 15px;
 }
+
 
 
 ul li{
@@ -196,8 +199,10 @@ ul li a p{
   height: 100%;
   width: 5%;
   background-color: var(--color-1);
-  border-radius: 1px solid #393232;
+  border-radius: 1px;
   transition: .01s linear;
+  border: none;
+  outline: none;
 }
 
 .Box_Item{
@@ -485,10 +490,6 @@ ul li a p{
   #check:checked~.slide{
     transform: translateX(-260px);
     }
-
-  .search-container{
-    width: 600px;
-  }
 }
 
 .nav__menu{
@@ -637,44 +638,7 @@ align-items: center;
   transition: .3s;
 }
 
-.nav__link .search-container {
-  width: 500px;
-  align-items: center;
-  position: relative;
-  background: #ffffff;
-  height: 3.5;
-  margin: 3px 0 0 0;
-  transition: .5s linear;
-  justify-content: space-between;
-  border-radius: 10px;
-  display: flex;
-}
 
-.nav__link .search-container input {
-  width: 90%;
-  border: none;
-  outline: none;
-  background: none;
-  height: 40px;
-  padding: 2px 10px;
-  color: #989898;
-  transition: .5s linear;
-}
-
-.nav__link .search-container input::placeholder {
-  color: #577B8D;
-  font-size: 12px;
-  transition: .5s linear;
-}
-
-.nav__link .search-container i{
-  position: absolute;
-  right: 5px;
-  top: 60%;
-  transform: translateY(-50%);
-  height: 30px;
-  width: 30px;
-}
 
 .Buy{
   height: 100vh;
@@ -723,7 +687,7 @@ align-items: center;
   margin-top: 10px;
 }
 
-.Buy article nav .Stream_bt span{
+.Buy article nav .Stream_bt .coverBt{
   background-color: #663da6;
   height: 100%;
   width: 0%;
@@ -736,9 +700,62 @@ align-items: center;
   z-index: -1;
 }
 
-.Stream_bt:hover span{
+
+nav .search-container {
+  width: 500px;
+  align-items: center;
+  position: relative;
+  background: #ffffff;
+  height: 3.5;
+  margin: 5px 0 0 0;
+  transition: .5s linear;
+  justify-content: space-between;
+  border-radius: 10px;
+  display: flex;
+}
+
+nav .search-container input {
+  width: 90%;
+  border: none;
+  outline: none;
+  background: none;
+  height: 40px;
+  padding: 2px 10px;
+  color: #989898;
+  transition: .5s linear;
+}
+
+nav .search-container button{
+  position: absolute;
+  height: 100%;
+  width: 10%;
+  right: 0px;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: #6DC5D1;
+  border: none;
+  outline: none;
+}
+
+nav .search-container input::placeholder {
+  color: #577B8D;
+  font-size: 12px;
+  transition: .5s linear;
+}
+
+nav .search-container i:hover {
+  color: #ffffff;
+}
+
+nav .search-container button:hover {
+  background-color: #757b7b;
+}
+
+
+
+.Stream_bt:hover .coverBt{
   width: 100%;
-  z-index: -1;
+  z-index: 0;
 }
 
 .Stream_bt:hover{
@@ -1014,23 +1031,23 @@ color: #fff;
 }
 
 .input-box i{
-position: absolute;
-font-size: 20px;
-transform: translateY(-50%);
-top: 50%;
-right: 20px;
+  position: absolute;
+  font-size: 20px;
+  transform: translateY(-50%);
+  top: 50%;
+  right: 20px;
 }
 
 .wrapper .remmeber-forgot{
-display: flex;
-justify-content: space-between;
-font-size: 14.5px;
-margin: -15px 5px 15px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  margin: -15px 5px 15px;
 }
 
 .remmeber-forgot label input{
-accent-color: #fff;
-margin-right: 3px;
+  accent-color: #fff;
+  margin-right: 3px;
 }
 
 .remmeber-forgot a{
@@ -1043,17 +1060,17 @@ text-decoration: underline;
 }
 
 .wrapper .btn{
-width: 100%;
-height: 45px;
-background: #fff;
-border: none;
-outline: none;
-border-radius: 40px;
-box-shadow: 0 0 10px rgba(0,0,0,0.1);
-cursor: pointer;
-font-size: 16px;
-color: #333;
-font-weight: 600px;
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600px;
 }
 
 .wrapper .register_link{
@@ -1148,7 +1165,7 @@ margin-bottom: 30px;
 
 .tooltip-text {
   padding: 6px;
-  background-color: #333;
+  background-color: var(--color-1);
   color: white;
   font-size: 12px;
   position: absolute;
@@ -1156,25 +1173,25 @@ margin-bottom: 30px;
   width: 100px;
   text-align: center;
   right: -120px;
-  bottom: 15px;
   visibility: hidden;
 }
 
 .tooltip-text::after {
   content: "";
   position: absolute;
-  left: -5px;
-  bottom: 8px;
+  left: -10px;
+  bottom: 7px;
   width: 0;
   height: 0;
   border-top: 7px solid transparent;
   border-bottom: 7px solid transparent;
-  border-right: 10px solid #333;
+  border-right: 10px solid var(--color-1);
 }
 
 
 a:hover .tooltip-text{
   visibility: visible;
+  display: block;
 }
 
 .Box_Item .buy_realted_box{
