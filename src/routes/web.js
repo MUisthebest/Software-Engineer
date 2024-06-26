@@ -1,8 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const { getHomePage, getShopFreePage, getShopBuyPage, getLovePage, getTrendingPage, getLogin, getCart, getRegister, getBoxItem, getAdmin, getAdminProduct, getAdminUser, getAdminOrder } = require("../controller/menuController");
-const { registerController } = require("../controller/registerController");
-const { loginController } = require("../controller/loginController");
+const { 
+    getHomePage, 
+    getShopFreePage, 
+    getShopBuyPage, 
+    getLovePage, 
+    getTrendingPage, 
+    getCart, 
+    getBoxItem, 
+    getAdmin, 
+    getAdminProduct, 
+    getAdminUser, 
+    getAdminOrder, 
+} = require("../controller/routeController");
 const dotenv = require('dotenv');
 
 
@@ -15,11 +25,7 @@ router.get('/Love', getLovePage);
 
 router.get('/Buy', getShopBuyPage);
 
-router.get('/Login', getLogin);
-
 router.get('/Cart', getCart);
-
-router.get('/Register', getRegister);
 
 router.get('/boxItem', getBoxItem);
 
@@ -30,7 +36,6 @@ router.post('Admin/', getAdmin);
 router.get('/User_Admin', getAdminUser);
 
 router.get('/Product_Admin', getAdminProduct);
-
 
 router.get('/Order-Admin', getAdminOrder);
 
@@ -82,22 +87,5 @@ router.get("/users", (req, res) => {
 
     registerController(res, user);
 })
-
-// Add the login route
-router.post("/login", (req, res) => {
-    const { username, password } = req.body;
-
-    if (!username || !password) {
-        return res.status(400).json({ message: "Please fill in all fields, username and password are required!" });
-    }
-
-    const user = {
-        username,
-        password
-    };
-
-    loginController(res, user);
-});
-
 
 module.exports = router;
