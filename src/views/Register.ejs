@@ -1,22 +1,26 @@
 <%-include('head.ejs')%>
 <section class="Login">
   <div class="wrapper">
-    <form action="/users" method="GET">
+    <form class="form">
         <h1>Register</h1>
         <div class="input-box">
-            <input type="text" placeholder="Username" name="username" required>
+            <input type="text" class="name-input" placeholder="Full name" name="name" required>
             <i class='bx bx-user' ></i>
         </div>
         <div class="input-box">
-            <input type="password" placeholder="Password" name="password" required>
+            <input type="text" class="username-input" placeholder="Username" name="username" required>
+            <i class='bx bx-user' ></i>
+        </div>
+        <div class="input-box">
+            <input type="password" class="password-input" placeholder="Password" name="password" required>
             <i class='bx bx-lock-alt' ></i>
         </div>
         <div class="input-box">
-            <input type="password" placeholder="Confirm password" required>
+            <input type="password" class="confirm-pass-input" placeholder="Confirm password" required>
             <i class='bx bx-lock-alt' ></i>
         </div>
         <div class="input-box">
-            <input type="phone" placeholder="Contact Number" name="phone" required>
+            <input type="phone" class="phone-input" placeholder="Contact Number" name="phone" required>
             <i class='bx bx-phone'></i>
         </div>
         <div class="location_users">
@@ -34,9 +38,15 @@
           <button type="submit" class="btn_register">Register</button>
         </form>
       </div>
-      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-      <script defer src="/js/importLocation.js"></script> 
     </form>
 </div>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+  integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script src="/js/registerForm.js"></script> 
+<!-- <script src="/js/importLocation.js"></script> -->
 </section>
 
