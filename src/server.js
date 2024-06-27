@@ -12,6 +12,10 @@ const connectDB = require('./db/connect')
 const webRoutes = require('./routes/web');
 const authRouter = require('./routes/auth')
 
+// error handler
+const errorHandlerMiddleware = require('./middleware/error-handler');
+const notFoundMiddleware = require('./middleware/not-found');
+
 // //Using MongoClient to connect to MongoDB
 // connectToMongo()
 
@@ -29,6 +33,9 @@ const port = process.env.PORT || 8080;
 app.use(express.static('./public'))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(notFoundMiddleware)
+app.use(errorHandlerMiddleware)
 
 configViewEngine(app);
 
