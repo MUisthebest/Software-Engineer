@@ -1440,7 +1440,7 @@ header .buy_realted_box .purchase_box .luv i:hover{
 
 .hp-btn:hover{
   background: transparent;
-  color: #000000;
+  color: #1743e3;
 }
 
 .home-img{
@@ -1467,14 +1467,38 @@ header .buy_realted_box .purchase_box .luv i:hover{
   position: absolute;
   max-width: 750px;
   transform: rotate(-90deg);
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 80%;
   left: -25%;
   top: 25%;
   z-index: 11;
   opacity: 0;
-  animation: slideRotate 1s ease forwards;
+  animation: slideRotate 2s ease forwards;
 }
+
+.home-anim .door1{
+  position: absolute;
+  transform: rotate(-90deg); 
+  z-index: 11;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  animation: moveLeft 1s ease forwards;
+  animation-delay: 2.2s;
+}
+
+.home-anim .door2{
+  position: absolute;
+  transform: rotate(-90deg); 
+  z-index: 11;
+  height: 100%;
+  width: 100%;
+  scale: -1;
+  opacity: 0;
+  animation: moveRight 1s ease forwards;
+  animation-delay: 2.2s;
+}
+
 
 .home .block1{
   height: 700px;
@@ -1486,6 +1510,25 @@ header .buy_realted_box .purchase_box .luv i:hover{
   z-index: 10;
   transform: rotate(45deg);
   animation: aBlock1 1s ease forwards;
+}
+
+.web-name{
+  width: 60%;
+  height: 50px;
+  position: absolute;
+  display: flex;
+  z-index: 14;
+  transform: rotate(-45deg);
+  top: 40%;
+  left: 20%;
+  justify-content: space-between;
+}
+
+.web-name img{
+  position: relative;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 3.4s;
+  opacity: 0;
 }
 
 
@@ -1522,6 +1565,7 @@ header .buy_realted_box .purchase_box .luv i:hover{
   } 
 }
 
+
 @keyframes slideTop{
   0% {
     transform: translateY(100px);
@@ -1539,7 +1583,55 @@ header .buy_realted_box .purchase_box .luv i:hover{
     opacity: 0;
   }
   100% {
-    transform: translate(100px,-100px) scale(1) rotate(-45deg);
+    transform: translate(145px,-40px) scale(1) rotate(-45deg);
     opacity: 1;
   }
+}
+
+
+@keyframes moveLeft{
+  0% {
+    opacity: 1;
+    border-bottom: 100px solid #7AB2B2;
+    border-left: 400px solid transparent;
+  }
+  25% {
+    border-bottom: 200px solid #7AB2B2;
+    border-left: 400px solid transparent;
+    opacity: 1;
+  }  
+  50% {
+    border-bottom: 300px solid #7AB2B2;
+    border-left: 400px solid transparent;
+    opacity: 1;
+  }   
+  100% {
+    border-bottom: 400px solid #7AB2B2;
+    border-left: 400px solid transparent;
+    opacity: 1;
+  }  
+}
+
+@keyframes moveRight{
+  0% {
+    opacity: 1;
+    scale: -1;
+    border-bottom: 100px solid #7AB2B2;
+    border-left: 400px solid transparent;
+  }
+  25% {
+    opacity: 1;
+    border-bottom: 200px solid #7AB2B2;
+    border-left: 400px solid transparent;
+  } 
+  50% {
+    opacity: 1;
+    border-bottom: 300px solid #7AB2B2;
+    border-left: 400px solid transparent;
+  }     
+  100% {
+    border-bottom: 400px solid #7AB2B2;
+    border-left: 400px solid transparent;
+    opacity: 1;
+  }   
 }
