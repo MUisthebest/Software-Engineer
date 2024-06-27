@@ -1,23 +1,27 @@
 const loginFormDOM = document.querySelector('.form')
 const usernameInput = document.querySelector('.username-input')
 const passwordInput = document.querySelector('.password-input')
+const formAlertDOM = document.querySelector('.form-alert')
 
-loginFormDOM.addEventListener('submit', function(e){
+loginFormDOM.addEventListener('submit', async (e) =>{
     e.preventDefault();
     const username = usernameInput.value;
     const password = passwordInput.value;
 
-    if (!username || !password)
-        return;
-
     const user = {username, password}
     try {
-        axios.post('/login', {...user})
+        const {data} = await axios.post('/login', {...user})
+        localStorage.setItem('token', data.token)
         usernameInput.value = ''
         passwordInput.value = ''
+        formAlertDOM.textContent = 'success'
 
         window.location.href = '/'
+
     } catch (error) {
-        console.log(error);
+        formAlertDOM.textContent = error.response.data.msg
+        localStorage.removeItem('token')
+        usernameInput.value = ''
+        passwordInput.value = ''
     }
 })

@@ -1,8 +1,11 @@
+require('express-async-errors')
+require('dotenv').config();
+
 const express = require('express');
 const app = express();
 const path = require('path');
 const configViewEngine = require('./configs/viewEngine');
-require('dotenv').config();
+
 // const mongoose = require('mongoose');
 const { error } = require('console');
 // const {connectToMongo} = require('./configs/mongo');
@@ -13,8 +16,8 @@ const webRoutes = require('./routes/web');
 const authRouter = require('./routes/auth')
 
 // error handler
-const errorHandlerMiddleware = require('./middleware/error-handler');
 const notFoundMiddleware = require('./middleware/not-found');
+const errorHandlerMiddleware = require('./middleware/error-handler');
 
 // //Using MongoClient to connect to MongoDB
 // connectToMongo()
@@ -34,14 +37,17 @@ app.use(express.static('./public'))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(notFoundMiddleware)
-app.use(errorHandlerMiddleware)
-
-configViewEngine(app);
 
 
 app.use('/', webRoutes);
 app.use('/', authRouter);
+
+configViewEngine(app);
+
+app.use(notFoundMiddleware)
+app.use(errorHandlerMiddleware)
+
+
 
 const start = async()=>{
     try {
