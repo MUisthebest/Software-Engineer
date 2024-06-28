@@ -10,19 +10,21 @@ const ProductSchema = mongoose.Schema({
     price:{
         type:Number,
         default:0,
+        required:true
     },
-    description:{
+    desc:{
         type:String,
         required: [true, 'Please provide product description'],
         maxlength: [1000, 'Description can not be more than 1000 characters'],
     },
     image:{
-        type:String,
-        required:[true,'Please provide image']
+        data: Buffer,
+        contentType: String,
     },
     quantity:{
         type:Number,
         default:0,
+        required:true
     }
 },{timestamps:true})
 
