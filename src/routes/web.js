@@ -23,7 +23,7 @@ router.get('/Trending', getTrendingPage);
 
 router.get('/Love', getLovePage);
 
-router.get('/Buy', getShopBuyPage);
+// router.get('/Buy', getShopBuyPage);
 
 router.get('/Cart', getCart);
 

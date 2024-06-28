@@ -12,9 +12,9 @@ const getShopFreePage = (req, res) =>{
     res.render("Layout.ejs", {filename: "Freepage.ejs"});
 }
 
-const getShopBuyPage = (req, res) =>{
-    res.render("Layout.ejs",{filename: "Buypage.ejs"});
-}
+// const getShopBuyPage = (req, res) =>{
+//     res.render("Layout.ejs",{filename: "Buypage.ejs"});
+// }
 
 const getLovePage = (req, res) =>{
     res.render("Layout.ejs", {filename: "Lovepage.ejs"});
@@ -66,7 +66,7 @@ const getAdminOrder = (req, res) =>{
 module.exports = {
     getHomePage, 
     getShopFreePage, 
-    getShopBuyPage, 
+    // getShopBuyPage, 
     getLovePage, 
     getTrendingPage, 
     getLogin, 

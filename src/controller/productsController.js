@@ -5,7 +5,7 @@ const path = require('path');
 
 const getAllProductsStatic = async(req,res)=>{
     const products = await Product.find({}).sort('createdAt').limit(10)
-    res.status(StatusCodes.OK).json({products})
+    res.status(StatusCodes.OK).render("Layout.ejs",{filename: "Buypage.ejs", products:products})
 }
 
 const getAllProducts = async(req,res)=>{
@@ -71,8 +71,8 @@ const createProduct = async (req,res)=>{
         quantity: req.body.quantity
     }
 
-    // const product = await Product.create(obj)
-    res.status(StatusCodes.CREATED).json(obj)
+    const product = await Product.create(obj)
+    res.status(StatusCodes.CREATED).json(product)
 }
 
 module.exports = {
