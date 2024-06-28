@@ -1,16 +1,79 @@
 [
     {
-        "name": "RAM",
-        "price": 25,
-        "desc": "This is RAM",
-        "image": "./public/Media/products/RAM.png",
-        "quantity": 150
+        "name": "BEATS SOLO 4",
+        "price": 235,
+        "desc": "This new headphone model integrates the most advanced audio technologies, significantly improving sound quality compared to the previous generation. This upgrade not only delivers clearer, more detailed sound, but also improves overall sound depth and range, helping users enjoy the best quality music.",
+        "image": "./public/Media/products/BeatSolo4.png",
+        "quantity": 30
     },
     {
-        "name": "SSD",
+        "name": "MFC-T4500DW Inkjet Printer",
+        "price": 605,
+        "desc": "This printer have wireless internet connection, high quality color print, auto 2 side print and can store up to 350 350 sheets of 80 gsm plain paper",
+        "image": "./public/Media/products/inkjet.png",
+        "quantity": 10
+    },
+    {
+        "name": "SRS-RA5000 Speaker",
+        "price": 569,
+        "desc": "This Sony speaker is wireless and can be connected through wifi and blue tooth, sound correction and sound technology that fills the room with amazing musics",
+        "image": "./public/Media/products/srs-ra.png",
+        "quantity": 20
+    },
+    {
+        "name": "BEATS SOLO BUDS",
+        "price": 79,
+        "desc": "Discover the perfect combination of beautiful design, excellent sound quality and maximum convenience with Beats Solo Buds headphones that are one of the cheapest on the market.",
+        "image": "./public/Media/products/beatbuds.png",
+        "quantity": 40
+    },
+    {
+        "name": "BEATS PILL PLUS SPEAKER",
+        "price": 137,
+        "desc": "This speaker houses powerful internal sound, can conect with any devices through blue tooth, is designed to be portable and fast charging",
+        "image": "./public/Media/products/beatpill.png",
+        "quantity": 35
+    },
+    {
+        "name": "Galaxy S24 Ultra",
+        "price": 1740,
+        "desc": "This smartphone has powerful hardware to meet AI speed, made from titanium which is one of the toughest material and boast 200MP of sharp and realistic resolution.",
+        "image": "./public/Media/products/galaxys24.png",
+        "quantity": 5
+    },
+    {
+        "name": "Gaming laptop ASUS ROG Strix SCAR 18 G834",
+        "price": 4630,
+        "desc": "This gaming laptop has these specs: G834JYR-R6011W (i9-14900HX | 64GB | 2TB | GeForce RTX™ 4090 16GB | 18' WQXGA 240Hz | Win 11)",
+        "image": "./public/Media/products/gaminglap.png",
+        "quantity": 7
+    },
+    {
+        "name": "Dell XPS 16 9640",
+        "price": 2199.99,
+        "desc": "This laptop has these specs: Core Ultra 7-166H, Ram 16GB, SSD 1TB,  RTX 4050, 16.3" FHD+",
+        "image": "./public/Media/products/dell.png",
+        "quantity": 19
+    },
+    {
+        "name": "USB Apacer AH357",
+        "price": 8,
+        "desc": "This USB has USB 3.2 hard drive capacity up to 32 GB, equipped with read speed of 130 MB/s and write speed of 25 MB/s",
+        "image": "./public/Media/products/usb.png",
+        "quantity": 53
+    },
+    {
+        "name": "WEBCAM HIKVISION DS-U525",
         "price": 40,
-        "desc": "This is SSD",
-        "image": "./public/Media/products/SSD.png",
-        "quantity": 200
-    }
+        "desc": "This webcam is plug and play, no app installation required, integrated high quality recording microphone, AGC automatic brightness adjustment and high resolution 1920×1080p with 2m cable",
+        "image": "./public/Media/products/webcam.png",
+        "quantity": 28
+    },
+    {
+        "name": "Samsung Galaxy Watch5 40mm smartwatch",
+        "price": 188,
+        "desc": "This smartwatch has aluminum alloy frame, 1.2 inch screen has a resolution of 396 x 396 pixels, a pixel density of 330 ppi providing high detail, chip Exynos W920, One UI Watch OS and 5atm water proof",
+        "image": "./public/Media/products/watch.png",
+        "quantity": 22
+    },
 ]
