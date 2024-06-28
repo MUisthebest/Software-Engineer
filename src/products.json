@@ -1,0 +1,16 @@
+[
+    {
+        "name": "RAM",
+        "price": 25,
+        "desc": "This is RAM",
+        "image": "./public/Media/products/RAM.png",
+        "quantity": 150
+    },
+    {
+        "name": "SSD",
+        "price": 40,
+        "desc": "This is SSD",
+        "image": "./public/Media/products/SSD.png",
+        "quantity": 200
+    }
+]

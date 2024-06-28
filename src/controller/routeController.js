@@ -64,5 +64,17 @@ const getAdminOrder = (req, res) =>{
 
 
 module.exports = {
-    getHomePage, getShopFreePage, getShopBuyPage, getLovePage, getTrendingPage, getLogin, getCart, getRegister, getBoxItem, getAdmin, getAdminProduct, getAdminUser, getAdminOrder
+    getHomePage, 
+    getShopFreePage, 
+    getShopBuyPage, 
+    getLovePage, 
+    getTrendingPage, 
+    getLogin, 
+    getCart, 
+    getRegister, 
+    getBoxItem, 
+    getAdmin, 
+    getAdminProduct, 
+    getAdminUser, 
+    getAdminOrder,
 }
