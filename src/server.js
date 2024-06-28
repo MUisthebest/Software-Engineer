@@ -13,7 +13,8 @@ const connectDB = require('./db/connect')
 
 // routes
 const webRoutes = require('./routes/web');
-const authRouter = require('./routes/auth')
+const authRouter = require('./routes/auth');
+const productsRouter = require('./routes/products')
 
 // error handler
 const notFoundMiddleware = require('./middleware/not-found');
@@ -41,6 +42,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/', webRoutes);
 app.use('/', authRouter);
+app.use('/', productsRouter);
 
 configViewEngine(app);
 
