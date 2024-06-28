@@ -51,7 +51,7 @@
     {
         "name": "Dell XPS 16 9640",
         "price": 2199.99,
-        "desc": "This laptop has these specs: Core Ultra 7-166H, Ram 16GB, SSD 1TB,  RTX 4050, 16.3" FHD+",
+        "desc": "This laptop has these specs: Core Ultra 7-166H, Ram 16GB, SSD 1TB,  RTX 4050, 16.3 inches FHD+",
         "image": "./public/Media/products/dell.png",
         "quantity": 19
     },
