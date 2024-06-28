@@ -1,5 +1,6 @@
 const Product = require('../models/Product')
 const {StatusCodes} = require('http-status-codes')
+const {NotFoundError} = require('../errors')
 const fs = require('fs')
 const path = require('path');
 
@@ -75,8 +76,19 @@ const createProduct = async (req,res)=>{
     res.status(StatusCodes.CREATED).json(product)
 }
 
+const getProduct = async (req,res)=>{
+    const {id:productId} = req.params
+    const product = await Product.findOne({_id:productId})
+
+    if (!product){
+        throw new NotFoundError(`No product with id: ${productId}`)
+    }
+    res.status(StatusCodes.OK).render("Layout.ejs",{filename: "boxItem.ejs", product:product})
+}
+
 module.exports = {
     getAllProductsStatic,
     getAllProducts,
     createProduct,
+    getProduct,
 }
