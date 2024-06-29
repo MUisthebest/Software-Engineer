@@ -46,7 +46,7 @@
                 <% for (let i = 0; i < products.length; i++){ %>
                     <div class="product">
                         <a href="/products/<%=products[i].id%>" class="choose">
-                            <img src="">
+                            <img src="data:image/<%=products[i].image.contentType%>;base64,<%=products[i].image.data.toString('base64')%>">
                             <div class="content">
                                 <div class="left">
                                     <h5><%=products[i].name%></h5> 
