@@ -51,7 +51,7 @@
                                 <div class="left">
                                     <h5><%=products[i].name%></h5> 
                                 </div>
-                                <h6><%=products[i].cost%></h6>
+                                <h6>Cost: <%=products[i].price%></h6>
                             </div>
                         </a>
                     </div>
@@ -59,8 +59,21 @@
             </div>
         </div>
         <div class="game2">
-            <h3><i class="fas fa-bomb"></i>Most Played</h3>
-            <div class="gameBx" id="game_bx_2">                     
+            <h3><i class="fas fa-bomb"></i>List Product</h3>
+            <div class="gameBx" id="game_bx_2">       
+                <% for (let i = 0; i < products.length; i++){ %>
+                    <div class="product">
+                        <a href="/products/<%=products[i].id%>" class="choose">
+                            <img src="data:image/<%=products[i].image.contentType%>;base64,<%=products[i].image.data.toString('base64')%>">
+                            <div class="content">
+                                <div class="left">
+                                    <h5><%=products[i].name%></h5> 
+                                </div>
+                                <h6>Cost: <%=products[i].price%></h6>
+                            </div>
+                        </a>
+                    </div>
+                <% } %>              
             </div>
         </div>
     </article>

@@ -646,7 +646,7 @@ align-items: center;
 
 
 .Buy{
-  height: 100vh;
+  height: 110vh;
   width: calc(100%);
   position: relative;
   transition: .05s ease-in-out;
@@ -658,7 +658,7 @@ align-items: center;
 
 .Buy article{
   width: 94%;
-  height: 94%;
+  height: 100%;
   border-radius: 10px 10px 10px 10px;
   border: 1px solid #fff;
   background-color: var(--color-1);
@@ -826,12 +826,13 @@ nav .search-container button:hover {
 
 .Buy article .game1 .gameBx{
   width: 100%;
-  height: 175px;
+  height: 200px;
   border: 1px solid #fff;
   display: flex;
   align-items: center;
   overflow: auto;
   scroll-behavior: smooth;
+  overflow-y: hidden;
 }
 
 .Buy article .game1 .gameBx::-webkit-scrollbar{
@@ -858,39 +859,45 @@ nav .search-container button:hover {
   color: #494848;
 }
 
+.gameBx .product{
+  width: 170px;
+  height: 200px;
+  border: 1px solid #000;
+  margin-left: 5px;
+  margin-top: 5px;
+}
 
-.Buy article .game1 .gameBx .card{
+
+.gameBx .product a{
   min-width: 220px;
   height: 160px;
   border: 1px solid #ffffff;
-  border-radius: 10px;
-  margin-top: 10px;
-  margin-right: 20px;
+  border-radius: 5px;
+  margin: 10px 10px 0px 10px;
 }
 
-.Buy article .game1 .gameBx .card a img{
-  width: 100%;
-  height: 70%;
+.gameBx .product a img{
+  width: 130px;
+  height: 130px;
   border-radius: 5px;
 }
 
-.Buy article .game1 .gameBx .card a .content{
+.gameBx .product a .content{
   width: 100%;
   height: 25%;
   /* border: 1px solid #fff; */
   display: flex;
-  justify-content: space-between;
   color: var(--color-3);
-  margin-top: -5px;
+  margin-top: 10px;
   transition: .5s linear;
 }
 
-.Buy article .game1 .gameBx .card .content .left{
+.gameBx .product .content .left{
   color: var(--color-3);
   transition: .5s linear;
 }
 
-.Buy article .game1 .gameBx .card .content .left h5{
+.gameBx .product .content .left h5{
   font-size: 18px;
   font-weight: 500;
   width: 150px;
@@ -899,7 +906,7 @@ nav .search-container button:hover {
   white-space: nowrap;
 }
 
-.Buy article .game1 .gameBx .card .content .left p{
+.gameBx .product .content .left p{
   font-size: 16px;
   font-weight: 500;
   width: 150px;
@@ -909,18 +916,22 @@ nav .search-container button:hover {
   color: #000000;
 }
 
-.Buy article .game1 .gameBx .card .content .left h6{
-  font-size: 8px;
+.gameBx .product .content h6{
+  font-size: 16px;
   font-weight: 500;
-  margin-top: 5px;
   transition: .5s linear;
-
+  width: 50%;
+  height: 50%;
+  margin: 15% 10% 0% -70%;
+  background-color: #04AA6D;
+  border-radius: 5px;
+  border: 1px solid #000;
 }
 
 .Buy article .game2{
   position: relative;
   width: 100%;
-  height: 360px;
+  height: 500px;
   border: 1px solid #fff;
   border-radius: 10px;
   padding: 0 30px;
@@ -945,7 +956,7 @@ nav .search-container button:hover {
 
 .Buy article .game2 .gameBx{
   width: 100%;
-  height: 200px;
+  height: 400px;
   margin-top: 8px;
   border: 1px solid #000000;
   display: flex;
@@ -978,12 +989,6 @@ nav .search-container button:hover {
 
 
 
-.Buy article .game2 .gameBx .card{
-  width: 100px;
-  height: 170px;
-  border: 1px solid #ffffff;
-  margin: 10px 5px;
-}
 
 .Login{
   height: 100vh;
