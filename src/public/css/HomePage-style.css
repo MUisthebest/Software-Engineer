@@ -646,7 +646,7 @@ align-items: center;
 
 
 .Buy{
-  height: 110vh;
+  height: 120vh;
   width: calc(100%);
   position: relative;
   transition: .05s ease-in-out;
@@ -663,6 +663,7 @@ align-items: center;
   border: 1px solid #fff;
   background-color: var(--color-1);
   z-index: 0;
+  margin-top: 20px;
 }
 
 .Buy article nav{
@@ -705,9 +706,15 @@ align-items: center;
   z-index: -1;
 }
 
+.search_box{
+  width: 40%;
+  background: transparent;
+  margin: 0% auto 0;
+  border-radius: 5px;
+}
 
 nav .search-container {
-  width: 500px;
+  width: 100%;
   align-items: center;
   position: relative;
   background: #ffffff;
@@ -754,6 +761,34 @@ nav .search-container i:hover {
 
 nav .search-container button:hover {
   background-color: #757b7b;
+}
+
+.realted_box{
+  z-index: 15;
+  position: absolute;
+}
+
+.result_box ul{
+  border-top: 1px solid #999;
+  padding: 10px 10px;
+  background: #fff;
+  width: 35%;
+  z-index: 15;
+  position: absolute;
+  margin-left: 1px;
+  border-radius: 5px;
+}
+
+.result_box ul li{
+  list-style: none;
+  border-radius: 3px;
+  padding: 15px 10px;
+  cursor: pointer;
+  z-index: 15;
+}
+
+.result_box ul li:hover{
+  background: #e9f3ff;
 }
 
 
@@ -815,6 +850,7 @@ nav .search-container button:hover {
   border: 1px solid #fff;
   padding: 0px 30px;
   margin-top: 20px;
+  z-index: 12;
 }
 
 .Buy article .game1 h3{
@@ -822,6 +858,7 @@ nav .search-container button:hover {
   font-size: 20px;
   font-weight: 600;
   transition: .5s linear;
+  z-index: 12;
 }
 
 .Buy article .game1 .gameBx{
@@ -833,6 +870,7 @@ nav .search-container button:hover {
   overflow: auto;
   scroll-behavior: smooth;
   overflow-y: hidden;
+  z-index: 11;
 }
 
 .Buy article .game1 .gameBx::-webkit-scrollbar{
@@ -865,6 +903,7 @@ nav .search-container button:hover {
   border: 1px solid #000;
   margin-left: 5px;
   margin-top: 5px;
+  z-index: 11;
 }
 
 
@@ -941,6 +980,7 @@ nav .search-container button:hover {
   border-radius: 10px;
   padding: 0 30px;
   overflow: hidden;
+  z-index: 12;
 }
 
 .Buy article .game2 h3{
@@ -1520,6 +1560,19 @@ header .buy_realted_box .purchase_box .luv i:hover{
   animation-delay: 2.2s;
 }
 
+.home-anim .door3{
+  position: absolute;
+  transform: rotate(-90deg); 
+  z-index: 12;
+  height: 100%;
+  width: 100%;
+  background-color: #7AB2B2;
+  scale: -1;
+  opacity: 0;
+  animation: appear 0.4s ease forwards;
+  animation-delay: 3.2s;
+}
+
 
 .home .block1{
   height: 700px;
@@ -1655,4 +1708,13 @@ header .buy_realted_box .purchase_box .luv i:hover{
     border-left: 400px solid transparent;
     opacity: 1;
   }   
+}
+
+@keyframes appear{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }

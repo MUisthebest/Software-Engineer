@@ -1,69 +1,14 @@
-const joinData = [
-    {
-        img: "/Media/mon1.png",
-        name: "Bằng very handsome",
-        describe: "abc",
-        cost: "10000"
-    },
-    {
-        img: "/Media/mon2.png",
-        name: "Monster",
-        describe: "oia",
-        cost: "12000"
-    },
-    {
-        img: "/Media/mon3.png",
-        name: "Oggy",
-        describe: "haha",
-        cost: "100000"
-    },
-    {
-        img: "/Media/mon4.png",
-        name: "Xì trum",
-        describe: "haha",
-        cost: "100000"
-    },
-    {
-        img: "/Media/mon5.png",
-        name: "Hunter",
-        describe: "haha",
-        cost: "100000"
-    },
-    {
-        img: "/Media/mon6.png",
-        name: "Meo Meo",
-        describe: "haha",
-        cost: "100000"
-    }
-]
-
-let index = 0;
-
-let importlistUser = document.getElementById('game_bx_1');
-
-
-function UpdateDiv(){
-    const intervalID = setInterval(()=>{
-        let card = document.createElement('div');
-        card.classList.add('card');
-        if(index == joinData.length){
-            clearInterval(intervalID);
-            return;
-        }
-        else{
-            index++;
-        }
-        const {img, name, describe, cost} = joinData[index-1];
-        card.innerHTML 
-        = 
-       `<a href="/boxItem" class="chooseCard"><img src="${img}"><div class="content"><div class="left"><h5>${name}</h5> <p> ${describe}</p></div><h6>${cost}</h6></div><a>` 
-        importlistUser.appendChild(card);
-    },1);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    UpdateDiv();
+var typed = new Typed(".input",{
+    strings:[`Welcome to our online web store, your one-stop shop for video game purchases. 
+            We are here to cater to your video game needs and preferences with our curated selection of video games.
+            No matter if you are seeking for a specific game or just browsing, our website has it all.`,
+            `Our team has dedicated to making the website as easy and comfortable for you to use and enjoy. 
+            We offer fair prices, security and scam-free store so you don't need to worry about anything and just experience the wonders of gaming. 
+            `,
+        `Join our growing community of satisfied customers and discover the joy of shopping online with us.
+        So what are you waiting for? Go find the video game of your liking and have fun! 
+        If you have any problems or questions, you can email us and we will help with it. `],
+        typeSpeed: 40,
+        backSpeed: 8,
+        loop: true
 })
-
-
-
