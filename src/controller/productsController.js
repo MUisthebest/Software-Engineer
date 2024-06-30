@@ -5,7 +5,7 @@ const fs = require('fs')
 const path = require('path');
 
 const getAllProductsStatic = async(req,res)=>{
-    const products = await Product.find({}).sort('createdAt').limit(10)
+    const products = await Product.find({}).sort('createdAt')
     res.status(StatusCodes.OK).render("Layout.ejs",{filename: "Buypage.ejs", products:products})
 }
 
