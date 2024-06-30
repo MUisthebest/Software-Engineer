@@ -51,7 +51,7 @@
     {
         "name": "Dell XPS 16 9640",
         "price": 2199.99,
-        "desc": "This laptop has these specs: Core Ultra 7-166H, Ram 16GB, SSD 1TB,  RTX 4050, 16.3 inches FHD+",
+        "desc": "This laptop has these specs: Core Ultra 7-166H, Ram 16GB, SSD 1TB,  RTX 4050, 16.3" FHD+",
         "image": "./public/Media/products/dell.png",
         "quantity": 19
     },
@@ -75,5 +75,229 @@
         "desc": "This smartwatch has aluminum alloy frame, 1.2 inch screen has a resolution of 396 x 396 pixels, a pixel density of 330 ppi providing high detail, chip Exynos W920, One UI Watch OS and 5atm water proof",
         "image": "./public/Media/products/watch.png",
         "quantity": 22
-    }
+    },
+    {
+        "name": "Smart Tivi NanoCell LG 4K 55 inch 55NANO76SQA",
+        "price": 503,
+        "desc": "Smart NanoCell LG 4K 55 inch 55NANO76SQA Smart TV, a masterpiece from LG with a simple, sophisticated design, vividly reproducing real life on a 4K screen on the Nano Color range, optimizing display and sound thanks to the Using α5 Gen5 AI 4K, AI Sound Pro fine-tunes attractive sound, bringing a perfect audio-visual experience on rich options from the WebOS 22 operating system.",
+        "image": "./public/Media/products/TV.png",
+        "quantity": 19
+    },
+    {
+        "name": "Casper Inverter air conditioner 1 HP TC-09IS35",
+        "price": 255,
+        "desc": "Casper Inverter 1 HP TC-09IS35 air conditioner provides effective cooling with Turbo fast cooling mode, automatically adjusts temperature with iFeel temperature sensor, and saves electricity with I-saving technology, increasing Device longevity with iClean self-cleaning function.",
+        "image": "./public/Media/products/AC.png",
+        "quantity": 32
+    },
+    {
+        "name": "Senko 3-blade fan L1638 47W",
+        "price": 17,
+        "desc": "Senko L1638 mezzanine fan has a beautiful design, can customize the fan height, cooling with 3 blades with a capacity of 47W, operates smoothly with a brass motor made from 100% copper wire, durable, low energy consumption.",
+        "image": "./public/Media/products/Fan.png",
+        "quantity": 55
+    },
+    {
+        "name": "LG Inverter refrigerator 470 liters Multi Door GR-B50BL",
+        "price": 585,
+        "desc": "LG Inverter refrigerator 470 liters GR-B50BL is the perfect choice for large families. With a spacious capacity of 470 liters, the large French Door refrigerator model is designed with many compartments - trays - shelves - drawers inside. Despite its large capacity, the refrigerator saves electricity thanks to Smart Inverter technology and a series of other advanced technologies equipped with this refrigerator.",
+        "image": "./public/Media/products/Fridge.png",
+        "quantity": 10
+    },
+    {
+        "name": "Electrolux UltimateCare 100 Inverter 9 kg washing machine EWF9025DQWB",
+        "price": 275,
+        "desc": "Electrolux UltimateCare 100 Inverter 9 kg EWF9025DQWB washing machine has the ability to save electricity thanks to the use of Inverter technology. Furthermore, the washing machine also minimizes allergens on human skin with convenient hot water washing technology and steam washing technology.",
+        "image": "./public/Media/products/WM.png",
+        "quantity": 12
+    },
+    {
+        "name": "Kangaroo 1.8 liter high frequency rice cooker KG599N",
+        "price": 82,
+        "desc": "Kangaroo KG599N high frequency rice cooker has a shiny stainless steel outer shell and durable structure. With a capacity of 1.8 liters, the rice cooker meets the cooking needs of families with 4 - 6 members. Electronic control panel with Vietnamese instructions, clear display screen helps you customize functions and cooking modes flexibly and accurately. 1200W capacity, using high frequency technology to help rice cook evenly, delicious, and more fluffy.",
+        "image": "./public/Media/products/RiceC.png",
+        "quantity": 46
+    },
+    {
+        "name": "Sunhouse SHB9111MT built-in double induction cooker",
+        "price": 98,
+        "desc": "Sunhouse double induction cooker has a modern built-in design, with two spacious cooking zones. The induction cooker has a total capacity of 3600W when 2 cookers are turned on at the same time: maximum capacity of the left side is 1800W and the right side is 1800W. The surface material is high-quality heat-resistant glass. Independent touch control panel for flexible adjustment.",
+        "image": "./public/Media/products/EStove.png",
+        "quantity": 78
+    },
+    {
+        "name": "Karofi KAD-X58 11-core hot and cold RO water purifier",
+        "price": 360,
+        "desc": "Karofi KAD-X58 hot and cold RO water purifier with 11 filter cores, equipped with 50 GPD RO filter membrane made in the US to ensure quality, 3 optional water modes according to needs, Nano Silver antibacterial technology,. .. will definitely be a useful water filtration device worthy of being in every family.",
+        "image": "./public/Media/products/WaterF.png",
+        "quantity": 63
+    },
+    {
+        "name": "Panasonic MJ-CS100WRA juicer",
+        "price": 59,
+        "desc": "Panasonic MJ-CS100WRA juicer with elegant, neat design, operates with a capacity of 260W, 2 pressing speeds, equipped with a safety lock feature, meeting the needs of family use.",
+        "image": "./public/Media/products/Juicer.png",
+        "quantity": 98
+    },
+    {
+        "name": "Sharp FP-J30E-A 50W air purifier",
+        "price": 86,
+        "desc": "Sharp air purifier with modern, luxurious, compact 2018 design, suitable for use from living room, family bedroom to office,... Using high-quality HEPA filter, air filter with 3 Sleeping fan speed - medium - high corresponds to air flow of 60 - 120 - 180 m^3/h. Noise level of only 45 dB corresponds to normal talking sound, bringing comfort to the space used. Smart Haze mode.",
+        "image": "./public/Media/products/AirF.png",
+        "quantity": 112
+    },
+    {
+        "name": "Samsung VCC8836V36/XSV canister vacuum cleaner",
+        "price": 90,
+        "desc": "Samsung vacuum cleaners possess a HEPA 13 filter capable of filtering fine dust and allergens to bring fresh air. 2200W operating capacity and 430W suction power with Cyclone vortex suction technology, helping you clean dust particles on the floor. The box-type vacuum cleaner is designed with a double-compartment dust container (Super Twin Chamber) to minimize dust spillage and avoid blocking the air suction path in the inner compartment.",
+        "image": "./public/Media/products/VaccumSS.png",
+        "quantity": 81
+    },
+    {
+        "name": "Microwave oven with grill Electrolux EMG23K22B 23 liters",
+        "price": 79,
+        "desc": "Microwave oven with grill Electrolux EMG23K22B 23 liters supports users to defrost, reheat, cook, and grill conveniently with a microwave capacity of 800W and grill 1000W. The oven is suitable for many types of users thanks to simple adjustment operations using a knob control panel with Vietnamese - English annotations.",
+        "image": "./public/Media/products/Microwave.png",
+        "quantity": 143
+    },
+    {
+        "name": "Sunhouse built-in range hood SHB6118B",
+        "price": 78,
+        "desc": "The Sunhouse SHB6118B built-in range hood has a luxurious black color and a beautiful bright stainless steel case. Well-functioning lights help housewives observe and prepare dishes more conveniently and easily. The built-in range hood operates at a capacity of 700 m³/h, with 3 suction speed settings to help clean smoke, deodorize quickly, and save energy. The aluminum filter mesh is durable, removable, and convenient to clean when needed.",
+        "image": "./public/Media/products/DustSucker.png",
+        "quantity": 150
+    },
+    {
+        "name": "Delites MC390E-N 400W 1.2 liter multi-function meat grinder",
+        "price": 16,
+        "desc": "Delites MC390E-N 400W 1.2 liter meat grinder with a powerful capacity of 400W and a 1.2 liter capacity jar, the machine can puree many different types of ingredients quickly and effectively.",
+        "image": "./public/Media/products/MeatGrinder.png",
+        "quantity": 200
+    },
+    {
+        "name": "AVA BL9006-GS multi-function blender",
+        "price": 21,
+        "desc": "AVA blender has a simple, modern, multi-functional design: blender, grinder. 500W capacity, using motor made entirely of copper, good electrical conductivity. Adjust 2 speeds with the rotary button to suit grinding different types of foods.",
+        "image": "./public/Media/products/Blender.png",
+        "quantity": 176
+    },
+    {
+        "name": "AVA RC-2022 2400W steam iron",
+        "price": 8,
+        "desc": "AVA RC-2022 2400W steam iron has a compact, modern design with luxurious colors, capacity up to 2400W for fast ironing, 260 ml tank capacity to iron more clothes and automatic shut-off feature. electricity is safe to use.",
+        "image": "./public/Media/products/Iron.png",
+        "quantity": 133
+    },
+    {
+        "name": "Sunhouse SHD1533 3.3 liter thermos",
+        "price": 33,
+        "desc": "Large capacity meets enough hot water needs for the whole family such as making tea, coffee, cooking noodles, etc. The water level scale helps you easily observe the amount of water inside. The inside of the bottle is made of 304 stainless steel, safe for users' health. 3 easy ways to pour water.",
+        "image": "./public/Media/products/WaterBoiler.png",
+        "quantity": 210
+    },
+    {
+        "name": "AVA SJ-009 slow juicer",
+        "price": 61,
+        "desc": "AVA SJ-009 slow juicer operates with a capacity of 200W, speed of 45 - 85 rpm, equipped with utilities and safety features to meet basic family use needs.",
+        "image": "./public/Media/products/SlowJuicer.png",
+        "quantity": 182
+    },
+    {
+        "name": "Rapido RAF-12M1 12 liter oil-free fryer",
+        "price": 59,
+        "desc": "Rapido RAF-12M1 12 liter oil-free fryer has a capacity of 1800W and a large capacity of 12 liters, Rapid Air heating technology, has a convection fan, an easy-to-use rotary button control panel,... is a household appliance. Helps you prepare many fried and grilled dishes to limit fat for your family.",
+        "image": "./public/Media/products/AirFryer.png",
+        "quantity": 161
+    },
+    {
+        "name": "Hitachi CV-BF16 GN canister vacuum cleaner",
+        "price": 66,
+        "desc": "CV-BF16 GN vacuum cleaner has a powerful 1600W operating capacity, 1.5 liter capacity with a standard filter to remove dust and dirt, supporting quick and convenient house cleaning.",
+        "image": "./public/Media/products/VaccumHitachi.png",
+        "quantity": 78
+    },
+    {
+        "name": "Pasion Echo wireless microphone",
+        "price": 70,
+        "desc": "Pasion Echo wireless microphone has a frequency of 40 HZ ~ 15 kHz, 30m reception range, beautiful design, sturdy, good sound pickup, for unlimited karaoke experience.",
+        "image": "./public/Media/products/WirelessMic.png",
+        "quantity": 90
+    },
+    {
+        "name": "Samsung The Freestyle Gen 2 FHD Pocket Smart TV Projector SP-LFF3CLA",
+        "price": 664,
+        "desc": "Samsung The Freestyle Gen 2 SP-LFF3CLA FHD pocket technology projector has a compact design with a rotating stand that can be used on any flat surface, supports Auto Keystone technology to automatically calibrate the screen, and reproduce multi-faceted 360˚ sound. Vivid direction, projection ability from 30 to 100 inches gives you more satisfying entertainment.",
+        "image": "./public/Media/products/Projector.png",
+        "quantity": 27
+    },
+    {
+        "name": "Dreame X40 Ultra vacuum cleaning robot",
+        "price": 1080,
+        "desc": "The Dreame X40 Ultra vacuum cleaning robot gives users a great cleaning experience. The robot is equipped with an edge brush and a rotating cleaning cloth that can extend flexibly, combined with a strong suction force of up to 12,000 Pa, helping to effectively remove dirt from every corner. Besides, thanks to its modern and automatic cleaning technology, Dreame X40 Ultra becomes a reliable comprehensive cleaning device for every home.",
+        "image": "./public/Media/products/Roomba.png",
+        "quantity": 9
+    },
+    {
+        "name": "Electrolux ESF6010BW mini dishwasher",
+        "price": 271,
+        "desc": "Remove stains easily with hot water washing. 6 different washing programs to suit user needs. Operates with low noise. Many useful utilities included. Two convenient dishwashing trays. Modern design, compact and easy to arrange. High efficiency goes hand in hand with the ability to save water.",
+        "image": "./public/Media/products/DishWasher.png",
+        "quantity": 39
+    },
+    {
+        "name": "Electrolux EDH14TRBD2 dehumidifier",
+        "price": 420,
+        "desc": "Electrolux EDH14TRBD2 dehumidifier has a sophisticated, modern design, powerful dehumidification combined with air filtration to bring fresh and dry air, 4.8 liter tank capacity suitable for spaces under 58m2.",
+        "image": "./public/Media/products/MoisterSucker.png",
+        "quantity": 25
+    },
+    {
+        "name": "Dien Quang DQ mosquito racket EMR02 WR",
+        "price": 5,
+        "desc": "The mosquito racket has a simple design, with high heat-resistant ABS plastic and good electrical insulation. Round charging head is universal with all sockets on the market. 3 modes of use, easy to adjust with the switch: catch mosquitoes and catch mosquitoes + use LED light on and off. Equipped with LED lights to help attract mosquitoes, for better mosquito catching and killing effectiveness.",
+        "image": "./public/Media/products/ESwatter.png",
+        "quantity": 45
+    },
+    {
+        "name": "Sunhouse SHD7013 infrared heater",
+        "price": 22,
+        "desc": "Sunhouse heaters have a modern design and come with many functions that will help increase your family's safety when used. The heating fan automatically turns off when it falls, increasing safety when used at night when going to bed. Equipped with a Quartz heating system that emits infrared rays, safe to use. 2 power adjustment modes suitable for many uses.",
+        "image": "./public/Media/products/Heater.png",
+        "quantity": 100
+    },
+    {
+        "name": "Benny BHT022X bathroom heating lamp",
+        "price": 23,
+        "desc": "Benny BHT022X bathroom heating lamp effectively heats with 2 light bulbs, large capacity for quick heating performance.",
+        "image": "./public/Media/products/LightHeater.png",
+        "quantity": 200
+    },
+    {
+        "name": "Comet CRT1612 rechargeable head flashlight",
+        "price": 4,
+        "desc": "The lamp has a neat and beautiful head-mounted design, the lamp shell is thick and sturdy, highly durable, break-resistant, and convenient. There is 1 LED bulb with a capacity of 3W for strong brightness and energy saving. Comet lamp's charging handle can be easily collapsed/extended, charging time is 12 - 15 hours. The strap is easy to change in width, suitable for many head sizes, hugging your head closely so you can use the light more conveniently.",
+        "image": "./public/Media/products/HeadLamp.png",
+        "quantity": 50
+    },
+    {
+        "name": "Comet CM069 multi-function insect killer lamp",
+        "price": 10,
+        "desc": "Lamp specialized for catching mosquitoes, compact design, youthful and bright colors, suitable for many different usage spaces. Comet lamp attracts mosquitoes, insects (stinging ants, winged ants, etc.) with purple light, safe for users' health, without using toxic chemicals. Kill mosquitoes easily with the electric grid surrounding the lamp, with a capacity of 6W, voltage 220V AC/50Hz, does not create unpleasant odors during the process of killing mosquitoes. The mosquito catch tray is located at the bottom of the lamp and can be conveniently removed, helping to clean up mosquitoes and insects and clean the lamp more quickly. There is a hook that allows you to easily hang the lamp anywhere in the house.",
+        "image": "./public/Media/products/BugLamp.png",
+        "quantity": 300
+    },
+    {
+        "name": "Comet CT175 study desk lamp",
+        "price": 11,
+        "desc": "The table lamp is equipped with a system of 42 LED bulbs, 5W capacity, providing realistic, natural, stable, non-flickering light. Using the highest quality Lithium battery today, with a capacity of 1200 mAh. Touch control - modern switch, easy to operate. Sophisticated, luxurious design, pure white color helps increase the aesthetics of the living space.",
+        "image": "./public/Media/products/TableLamp.png",
+        "quantity": 111
+    },
+    {
+        "name": "Comet CRT453 multi-function rechargeable flashlight",
+        "price": 3,
+        "desc": "Comet lamp has a compact design, featuring 2 orange-white colors, very youthful, eye-catching but still gentle and luxurious. The lamp body is made of ABS material, which is durable, safe, has good strength and heat resistance, and is easy to clean when dirty, keeping it new for a long time. Simple control with the switch on the lamp body, easy to turn on and off in just 1 operation. The lamp uses 2 1W LED bulbs for sufficient light and saves electricity. The 4V 400mAh battery built into the light is super durable, charging time is 12 - 15 hours.",
+        "image": "./public/Media/products/FlashLight.png",
+        "quantity": 333
+    },
 ]
