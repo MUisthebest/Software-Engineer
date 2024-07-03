@@ -88,17 +88,17 @@ ul{
   position: relative;
 }
 
-.nav__menu .nav__list li.active a i{
+.nav__menu .nav__list li.select a i{
   opacity: 1;
   transform: translateY(-8px);
   background-color: transparent;
 }
 
-.nav__menu .nav__list li.active a{
+.nav__menu .nav__list li.select a{
   background-color: transparent;
 }
 
-.nav__menu .nav__list li.active a i{
+.nav__menu .nav__list li.select a i{
   opacity: 1;
   transform: translateY(-8px);
   background-color: transparent;
@@ -113,6 +113,7 @@ ul{
   border-radius: 15px 15px 0 0;
   transition: 0.2s ease-in;
   cursor: pointer;
+  opacity: 0;
 }
 
 
@@ -181,6 +182,14 @@ ul li a p{
   visibility: hidden;
 }
 
+
+
+.but{
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+  visibility: hidden;
+}
 
 
 .nav__list li i{
@@ -620,7 +629,7 @@ align-items: center;
 
 #BG_Login{
   min-height: 100vh;
-  background: url('../Media/BG_Login.jpg') no-repeat;
+  background: url('../Media/BG-Login.png') no-repeat;
   z-index: var(0);
   background-position: center;
   background-size: cover;
@@ -1041,7 +1050,7 @@ nav .search-container button:hover {
   position: relative;
   transition: .05s ease-in-out;
   background-color: var(--color-2);
-  background-image: linear-gradient(rgb(0,0,0,0.15),rgba(0, 0, 0, 0.15)),url("../Media/BG_Login.jpg");
+  background-image: linear-gradient(rgb(0,0,0,0.15),rgba(0, 0, 0, 0.15)),url("../Media/BG-Login.png");
   background-size: cover;
   background-position: center;
 }
@@ -1207,7 +1216,7 @@ margin-bottom: 30px;
   left:0;
   width: 100%;
   height: 100%;
-  background: url('../Media/BG_Login.jpg') no-repeat;
+  background: url('../Media/BG-Login.png') no-repeat;
   box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
   z-index: var(-100);
   background-position: center;
@@ -1287,7 +1296,7 @@ header .buy_realted_box .buy_box, .realted_box{
 
 header .buy_realted_box .buy_box{
   width: 55%;
-  padding: 0px 20px;
+  padding: 0px 10px;
 }
 
 header .buy_realted_box .buy_box .img_product_box {
@@ -1406,7 +1415,7 @@ header .buy_realted_box .purchase_box label label i{
   color: white;
 }
 
-header .buy_realted_box .purchase_box .luv{
+.Box_Item .buy_realted_box .buy_box .purchase_box .luv{
   padding: 10px 0px;
   background: #663da6;
   width: 8%;
@@ -1414,36 +1423,40 @@ header .buy_realted_box .purchase_box .luv{
   justify-content: center;
 }
 
-header .buy_realted_box .purchase_box .luv i{
+.Box_Item .buy_realted_box .buy_box .purchase_box .luv i{
   color: #fff;
 }
 
-header .buy_realted_box .purchase_box .luv i:hover{
+.Box_Item .buy_realted_box .buy_box .purchase_box .luv:hover i{
   color: #ec45d3;
 }
 
-.nav__menu ul li:nth-child(1).active ~ .indicate{
+.nav__menu ul li:nth-child(1).select ~ .indicate{
   transform: translateX(-160px);
+  opacity: 1;
 }
 
-.nav__menu ul li:nth-child(3).active ~ .indicate{
+.nav__menu ul li:nth-child(3).select ~ .indicate{
   transform: translateX(160px);
   background-color: var(--color-5);
+  opacity: 1;
 }
 
-.nav__menu ul li:nth-child(3).active ~ .indicate::after{
+.nav__menu ul li:nth-child(3).select ~ .indicate::after{
   box-shadow: -13px 0 0 var(--color-5);
+  opacity: 1;
 }
 
-.nav__menu ul li:nth-child(3).active ~ .indicate::before{
+.nav__menu ul li:nth-child(3).select ~ .indicate::before{
   box-shadow: 13px 0 0 var(--color-5);
-
+  opacity: 1;
 }
 
 
 
-.nav__menu ul li:nth-child(2).active ~ .indicate{
+.nav__menu ul li:nth-child(2).select ~ .indicate{
   transform: translateX(0px);
+  opacity: 1;
 }
 
 .home{
@@ -1901,4 +1914,18 @@ header .buy_realted_box .purchase_box .luv i:hover{
   font-size: 45px;
   color: #444;
   transition: .5s;
+}
+
+
+aside {
+  grid-area: aside;
+}
+
+.center {
+  text-align:center;
+}
+
+aside > h2 {
+  color: #fff;
+  text-decoration: underline;
 }

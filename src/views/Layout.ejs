@@ -8,28 +8,28 @@
                         <img src = "/Media/Logo.png" width="40" height="40" alt="SHOP Ú">
                          <span>ELECTRONICS DEFIANT</span>
                     </li>
-                    <li>
+                    <li class="c1">
                         <a href="/">
                             <i class='bx bxs-home-circle'></i>
                             <span class="link__name">Home</span>
                             <span class="tooltip-text">This is Home</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="c2">
                         <a href="/Trending">
                             <i class='bx bx-trending-up' ></i>
                             <span class="link__name">Trending</span>
                             <span class="tooltip-text">This is Trending</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="c3">
                         <a href="/Contact">
                             <i class='bx bxs-contact' ></i>
                             <span class="link__name">Contact</span>
                             <span class="tooltip-text">This is Contact</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="c4">
                         <a href="/Love">
                             <i class='bx bxs-book-heart' ></i>
                             <span class="link__name">Wishlist</span>
@@ -39,29 +39,28 @@
                 </ul>
             </div>
         </nav>
-        <%if (filename === "boxItem.ejs" || filename === "Trendingpage.ejs" || filename === "Lovepage.ejs" || filename === "Homepage.ejs") { %> 
-            <header class="header">
-                <nav class="nav container">
-                    <div class="nav__toggle" id="nav-toggle">
-                    <i class="fas fa-bars nav__burger"></i>
-                    <i class="fas fa-window-close nav__close"></i>
-                    </div>
-                </div>
-                <div class="nav__menu" id = "nav-menu">
-                <ul class = "nav__list">        
-                    <li>
-                        <a href="/Buy" class="nav__link"><i class ="fas fa-shopping-bag "></i></a>
-                    </li>  
-                    <li>
-                        <a href="/Cart" class="nav__link"><i class ="fas fa-shopping-cart"></i></a>
-                    </li> 
-                    <li>
-                        <a href="/Login" class="nav__link"><i class ="fas fa-sign-in-alt"></i></a>
-                    </li> 
-                </ul>          
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__toggle" id="nav-toggle">
+            <i class="fas fa-bars nav__burger"></i>
+            <i class="fas fa-window-close nav__close"></i>
             </div>
-            </nav>
-            <%}%>
+        </div>
+        <div class="nav__menu" id = "nav-menu">
+        <ul class = "nav__list">        
+            <li class="choose1">
+                <a href="/Buy" class="nav__link"><i class ="fas fa-shopping-bag "></i></a>
+            </li>  
+            <li class="choose2">
+                <a href="/Cart" class="nav__link"><i class ="fas fa-shopping-cart"></i></a>
+            </li> 
+            <li class="choose3">
+                <a href="/Login" class="nav__link"><i class ="fas fa-sign-in-alt"></i></a>
+            </li> 
+            <div class="indicate"></div>
+        </ul>          
+        </div>
+        </nav>
                  <% if (filename === "Login.ejs") { %> <%-include('Login.ejs')%>
                 <% } else if (filename === "Homepage.ejs") { %> <%-include('Homepage.ejs')%>
                 <% }
@@ -84,15 +83,7 @@
         </header>
         <script src ="/js/changeScreen.js"></script>
         <script src ="/js/slideBar.js"></script>    
-        <script>
-            let list = document.querySelectorAll('.header .nav__menu .nav__list li');
-            function activeLink(){
-                list.forEach((item) => 
-                    item.classList.remove('active'));
-                    this.classList.add('active');
-                }
-            list .forEach((item) =>  item.addEventListener('click',activeLink))
-        </script>    
+        <script src="/js/changeIndicate.js"></script>    
     </body>
 </html>
 
