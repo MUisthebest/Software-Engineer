@@ -16,8 +16,8 @@
                 <label>
                     <i class='bx bxs-coin' ></i></label></label>
                 <input type="checkbox" id="love" class="but">
-                <label class="luv" for="love">
-                    <i class='bx bxs-heart' id="love"></i>
+                <label class="luv" for="love" id="<%=productId%>">
+                    <span class="heart" id="love"></span>
                 </label>
             </div>
         </div>
@@ -26,3 +26,11 @@
 </section>
 
 <script src="/js/wishlist.js"></script> 
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<!-- <script>
+    $(document).ready(function(){
+      $('.luv').click(function(){
+        $('.heart').toggleClass("heart-active")
+      });
+    });
+ </script> -->

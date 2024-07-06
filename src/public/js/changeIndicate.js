@@ -7,10 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const c3 = document.querySelector('.c3');
     const c4 = document.querySelector('.c4');
 
-    // Lấy trạng thái nút từ sessionStorage (nếu có)
     const selectedButton = sessionStorage.getItem('selectedButton');
 
-    // Cập nhật trạng thái nút ban đầu
     updateSelectedButton(selectedButton);
 
     buy.onclick = () => {
@@ -30,22 +28,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
     c1.onclick = () => {
         sessionStorage.setItem('selectedButton', 'c');
-        updateSelectedButton('buy');
+        updateSelectedButton('c');
     };
 
     c2.onclick = () => {
         sessionStorage.setItem('selectedButton', 'c');
-        updateSelectedButton('buy');
+        updateSelectedButton('c');
     };
 
     c3.onclick = () => {
         sessionStorage.setItem('selectedButton', 'c');
-        updateSelectedButton('buy');
+        updateSelectedButton('c');
     };
 
     c4.onclick = () => {
         sessionStorage.setItem('selectedButton', 'c');
-        updateSelectedButton('buy');
+        updateSelectedButton('c');
     };
 
     function updateSelectedButton(selected) {

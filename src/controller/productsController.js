@@ -83,7 +83,7 @@ const getProduct = async (req,res)=>{
     if (!product){
         throw new NotFoundError(`No product with id: ${productId}`)
     }
-    res.status(StatusCodes.OK).render("Layout.ejs",{filename: "boxItem.ejs", product:product})
+    res.status(StatusCodes.OK).render("Layout.ejs",{filename: "boxItem.ejs", product:product, productId})
 }
 
 module.exports = {
