@@ -12,3 +12,11 @@ var typed = new Typed(".input",{
         backSpeed: 8,
         loop: true
 })
+
+document.addEventListener("DOMContentLoaded", function() {
+    const c5 = document.querySelector('.hp-btn');
+    c5.onclick = () => {
+        sessionStorage.setItem('selectedButton', 'buy');
+        updateSelectedButton('buy');
+    };
+})

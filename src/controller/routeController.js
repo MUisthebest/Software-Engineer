@@ -1,5 +1,7 @@
 const fs = require("node:fs");
 const ejs = require('ejs');
+const Product = require('../models/Product')
+
 
 var listOfItems = [];
 const getHomePage = (req, res) => {
@@ -20,10 +22,6 @@ const getLovePage = (req, res) =>{
     res.render("Layout.ejs", {filename: "Lovepage.ejs"});
 }
 
-const getTrendingPage = (req, res) =>{
-    res.render("Layout.ejs", {filename: "Trendingpage.ejs"});
-}
-
 
 const getLogin = (req, res) =>{
     res.render("Layout.ejs",{filename: "Login.ejs"});
@@ -35,6 +33,11 @@ const getCart = (req, res) =>{
 
 const getRegister =(req, res) =>{
     res.render("Layout.ejs",{filename: "Register.ejs"});
+}
+
+const getTrendingPage = async(req,res) =>{
+    const products = await Product.find({}).sort('createdAt')
+    res.render("Layout.ejs", {filename: "Trendingpage.ejs", products: products});
 }
 
 const getBoxItem = (req, res) =>{
@@ -68,7 +71,6 @@ module.exports = {
     getShopFreePage, 
     // getShopBuyPage, 
     getLovePage, 
-    getTrendingPage, 
     getLogin, 
     getCart, 
     getRegister, 
@@ -77,4 +79,5 @@ module.exports = {
     getAdminProduct, 
     getAdminUser, 
     getAdminOrder,
+    getTrendingPage
 }

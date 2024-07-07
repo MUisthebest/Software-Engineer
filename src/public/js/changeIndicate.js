@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
         updateSelectedButton('c');
     };
 
+
     function updateSelectedButton(selected) {
         buy.classList.remove('select');
         cart.classList.remove('select');

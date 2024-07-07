@@ -777,6 +777,13 @@ nav .search-container button:hover {
   position: absolute;
 }
 
+.Buy article nav select{
+  width: 15%;
+  height: 40%;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
 .result_box ul{
   border-top: 1px solid #999;
   padding: 10px 10px;
@@ -800,17 +807,6 @@ nav .search-container button:hover {
   background: #e9f3ff;
 }
 
-
-
-.Stream_bt:hover .coverBt{
-  width: 100%;
-  z-index: 0;
-}
-
-.Stream_bt:hover{
-  border: none;
-  color: white;
-}
 
 
 .Buy article nav .right_bx{
@@ -880,6 +876,7 @@ nav .search-container button:hover {
   scroll-behavior: smooth;
   overflow-y: hidden;
   z-index: 11;
+  background: #fff;
 }
 
 .Buy article .game1 .gameBx::-webkit-scrollbar{
@@ -913,36 +910,53 @@ nav .search-container button:hover {
   margin-left: 5px;
   margin-top: 5px;
   z-index: 11;
+  box-sizing: border-box;
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16)
+  0 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background-color: #f2f2f2;
+  transition: .4s;
+}
+
+.gameBx .product:hover{
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16)
+  0 3px 3px rgba(0, 0, 0, 0.23); 
+  transform: translate(0px,-8px);
 }
 
 
 .gameBx .product a{
   min-width: 220px;
   height: 160px;
-  border: 1px solid transparent;
+
   border-radius: 5px;
-  margin: 20% 10% 20% 10%;
+  margin: 20% 0% 20% 0%;
+  outline: none;
 }
 
 .gameBx .product a img{
-  width: 130px;
+  width: 100%;
   height: 130px;
-  border-radius: 5px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  outline: none;
 }
 
 .gameBx .product a .content{
   width: 100%;
   height: 25%;
-  border: 1px solid #fff;
   display: flex;
   color: var(--color-3);
   margin-top: 10px;
   transition: .5s linear;
+  display: flex;
 }
 
 .gameBx .product .content .left{
   color: var(--color-3);
   transition: .5s linear;
+  width: 100%;
 }
 
 .gameBx .product .content .left h5{
@@ -952,33 +966,39 @@ nav .search-container button:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  outline: none;
 }
 
-.gameBx .product .content .left p{
-  font-size: 16px;
-  font-weight: 500;
-  width: 150px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: #000000;
-}
-
-.gameBx .product .content h6{
-  font-size: 16px;
-  font-weight: 500;
-  transition: .5s linear;
-  width: 80%;
-  height: 50%;
-  margin: 12% 10% 0% -80%;
-  background-color: #04AA6D;
-  border-radius: 5px;
-  border: 1px solid #000;
-}
-
-.gameBx .product .content h6 p{
-  margin-left: 25%;
+.left .buy_now{
+  text-align: center;
+  font-size: 15px;
+  color: #fff;
   width: 100%;
+  padding: 10px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #2183a2;
+  line-height: 0.42em;
+}
+
+
+.left .buy_now .p1{
+  opacity: 1;
+}
+
+.left .buy_now .p2{
+  opacity: 0;
+}
+
+.gameBx .product:hover .content .left .buy_now .p1{
+  opacity: 0;
+}
+
+.gameBx .product:hover .content .left .buy_now .p2{
+  opacity: 1;
 }
 
 .Buy article .game2{
@@ -1017,6 +1037,7 @@ nav .search-container button:hover {
   justify-content: space-between;
   flex-wrap: wrap;
   overflow-y: auto;
+  background: white;
 }
 
 .Buy article .game2 h3 i{

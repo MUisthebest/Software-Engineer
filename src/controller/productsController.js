@@ -86,6 +86,7 @@ const getProduct = async (req,res)=>{
     res.status(StatusCodes.OK).render("Layout.ejs",{filename: "boxItem.ejs", product:product, productId})
 }
 
+
 module.exports = {
     getAllProductsStatic,
     getAllProducts,

@@ -1,7 +1,13 @@
 <section class="Buy">
     <article>
         <nav>
-            <button class="Stream_bt"><span class="coverBt"></span>Stream</button>
+            <label for="cost"></label>
+            <select name="cost" id="cars">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="opel">Opel</option>
+              <option value="audi">Audi</option>
+            </select>
             <div class="search_box">
                 <div class="search-container">
                     <input type="text" placeholder="Search...">
@@ -18,7 +24,7 @@
                 <i class="far fa-moon" id="moon"></i>
                 <i class="fas fa-sun" id="sun"></i>
                 <i class="fas fa-wifi" id="wifi"></i>
-                <i class="fas fa-cog"></i>
+                <i class="fas fa-shopping-cart"></i>
                 <button id="active_battery"><i class="fas fa-battery-three-quarters" id="battery_icon"></i><span id="battery_level">84%</span></button>
             </div>
         </nav>
@@ -36,8 +42,8 @@
                             <div class="content">
                                 <div class="left">
                                     <h5><%=products[i].name%></h5> 
+                                    <button class="buy_now"><p class="p1">Buy Now</p><p class="p2"><%=products[i].price%> $</p></button>
                                 </div>
-                                <h6><p>Cost: <%=products[i].price%></p></h6>
                             </div>
                         </a>
                     </div>
@@ -54,8 +60,8 @@
                             <div class="content">
                                 <div class="left">
                                     <h5><%=products[i].name%></h5> 
+                                    <button class="buy_now"><p class="p1">Buy Now</p><p class="p2"><%=products[i].price%> $</p></button>
                                 </div>
-                                <h6><p>Cost: <%=products[i].price%></p></h6>
                             </div>
                         </a>
                     </div>

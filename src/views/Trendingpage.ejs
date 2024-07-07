@@ -3,17 +3,19 @@
         <h2 class="center">My Wishlist</h2>
     </aside>    
     <div class="gameBx" id="game_bx_2">       
+        <% for (let i = 0; i < products.length; i++){ %>
             <div class="product">
-                <a>
-                    <img src="">
+                <a href="/products/<%=products[i].id%>" id="<%=products[i].id%>" class="wish">
+                    <img src="data:image/<%=products[i].image.contentType%>;base64,<%=products[i].image.data.toString('base64')%>" class="image">
                     <div class="content">
                         <div class="left">
-                            <h5></h5> 
+                            <h5><%=products[i].name%></h5> 
                         </div>
-                        <h6><p></p></h6>
+                        <h6><p>Cost: <%=products[i].price%></p></h6>
                     </div>
                 </a>
             </div>
+        <% } %>              
     </div>
 </section>
-<!-- <script src="/js/importWishlist.js"></script>  -->
+<script src="/js/importWishlist.js"></script> 
