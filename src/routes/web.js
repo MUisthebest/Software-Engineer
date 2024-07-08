@@ -12,6 +12,7 @@ const {
     getAdminProduct, 
     getAdminUser, 
     getAdminOrder, 
+    getUser
 } = require("../controller/routeController");
 const dotenv = require('dotenv');
 
@@ -87,5 +88,7 @@ router.get("/users", (req, res) => {
 
     registerController(res, user);
 })
+
+router.get('/User',getUser)
 
 module.exports = router;

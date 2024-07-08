@@ -40,7 +40,7 @@
             </div>
         </nav>
     <header class="header">
-        <nav class="nav container">
+        <nav class="nav container-fluid">
             <div class="nav__toggle" id="nav-toggle">
             <i class="fas fa-bars nav__burger"></i>
             <i class="fas fa-window-close nav__close"></i>
@@ -68,7 +68,8 @@
                 <% }
                 else if (filename === "Buypage.ejs") { %> <%-include('Buypage.ejs')%>
                 <% }
-                
+                else if (filename === "User.ejs") { %> <%-include('User.ejs')%>
+                <% }   
                 else if (filename === "Lovepage.ejs") { %> <%-include('Lovepage.ejs')%>
                 <% }
                 else if (filename === "Trendingpage.ejs") { %> <%-include('Trendingpage.ejs')%>

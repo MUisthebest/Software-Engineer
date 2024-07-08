@@ -64,6 +64,9 @@ const getAdminOrder = (req, res) =>{
 //     res.render("Database.ejs",{listItems: listOfItems});
 // }
 
+const getUser = (req, res) =>{
+    res.render("Layout.ejs",{filename: "User.ejs"});
+}
 
 
 module.exports = {
@@ -79,5 +82,6 @@ module.exports = {
     getAdminProduct, 
     getAdminUser, 
     getAdminOrder,
-    getTrendingPage
+    getTrendingPage,
+    getUser
 }
