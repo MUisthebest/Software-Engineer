@@ -64,8 +64,9 @@ const getAdminOrder = (req, res) =>{
 //     res.render("Database.ejs",{listItems: listOfItems});
 // }
 
-const getUser = (req, res) =>{
-    res.render("Layout.ejs",{filename: "User.ejs"});
+const getUser = async(req, res) =>{
+    const products = await Product.find({}).sort('createdAt')
+    res.render("Layout.ejs",{filename: "User.ejs", products:products});
 }
 
 

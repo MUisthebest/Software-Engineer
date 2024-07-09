@@ -15,4 +15,10 @@ document.addEventListener("DOMContentLoaded", function() {
             </li> 
         `
     }
+    else{
+        changeObject.innerHTML = `<li class="choose3">
+        <a href="/Login" class="nav__link"><i class='fas fa-sign-in-alt'></i></a>
+    </li> 
+`        
+    }
 })

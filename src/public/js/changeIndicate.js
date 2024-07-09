@@ -15,11 +15,10 @@ document.addEventListener("DOMContentLoaded", function() {
             buy.classList.add('select');
         } else if (currentUrl.includes("Cart")) {
             cart.classList.add('select');
-        } else if (currentUrl.includes("Login")) {
+        } else if (currentUrl.includes("Login")||currentUrl.includes("User")||currentUrl.includes("Register")) {
             login.classList.add('select');
-        } else if(currentUrl.includes("User")){
-            login.classList.add('select');
-        }
+        } 
+        
     }
 
 });
