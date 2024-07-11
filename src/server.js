@@ -5,6 +5,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const configViewEngine = require('./configs/viewEngine');
+const cookieParser = require('cookie-parser')
 
 // const mongoose = require('mongoose');
 const { error } = require('console');
@@ -15,6 +16,7 @@ const connectDB = require('./db/connect')
 const webRoutes = require('./routes/web');
 const authRouter = require('./routes/auth');
 const productsRouter = require('./routes/products')
+const usersRouter = require('./routes/users')
 
 // error handler
 const notFoundMiddleware = require('./middleware/not-found');
@@ -37,12 +39,14 @@ const port = process.env.PORT || 8080;
 app.use(express.static('./public'))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser(process.env.JWT_SECRET));
 
 
 
 app.use('/', webRoutes);
 app.use('/', authRouter);
 app.use('/', productsRouter);
+app.use('/', usersRouter);
 
 configViewEngine(app);
 
