@@ -38,15 +38,15 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label class="form-label">Username</label>
-                                <input type="text" class="form-control mb-1" value="nmaxwell">
+                                <input type="text" class="form-control mb-1" value="<%=user.username%>">
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Name</label>
-                                <input type="text" class="form-control" value="Nelle Maxwell">
+                                <input type="text" class="form-control" value="<%=user.name%>">
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Phone</label>
-                                <input type="text" class="form-control mb-1" value="nmaxwell@mail.com">
+                                <input type="text" class="form-control mb-1" value="<%=user.phone%>">
                              </div>
                             <div class="form-group">
                                 <label class="form-label">ID</label>
@@ -56,18 +56,23 @@
                     </div>
                     <div class="tab-pane fade" id="account-change-password">
                         <div class="card-body pb-2">
-                            <div class="form-group">
-                                <label class="form-label">Current password</label>
-                                <input type="password" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">New password</label>
-                                <input type="password" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Repeat new password</label>
-                                <input type="password" class="form-control">
-                            </div>
+                            <form class="edit-form">
+                                <div class="form-group">
+                                    <label class="form-label">Current password</label>
+                                    <input type="password" class="form-control" id="curPassword">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">New password</label>
+                                    <input type="password" class="form-control" id="newPassword">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Confirm new password</label>
+                                    <input type="password" class="form-control" id="confirmPassword">
+                                </div>
+                                <div class="text-small form-alert"></div>
+                                <button type="submit">Apply</button>
+                            </form>
+                            
                         </div>
                     </div>
                     <div class="tab-pane fade" id="account-info">
@@ -218,5 +223,12 @@
         <button type="button" class="btn btn-default">Cancel</button>
     </div>
     </div>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+            integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+    <script src="/js/editProfile.js"></script>
 </section>
 
