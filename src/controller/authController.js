@@ -1,6 +1,7 @@
 const User = require('../models/User')
 const {StatusCodes} = require('http-status-codes')
 const {BadRequestError, UnauthenticatedError} = require('../errors')
+const {createTokenUser, attachCookiesToResponse} = require('../utils')
 
 const register = async (req,res)=>{
     const user = await User.create({...req.body})
@@ -25,16 +26,29 @@ const login = async(req,res)=>{
         throw new UnauthenticatedError('Invalid Credentials')
     }
 
-    const token = user.createJWT();
-    res.status(StatusCodes.OK).json({user:{name:user.name}, token})
+    const tokenUser = createTokenUser(user)
+    attachCookiesToResponse({res, user: tokenUser});
+    res.status(StatusCodes.OK).json({user:tokenUser})
 }
 
 const dashboard = async (req,res)=>{
     res.status(200).json({msg:`Hello, ${req.user.name}`})
 }
 
+const logout = async(req,res)=>{
+    res.cookie('token','logout',{
+        httpOnly: true,
+        expires: new Date(Date.now() + 1000),
+    });
+    res.cookie('user','',{
+        expires: new Date(Date.now()),
+    })
+    res.status(200).json({msg:'user logged out!'})
+}
+
 module.exports = {
     register,
     login,
+    logout,
     dashboard,
 }

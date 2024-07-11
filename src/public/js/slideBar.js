@@ -5,13 +5,16 @@ slideToggle.addEventListener("click", ()=>{
 })
 
 const changeObject = document.querySelector(".choose3");
-const login = localStorage.getItem("token")
+const user = document.cookie.split(';').find(c => c.startsWith('user='));
 
 document.addEventListener("DOMContentLoaded", function() {
-    if(login!==null){
+    if(user){
+        const data = user.split('user=')[1]
+        const jsonData = JSON.parse(data);
+        const userId = jsonData.userId;
         changeObject.innerHTML = `
             <li class="choose3">
-                <a href="/User" class="nav__link"><i class='bx bxs-user-badge'></i></a>
+                <a href="/user/${userId}" class="nav__link"><i class='bx bxs-user-badge'></i></a>
             </li> 
         `
     }
