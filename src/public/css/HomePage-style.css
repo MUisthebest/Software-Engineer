@@ -6,6 +6,7 @@
     --color-3: #000;
     --color-4: #D3E3FC;
     --color-5: #55829C;
+    --color-6: #45474B;
   }
 }
 
@@ -67,12 +68,16 @@ ul{
   display: flex;
   position: relative;
   margin: auto 0;
+  border: none;
+  outline: none;
 }
 
 .nav__menu .nav__list li{
   margin: 0 30px;
   list-style: none;
   z-index: 111;
+  border: 0;
+  outline: none;
 }
 
 .nav__menu .nav__list li a{
@@ -81,6 +86,8 @@ ul{
   font-size: 1.5em;
   text-decoration: none;
   transition: 0.2s 0.1s ease;
+  border: 0;
+  outline: none;
 }
 
 .nav__menu .nav__list li a i{
@@ -458,6 +465,8 @@ ul li a p{
   }
 
 
+
+
   .nav {
     background-color: var(--color-1);  
     width: 100%;
@@ -513,6 +522,8 @@ ul li a p{
   width: 100%;
   display: flex;
   position: relative;
+  outline: none;
+  border: none;
 }
 
 .show-menu{
@@ -613,6 +624,7 @@ align-items: center;
     height: 100%;
     display: flex;
     column-gap: 2.6rem;
+    outline: none;
   }
 
   .nav__link{
@@ -634,6 +646,8 @@ align-items: center;
   z-index: var(0);
   background-position: center;
   background-size: cover;
+  outline: none;
+  backdrop-filter: blur(20px);
 
 }
 
@@ -656,7 +670,7 @@ align-items: center;
 
 
 .Buy{
-  height: 120vh;
+  height: 130vh;
   width: calc(100%);
   position: relative;
   transition: .05s ease-in-out;
@@ -668,7 +682,7 @@ align-items: center;
 
 .Buy article{
   width: 94%;
-  height: 100%;
+  height: 120vh;
   border-radius: 10px 10px 10px 10px;
   border: 1px solid #fff;
   background-color: var(--color-1);
@@ -1036,7 +1050,7 @@ nav .search-container button:hover {
   height: 400px;
   margin-top: 8px;
   border: 1px solid #000000;
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
   flex-wrap: wrap;
   overflow-y: auto;
@@ -1074,7 +1088,9 @@ nav .search-container button:hover {
   position: relative;
   transition: .05s ease-in-out;
   background-color: var(--color-2);
-  background-image: linear-gradient(rgb(0,0,0,0.15),rgba(0, 0, 0, 0.15)),url("../Media/BG-Login.png");
+  background-image: linear-gradient(rgb(0,0,0,0.15),rgba(0, 0, 0, 0.1)),url("../Media/BG-Login.png");
+  outline: none;
+  backdrop-filter: blur(100px);
   background-size: cover;
   background-position: center;
 }
@@ -1131,6 +1147,7 @@ color: #fff;
   justify-content: space-between;
   font-size: 14.5px;
   margin: -15px 5px 15px;
+  padding: 0 10px;
 }
 
 .remmeber-forgot label input{
@@ -1166,6 +1183,14 @@ text-decoration: underline;
 font-size: 14.5px;
 text-align: center;
 margin-top: 20px;
+padding: 10px 20px;
+justify-content: space-between;
+}
+
+.wrapper .register_link p{
+  width: 100%;
+  justify-content: space-around;
+  display: flex;
 }
 
 .wrapper .location_users{
@@ -1245,6 +1270,7 @@ margin-bottom: 30px;
   z-index: var(-100);
   background-position: center;
   background-size: 1600px;
+  backdrop-filter: blur(35px);
 }
 
 #customers {
@@ -1492,17 +1518,26 @@ header .buy_realted_box .purchase_box label label i{
 
 .nav__menu ul li:nth-child(3).select ~ .indicate{
   transform: translateX(160px);
-  background-color: var(--color-5);
+  background: linear-gradient(to right,var(--color-6), #912e2e);
   opacity: 1;
+  outline: none;
+  backdrop-filter: blur(50px);
+  border: none;
 }
 
 .nav__menu ul li:nth-child(3).select ~ .indicate::after{
-  box-shadow: -13px 0 0 var(--color-5);
+  box-shadow: -13px 0 0 #912e2e;
+  outline: none;
+  backdrop-filter: blur(50px);
+  border: none;
   opacity: 1;
 }
 
 .nav__menu ul li:nth-child(3).select ~ .indicate::before{
-  box-shadow: 13px 0 0 var(--color-5);
+  box-shadow: 13px 0 0 var(--color-6);
+  outline: none;
+  backdrop-filter: blur(50px);
+  border: none;
   opacity: 1;
 }
 
@@ -1520,10 +1555,10 @@ header .buy_realted_box .purchase_box label label i{
   display: flex;
   align-items: center;
   padding: 50px 8% 0;
-  justify-content: space-between;
   background-color: #eaeaea;
   overflow: hidden;
   z-index: 9;
+  flex-wrap: nowrap;
 }
 
 
@@ -1642,15 +1677,17 @@ header .buy_realted_box .purchase_box label label i{
 
 
 .home .block1{
-  height: 700px;
-  width: 700px;
+  width: 60%;
+  height: 120%;
   position: absolute;
   background: #1743e3;
-  top: -25%;
-  right: -25%;
+  top: -40%;
+  right: -20%;
+  margin: 0 auto;
   z-index: 10;
-  transform: rotate(45deg);
-  animation: aBlock1 1s ease forwards;
+  clip-path: polygon(50% 0,100% 50%, 50% 100%, 0 50%);
+  animation: slideBottom 1s ease forwards;
+  flex-grow: 1;
 }
 
 .web-name{

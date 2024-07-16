@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
             buy.classList.add('select');
         } else if (currentUrl.includes("Cart")) {
             cart.classList.add('select');
-        } else if (currentUrl.includes("Login")||currentUrl.includes("User")||currentUrl.includes("Register")) {
+        } else if (currentUrl.includes("Login")||currentUrl.includes("user")||currentUrl.includes("Register")) {
             login.classList.add('select');
         } 
         
