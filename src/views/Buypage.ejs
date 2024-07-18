@@ -11,7 +11,7 @@
             <div class="search_box">
                 <div class="search-container">
                     <input type="text" placeholder="Search...">
-                    <button><i class="fas fa-search"></i></button>
+                    <button onclick="window.location.href = '/getSearch'"><i class="fas fa-search"></i></button>
                 </div>
                 <div class="result_box">
                     <ul>
@@ -28,51 +28,53 @@
                 <button id="active_battery"><i class="fas fa-battery-three-quarters" id="battery_icon"></i><span id="battery_level">84%</span></button>
             </div>
         </nav>
-        <div class="game1">
-            <div class="scroll_item_bt">
-               <i class="fas fa-caret-left" id="game_bx_1_left_bt"></i>
-               <i class="fas fa-caret-right" id="game_bx_1_right_bt"></i>
-            </div>
-            <h3><i class="fab fa-bandcamp"></i>Recommend For You</h3>
-            <div class="gameBx" id="game_bx_1">
-                <% for (let i = 0; i < products.length; i++){ %>
-                    <div class="product">
-                        <a href="/products/<%=products[i].id%>" id="product"+<%=products[i].id%>>
-                            <img src="data:image/<%=products[i].image.contentType%>;base64,<%=products[i].image.data.toString('base64')%>">
-                            <div class="content">
-                                <div class="left">
-                                    <h5><%=products[i].name%></h5> 
-                                    <button class="buy_now"><p class="p1">Buy Now</p><p class="p2"><%=products[i].price%> $</p></button>
+        <div class="main">
+            <div class="game1">
+                <div class="scroll_item_bt">
+                   <i class="fas fa-caret-left" id="game_bx_1_left_bt"></i>
+                   <i class="fas fa-caret-right" id="game_bx_1_right_bt"></i>
+                </div>
+                <h3><i class="fab fa-bandcamp"></i>Recommend For You</h3>
+                <div class="gameBx" id="game_bx_1">
+                    <% for (let i = 0; i < products.length; i++){ %>
+                        <div class="product">
+                            <a href="/products/<%=products[i].id%>" id="product"+<%=products[i].id%>>
+                                <img src="data:image/<%=products[i].image.contentType%>;base64,<%=products[i].image.data.toString('base64')%>">
+                                <div class="content">
+                                    <div class="left">
+                                        <h5><%=products[i].name%></h5> 
+                                        <button class="buy_now"><p class="p1">Buy Now</p><p class="p2"><%=products[i].price%> $</p></button>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                <% } %>  
+                            </a>
+                        </div>
+                    <% } %>  
+                </div>
             </div>
-        </div>
-        <div class="game2">
-            <h3><i class="fas fa-bomb"></i>List Product</h3>
-            <div class="gameBx" id="game_bx_2">       
-                <% for (let i = 0; i < products.length; i++){ %>
-                    <div class="product">
-                        <a href="/products/<%=products[i].id%>" id="product"+<%=products[i].id%>>
-                            <img src="data:image/<%=products[i].image.contentType%>;base64,<%=products[i].image.data.toString('base64')%>">
-                            <div class="content">
-                                <div class="left">
-                                    <h5><%=products[i].name%></h5> 
-                                    <button class="buy_now"><p class="p1">Buy Now</p><p class="p2"><%=products[i].price%> $</p></button>
+            <div class="game2">
+                <h3><i class="fas fa-bomb"></i>List Product</h3>
+                <div class="gameBx" id="game_bx_2">       
+                    <% for (let i = 0; i < products.length; i++){ %>
+                        <div class="product">
+                            <a href="/products/<%=products[i].id%>" id="product"+<%=products[i].id%>>
+                                <img src="data:image/<%=products[i].image.contentType%>;base64,<%=products[i].image.data.toString('base64')%>">
+                                <div class="content">
+                                    <div class="left">
+                                        <h5><%=products[i].name%></h5> 
+                                        <button class="buy_now"><p class="p1">Buy Now</p><p class="p2"><%=products[i].price%> $</p></button>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                <% } %>              
+                            </a>
+                        </div>
+                    <% } %>              
+                </div>
             </div>
         </div>
     </article>
 </section>
 <!-- <script src ="/js/importListUser.js"></script> -->
 <script src ="/js/handleScrollBar.js"></script>
-<script src ="/js/leftBox.js"></script>
+<script src ="/js/handleShopping.js"></script>
 <script src="/js/changeIndicate.js"></script>    
 
 

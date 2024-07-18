@@ -90,8 +90,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 battery_icon.style.color = "unset";
             }
         }
-})
 
+})
 
 
 

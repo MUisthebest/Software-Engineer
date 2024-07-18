@@ -69,6 +69,9 @@ const getUser = async(req, res) =>{
     res.render("Layout.ejs",{filename: "User.ejs", products:products});
 }
 
+const getSearch = async(req, res) =>{
+    res.render("Layout.ejs",{ filename: "resultSearch.ejs"});
+}
 
 module.exports = {
     getHomePage, 
@@ -84,5 +87,6 @@ module.exports = {
     getAdminUser, 
     getAdminOrder,
     getTrendingPage,
-    getUser
+    getUser,
+    getSearch
 }

@@ -13,11 +13,6 @@ const showMenu = (idToggle,Idnav) =>{
 
 showMenu('nav-toggle','nav-menu');
 
-function change(){
-
-    document.querySelector('.Shop').innerHTML = "<h1>HaHa</h1>";
-}
-
 let cards = document.querySelectorAll('.card');
 cards.forEach((card, index) => {
     card.addEventListener('click', () => {
