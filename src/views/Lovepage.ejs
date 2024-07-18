@@ -1,100 +1,21 @@
-<section class="Contact">
-    <div class="slide_contact">
-        <div class="next active">
-            <img src="/Media/member1.jpg" alt="">
-            <div class="left_info">
-                <div class="penetrate-blur">
-                    <h1>BẰ</h1>
-                </div>
-                <div class="info">
-                    <h3>Roles:</h3>
-                    <p>UI developer</p>
-                    <a href="https://www.facebook.com/profile.php?id=100037472223698" class="btn"><i class='bx bxl-facebook-circle' ></i></a>
-                </div>
+<section class="Wishlist">
+    <aside id = "wishlist">
+        <h2 class="center">My Wishlist</h2>
+    </aside>    
+    <div class="gameBx" id="game_bx_2">       
+        <% for (let i = 0; i < products.length; i++){ %>
+            <div class="product">
+                <a href="/products/<%=products[i].id%>" id="<%=products[i].id%>" class="wish">
+                    <img src="data:image/<%=products[i].image.contentType%>;base64,<%=products[i].image.data.toString('base64')%>">
+                    <div class="content">
+                        <div class="left">
+                            <h5><%=products[i].name%></h5> 
+                            <button class="buy_now"><p class="p1">Buy Now</p><p class="p2"><%=products[i].price%> $</p></button>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <div class="right_info">
-                <h1>NG</h1>
-                <h3>Leader</h3>
-            </div>
-        </div>
-        <div class="next">
-            <img src="/Media/member2.webp" alt="">
-            <div class="left_info">
-                <div class="penetrate-blur">
-                    <h1>A</h1>
-                </div>
-                <div class="info">
-                    <h3>Roles:</h3>
-                    <p>Handle Database</p>
-                    <a href="https://www.facebook.com/profile.php?id=100009643428281" class="btn"><i class='bx bxl-facebook-circle' ></i></a>
-                </div>
-            </div>
-            <div class="right_info">
-                <h1>NH</h1>
-                <h3>Member</h3>
-            </div>
-        </div>
-        <div class="next">
-            <img src="/Media/member3.jpg" alt="">
-            <div class="left_info">
-                <div class="penetrate-blur">
-                    <h1>VI</h1>
-                </div>
-                <div class="info">
-                    <h3>Roles:</h3>
-                    <p>Handle Model</p>
-                    <a href="https://www.facebook.com/vuive.vinh.967" class="btn"><i class='bx bxl-facebook-circle' ></i></a>
-                </div>
-            </div>
-            <div class="right_info">
-                <h1>NH</h1>
-                <h3>Member</h3>
-            </div>
-        </div>
-        <div class="next">
-            <img src="/Media/member4.jpg" alt="">
-            <div class="left_info">
-                <div class="penetrate-blur">
-                    <h1>GI</h1>
-                </div>
-                <div class="info">
-                    <h3>Roles:</h3>
-                    <p>Content Creator</p>
-                    <a href="https://www.facebook.com/baogiang.le.12576" class="btn"><i class='bx bxl-facebook-circle' ></i></a>
-                </div>
-            </div>
-            <div class="right_info">
-                <h1>ANG</h1>
-                <h3>Member</h3>
-            </div>
-        </div>
-        <div class="next">
-            <img src="/Media/member5.webp" alt="">
-            <div class="left_info">
-                <div class="penetrate-blur">
-                    <h1>H</h1>
-                </div>
-                <div class="info">
-                    <h3>Roles:</h3>
-                    <p>Handle Database</p>
-                    <a href="https://www.facebook.com/vuhuanssj" class="btn"><i class='bx bxl-facebook-circle' ></i></a>
-                </div>
-            </div>
-            <div class="right_info">
-                <h1>UÂN</h1>
-                <h3>Member</h3>
-            </div>
-        </div>
-    </div>
-
-    <div class="nav-contact">
-        <span class="prev-btn">
-            <i class='bx bx-chevron-left' ></i>
-        </span>
-        <span class="next-btn">
-            <i class='bx bx-chevron-right' ></i>                        
-        </span>
+        <% } %>              
     </div>
 </section>
-
-<script src="/js/contact.js"></script>
+<script src="/js/importWishlist.js"></script> 

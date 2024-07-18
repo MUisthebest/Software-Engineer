@@ -1,21 +1,64 @@
-<section class="Wishlist">
-    <aside id = "wishlist">
-        <h2 class="center">My Wishlist</h2>
-    </aside>    
-    <div class="gameBx" id="game_bx_2">       
-        <% for (let i = 0; i < products.length; i++){ %>
-            <div class="product">
-                <a href="/products/<%=products[i].id%>" id="<%=products[i].id%>" class="wish">
-                    <img src="data:image/<%=products[i].image.contentType%>;base64,<%=products[i].image.data.toString('base64')%>">
-                    <div class="content">
-                        <div class="left">
-                            <h5><%=products[i].name%></h5> 
-                            <button class="buy_now"><p class="p1">Buy Now</p><p class="p2"><%=products[i].price%> $</p></button>
-                        </div>
-                    </div>
-                </a>
+<section class="Trendding">
+    <div class="slider_trending" style= "--quantity: 10">
+        <div class="itemT" style="--position: 1">
+            <div class="item_product">
+                <img src="data:image/<%=products[0].image.contentType%>;base64,<%=products[0].image.data.toString('base64')%>" alt="">
+                <p><%=products[0].name%></p>
             </div>
-        <% } %>              
+        </div>
+        <div class="itemT" style="--position: 2">
+            <div class="item_product">
+                <img src="data:image/<%=products[1].image.contentType%>;base64,<%=products[1].image.data.toString('base64')%>" alt="">
+                <p><%=products[1].name%></p>
+            </div>        
+        </div>
+        <div class="itemT" style="--position: 3">
+            <div class="item_product">
+                <img src="data:image/<%=products[2].image.contentType%>;base64,<%=products[2].image.data.toString('base64')%>" alt="">
+                <p><%=products[2].name%></p>
+            </div>
+        </div>
+        <div class="itemT" style="--position: 4">
+            <div class="item_product">
+                <img src="data:image/<%=products[3].image.contentType%>;base64,<%=products[3].image.data.toString('base64')%>" alt="">
+                <p><%=products[3].name%></p>
+            </div>
+        </div>
+        <div class="itemT" style="--position: 5">
+            <div class="item_product">
+                <img src="data:image/<%=products[4].image.contentType%>;base64,<%=products[4].image.data.toString('base64')%>" alt="">
+                <p><%=products[4].name%></p>
+            </div>        
+        </div>
+        <div class="itemT" style="--position: 6">
+            <div class="item_product">
+                <img src="data:image/<%=products[6].image.contentType%>;base64,<%=products[6].image.data.toString('base64')%>" alt="">
+                <p><%=products[6].name%></p>
+            </div>
+        </div>
+        <div class="itemT" style="--position: 7">
+            <div class="item_product">
+                <img src="data:image/<%=products[7].image.contentType%>;base64,<%=products[7].image.data.toString('base64')%>" alt="">
+                <p><%=products[7].name%></p>
+            </div>
+        </div>
+        <div class="itemT" style="--position: 8">
+            <div class="item_product">
+                <img src="data:image/<%=products[8].image.contentType%>;base64,<%=products[8].image.data.toString('base64')%>" alt="">
+                <p><%=products[8].name%></p>
+            </div>
+        </div>
+        <div class="itemT" style="--position: 9">
+            <div class="item_product">
+                <img src="data:image/<%=products[9].image.contentType%>;base64,<%=products[9].image.data.toString('base64')%>" alt="">
+                <p><%=products[9].name%></p>
+            </div>
+        </div>
+        <div class="itemT" style="--position: 10">
+            <div class="item_product">
+                <img src="data:image/<%=products[10].image.contentType%>;base64,<%=products[10].image.data.toString('base64')%>" alt="">
+                <p><%=products[10].name%></p>
+            </div>
+        </div>
     </div>
 </section>
-<script src="/js/importWishlist.js"></script> 

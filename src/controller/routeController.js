@@ -18,8 +18,8 @@ const getShopFreePage = (req, res) =>{
 //     res.render("Layout.ejs",{filename: "Buypage.ejs"});
 // }
 
-const getLovePage = (req, res) =>{
-    res.render("Layout.ejs", {filename: "Lovepage.ejs"});
+const getContact = (req, res) =>{
+    res.render("Layout.ejs", {filename: "Contact.ejs"});
 }
 
 
@@ -35,9 +35,9 @@ const getRegister =(req, res) =>{
     res.render("Layout.ejs",{filename: "Register.ejs"});
 }
 
-const getTrendingPage = async(req,res) =>{
+const getLovePage = async(req,res) =>{
     const products = await Product.find({}).sort('createdAt')
-    res.render("Layout.ejs", {filename: "Trendingpage.ejs", products: products});
+    res.render("Layout.ejs", {filename: "Lovepage.ejs", products: products});
 }
 
 const getBoxItem = (req, res) =>{
@@ -73,6 +73,11 @@ const getSearch = async(req, res) =>{
     res.render("Layout.ejs",{ filename: "resultSearch.ejs"});
 }
 
+const getTrendding = async(req, res) =>{
+    const products = await Product.find({}).sort('createdAt')
+    res.render("Layout.ejs",{ filename: "Trendingpage.ejs", products:products});
+}
+
 module.exports = {
     getHomePage, 
     getShopFreePage, 
@@ -86,7 +91,8 @@ module.exports = {
     getAdminProduct, 
     getAdminUser, 
     getAdminOrder,
-    getTrendingPage,
+    getTrendding,
     getUser,
-    getSearch
+    getSearch,
+    getContact
 }

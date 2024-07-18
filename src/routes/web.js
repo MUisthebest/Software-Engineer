@@ -5,14 +5,15 @@ const {
     getShopFreePage, 
     getShopBuyPage, 
     getLovePage, 
-    getTrendingPage, 
+    getTrendding, 
     getCart, 
     getBoxItem, 
     getAdmin, 
     getAdminProduct, 
     getAdminUser, 
     getAdminOrder, 
-    getSearch
+    getSearch,
+    getContact
 } = require("../controller/routeController");
 const dotenv = require('dotenv');
 
@@ -20,7 +21,7 @@ const dotenv = require('dotenv');
 
 router.get('/', getHomePage);
 
-router.get('/Trending', getTrendingPage);
+router.get('/Trending', getTrendding);
 
 router.get('/Love', getLovePage);
 
@@ -28,7 +29,7 @@ router.get('/Cart', getCart);
 
 router.get('/boxItem', getBoxItem);
 
-router.get('/Contact', getAdmin);
+router.get('/Admin', getAdmin);
 
 router.post('Admin/', getAdmin);
 
@@ -39,5 +40,7 @@ router.get('/Product_Admin', getAdminProduct);
 router.get('/Order-Admin', getAdminOrder);
 
 router.get('/getSearch', getSearch);
+
+router.get('/Contact', getContact);
 
 module.exports = router;
