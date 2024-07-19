@@ -241,7 +241,7 @@ ul li a p{
 }
 
 .slide-bar.hidden{
-  width: 16%;
+  width: 18%;
 }
 
 .slide-bar .menu_item{
@@ -368,8 +368,8 @@ ul li a p{
 }
 
 .slide-bar.hidden ~ .header{
-  width: calc(84%);
-  left: 16%;
+  width: calc(82%);
+  left: 18%;
 }
 
 .nav {
@@ -670,7 +670,7 @@ align-items: center;
 
 
 .Buy{
-  height: 130vh;
+  height: 150vh;
   width: calc(100%);
   position: relative;
   transition: .05s ease-in-out;
@@ -682,7 +682,7 @@ align-items: center;
 
 .Buy article{
   width: 94%;
-  height: 120vh;
+  height: 140vh;
   border-radius: 10px 10px 10px 10px;
   border: 1px solid #fff;
   background-color: var(--color-1);
@@ -1021,7 +1021,7 @@ nav .search-container button:hover {
 .Buy article .game2{
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 400px;
   border: 1px solid #fff;
   border-radius: 10px;
   padding: 0 30px;
@@ -2237,6 +2237,7 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
 .Trendding .slider_trending .itemT .item_product img{
   width: 100%;
   height: 100%;
+  position: relative;
   object-fit: cover;
   border-radius: 15px;
   text-shadow: 
@@ -2257,7 +2258,9 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
 .Trendding .slider_trending .itemT .item_product p{
   width: 100%;
   height: 100%;
+  position: relative;
   background-color: #969696;
+  border-radius: 15px;
 }
 
 .sBx .searchBx{
