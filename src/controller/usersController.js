@@ -12,6 +12,16 @@ const getSingleUser = async (req,res)=>{
     res.status(StatusCodes.OK).render("Layout.ejs",{filename: "User.ejs", user:user, userId})
 }
 
+const getSingleProfile = async (req,res)=>{
+    const {id: userId} = req.params
+    const user = await User.findOne({_id: userId});
+
+    if (!user){
+        throw new NotFoundError(`No user with id: ${userId}`)
+    }
+    res.status(StatusCodes.OK).render("Layout.ejs",{filename: "Profile.ejs", user:user, userId})
+}
+
 const updateUserPassword = async (req,res)=>{
     const {currentPassword, newPassword, confirmPassword} = req.body;
     if (!currentPassword || !newPassword || !confirmPassword) {
@@ -35,4 +45,5 @@ const updateUserPassword = async (req,res)=>{
 module.exports = {
     getSingleUser,
     updateUserPassword,
+    getSingleProfile
 }
