@@ -4,6 +4,40 @@ let day_night_2 = document.getElementById('sun');
 
 day_night_1.style.display = "none";
 
+const products = document.querySelectorAll('.product a');
+const nameProducts = document.querySelectorAll('.left h5');
+const productPairs = Array.from(products).map((product, index) => {
+    return {
+        element: index,
+        name: nameProducts[index].textContent,
+    };
+});
+
+const resultBox = document.querySelector('.result_box')
+const inputBox = document.getElementById('input-box')
+
+inputBox.onkeyup = function(){
+    let result = [];
+    let input = inputBox.value;
+    if(input.length){
+        result = productPairs.filter((keyword) => {
+            return keyword.name.toLowerCase().includes(input.toLowerCase());
+        });
+        display(result)
+    }
+    else{
+        resultBox.innerHTML = ''
+    }
+}
+
+function display(result){
+    const content = result.map((pair) =>{
+        const productID = products[pair.element].getAttribute("id")
+        return `<a href="/products/${productID}" id="${productID}"><li>${pair.name}</li></a>`
+    })
+    resultBox.innerHTML = "<ul>" + content + "</ul>"
+}
+
 document.addEventListener("DOMContentLoaded", function() {
 
     const changeMode = localStorage.getItem("changeMode");
@@ -22,13 +56,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function updateMode(choose){
         if(choose === "white"){
-            document.documentElement.style.setProperty('--color-1','#3C5B6F');
             document.documentElement.style.setProperty('--color-2','#153448');
             day_night_2.style.display = "none";      
             day_night_1.style.display = "unset"; 
         }
         else{
-            document.documentElement.style.setProperty('--color-1','#45586b');
             document.documentElement.style.setProperty('--color-2','#9AC8CD');
             day_night_1.style.display = "none";      
             day_night_2.style.display = "unset"; 
@@ -92,6 +124,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
 })
+
+
 
 
 

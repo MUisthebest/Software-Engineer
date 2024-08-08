@@ -22,38 +22,22 @@
                     <span class="data-title">Address</span>      
                 </div>
                 <div class="box_data">
-                    <div class="data ID">
-                        <span class="data-list">01</span>
-                        <span class="data-list">02</span>
-                        <span class="data-list">03</span>
-                        <span class="data-list">04</span>
-                        <span class="data-list">05</span>
-                        <span class="data-list">06</span>
-                    </div>
-                    <div class="data name">
-                        <span class="data-list">Bằng</span>
-                        <span class="data-list">Bằng</span>
-                        <span class="data-list">Bằng</span>
-                        <span class="data-list">Bằng</span>
-                        <span class="data-list">Bằng</span>
-                        <span class="data-list">Bằng</span>
-                    </div>
-                    <div class="data phone">
-                        <span class="data-list">0824373909</span>
-                        <span class="data-list">0824373909</span>
-                        <span class="data-list">0824373909</span>
-                        <span class="data-list">0824373909</span>
-                        <span class="data-list">0824373909</span>
-                        <span class="data-list">0824373909</span>
-                    </div>   
-                    <div class="data address">
-                        <span class="data-list">VietNam</span>
-                        <span class="data-list">VietNam</span>
-                        <span class="data-list">VietNam</span>
-                        <span class="data-list">VietNam</span>
-                        <span class="data-list">VietNam</span>
-                        <span class="data-list">VietNam</span>
-                    </div>   
+                    <% for (let i = 0; i < users.length; i++){ %>
+                    <div class="item">
+                        <div class="data ID">
+                            <span class="data-list"><%=users[i].id%></span>
+                        </div>
+                        <div class="data name">
+                            <span class="data-list"><%=users[i].username%></span>
+                        </div>
+                        <div class="data phone">
+                            <span class="data-list"><%=users[i].phone%></span>
+                        </div>   
+                        <div class="data address">
+                            <span class="data-list"><%=users[i].address.city%></span>
+                        </div> 
+                    </div>  
+                    <% } %>                          
                 </div>
             </div>
         </div>             

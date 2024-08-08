@@ -5,7 +5,7 @@
         <div class="Activity">
             <div class="title">
                 <i class='bx bxs-user'></i>
-                <span class="text">Manage User</span>
+                <span class="text">Manage Product</span>
             </div>
             <div class="content">
                 <div class="Btns">
@@ -21,39 +21,23 @@
                     <span class="data-title">Image</span>      
                 </div>
                 <div class="box_data">
-                    <div class="data ID">
-                        <span class="data-list">01</span>
-                        <span class="data-list">02</span>
-                        <span class="data-list">03</span>
-                        <span class="data-list">04</span>
-                        <span class="data-list">05</span>
-                        <span class="data-list">06</span>
-                    </div>
-                    <div class="data name">
-                        <span class="data-list">Bằng</span>
-                        <span class="data-list">Bằng</span>
-                        <span class="data-list">Bằng</span>
-                        <span class="data-list">Bằng</span>
-                        <span class="data-list">Bằng</span>
-                        <span class="data-list">Bằng</span>
-                    </div>
-                    <div class="data phone">
-                        <span class="data-list">0824373909</span>
-                        <span class="data-list">0824373909</span>
-                        <span class="data-list">0824373909</span>
-                        <span class="data-list">0824373909</span>
-                        <span class="data-list">0824373909</span>
-                        <span class="data-list">0824373909</span>
-                    </div>   
-                    <div class="data address">
-                        <span class="data-list"><img src="/Media/mon1.png" alt=""></span>
-                        <span class="data-list"><img src="/Media/mon2.png" alt=""></span>
-                        <span class="data-list"><img src="/Media/mon3.png" alt=""></span>
-                        <span class="data-list"><img src="/Media/mon4.png" alt=""></span>
-                        <span class="data-list"><img src="/Media/mon5.png" alt=""></span>
-                        <span class="data-list"><img src="/Media/mon6.png" alt=""></span>
-                    </div>   
-                </div>
+                    <% for (let i = 0; i < products.length; i++){ %>
+                        <div class = "item">
+                            <div class="data ID">
+                                <span class="data-list"><%=products[i].id%></span>
+                            </div>
+                            <div class="data name">
+                                <span class="data-list"><%=products[i].name%></span>
+                            </div>
+                            <div class="data phone">
+                                <span class="data-list"><%=products[i].price%></span>
+                            </div>   
+                            <div class="data address">
+                                <span class="data-list"><img src="data:image/<%=products[i].image.contentType%>;base64,<%=products[i].image.data.toString('base64')%>" alt=""></span>
+                            </div>  
+                        </div> 
+                        <% } %> 
+                    </div>     
             </div>
         </div>             
     </div>

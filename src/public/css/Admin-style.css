@@ -231,18 +231,19 @@ nav.close ~ .Users .top{
   display: flex;
   position: relative;
   margin-top: 60px; 
+  flex-direction: column;
 }
 
 .UserData .box_data{
   align-items: center;
   width: 98%;
-  position: absolute;
+  position: relative;
   display: flex;
-  margin-top: 20%;
+  flex-direction: column;
   background-color: #ffffff;
   left: 1%;
   border-radius: 10px;
-  height: 200px;
+  height: 400px;
 }
 
 .UserData .box_data{
@@ -252,22 +253,29 @@ nav.close ~ .Users .top{
 .UserData .box_title{
   justify-content: space-between;
   align-items: center;
-  position: absolute;
+  position: relative;
   display: flex;
   width: 97%;
   margin-left: 1%;
   background-color: antiquewhite;
 }
 
-.UserData .box_data .data{
-  flex-direction: column;
-  margin: 5px 10px 0 0;
-  display: flex;
-  position: relative;
+.UserData .box_data .item{
   width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.UserData .box_data .data{
+  margin: 5px 0px 0 0;
+  position: relative;
+  display: flex;
   background-color: #ffffff;
   align-items: center;
-  height: 100%;
+  justify-content: center;
+  text-align: center;
+  width: 25%;
 }
 
 .UserData .box_title .data-title{
@@ -300,43 +308,52 @@ nav.close ~ .Users .top{
   display: flex;
   position: relative;
   margin-top: 60px; 
+  flex-direction: column;
 }
 
 .ProductData .box_data{
   align-items: center;
   width: 98%;
-  position: absolute;
+  position: relative;
   display: flex;
-  margin-top: 20%;
+  flex-direction: column;
   background-color: #ffffff;
   left: 1%;
   border-radius: 10px;
-  height: 200px;
+  height: 400px;
 }
 
 .ProductData .box_data{
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .ProductData .box_title{
   justify-content: space-between;
   align-items: center;
-  position: absolute;
+  position: relative;
   display: flex;
   width: 97%;
   margin-left: 1%;
   background-color: antiquewhite;
 }
 
-.ProductData .box_data .data{
-  flex-direction: column;
-  margin: 5px 10px 0 0;
-  display: flex;
-  position: relative;
+.ProductData .box_data .item{
   width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.ProductData .box_data .data{
+  margin: 5px 0px 0 0;
+  position: relative;
+  display: flex;
   background-color: #ffffff;
   align-items: center;
-  height: 100%;
+  justify-content: center;
+  text-align: center;
+  width: 25%;
 }
 
 .ProductData .box_title .data-title{
@@ -356,9 +373,6 @@ nav.close ~ .Users .top{
   font-size: 18px;
   font-weight: 400px;
   margin-top: 25px;
-  white-space: nowrap;
-  align-items: center;
-  justify-content: center;
 }
 
 .ProductData .data .data-list img{
