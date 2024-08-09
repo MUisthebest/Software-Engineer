@@ -9,7 +9,7 @@ const nameProducts = document.querySelectorAll('.left h5');
 const productPairs = Array.from(products).map((product, index) => {
     return {
         element: index,
-        name: nameProducts[index].textContent,
+        name: nameProducts[index].textContent
     };
 });
 
@@ -31,12 +31,21 @@ inputBox.onkeyup = function(){
 }
 
 function display(result){
-    const content = result.map((pair) =>{
-        const productID = products[pair.element].getAttribute("id")
-        return `<a href="/products/${productID}" id="${productID}"><li>${pair.name}</li></a>`
-    })
-    resultBox.innerHTML = "<ul>" + content + "</ul>"
+    const seenIDs = new Set();
+    const seenNames = new Set();
+    const content = result.map((pair) => {
+        const productID = products[pair.element].getAttribute("id");
+        const productName = pair.name;
+        if (!seenIDs.has(productID) && !seenNames.has(productName)) {
+            seenIDs.add(productID);
+            seenNames.add(productName);
+            return `<a href="/products/${productID}" id="${productID}"><li>${productName}</li></a>`;
+        }
+    }).filter(Boolean).join('');
+    resultBox.innerHTML = `<ul>${content}</ul>`;
 }
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
 

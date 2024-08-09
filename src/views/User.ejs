@@ -28,7 +28,7 @@
                 </div>
                 <div class="d-flex pt-1">
                   <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary me-1 flex-grow-1 mr-2" onclick="changeURL()">Edit Profile</button>
-                  <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary flex-grow-1">Logout</button>
+                  <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary flex-grow-1" onclick="Logout()">Logout</button>
                 </div>
               </div>
             </div>
@@ -45,3 +45,12 @@
         window.location.href = newURL;
     }
 </script>
+
+  <script>
+    function Logout() {
+      document.cookie = 'user=; expires=Thu, 01 Jan 1970 00:00:00 UTC';
+      window.location.href = '/Login';
+      const { data } = null
+      formAlertDOM.textContent = null
+    }
+  </script>

@@ -1656,9 +1656,7 @@ header .buy_realted_box .purchase_box label label i{
   transform: translateX(160px);
   background: linear-gradient(to right,var(--color-6), #912e2e);
   opacity: 1;
-  outline: none;
   backdrop-filter: blur(50px);
-  border: none;
 }
 
 .nav__menu ul li:nth-child(3).select ~ .indicate::after{
@@ -1720,16 +1718,18 @@ header .buy_realted_box .purchase_box label label i{
 
 
 .home-content{
-  max-width: 630px;
+  max-width: 700px;
   z-index: 11;
 }
 
 .home-content h1{
-  font-size: 63px;
+  font-size: 60px;
+  width: 100%;
   line-height: 1.2;
   animation: slideBottom 1s ease forwards;
   background: linear-gradient(to right, #FF204E, #FF7EE2);
   -webkit-background-clip: text;
+  font-family: "Poppins", sans-serif;
   color: transparent;
 
 }
@@ -1741,18 +1741,23 @@ header .buy_realted_box .purchase_box label label i{
   color: transparent;
   height: 30%;
   position: relative;
+  font-family: "Poppins", sans-serif;
   animation: slideRight 1s ease forwards;
 
 }
 
 .home-content p{
-  font-size: 20px;
+  font-size: 18px;
   margin: 30px 0 50px;
   animation: slideTop 1s ease forwards;
   background: linear-gradient(to right, #FF204E, #FF7EE2);
   -webkit-background-clip: text;
   color: transparent;
   font-weight: bold;
+  height: 35%;
+  width: 45%;
+  position: absolute;
+  font-family: "Poppins", sans-serif;
 }
 
 .hp-btn{
@@ -1771,6 +1776,7 @@ header .buy_realted_box .purchase_box label label i{
   margin-top: 30%;
   font-weight: bold;
   cursor: pointer;
+  font-family: "Poppins", sans-serif;
   animation: slideTop 1s ease forwards ;
 }
 

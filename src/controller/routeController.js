@@ -25,6 +25,7 @@ const getContact = (req, res) =>{
 
 
 const getLogin = (req, res) =>{
+    res.clearCookie('user');
     res.render("Layout.ejs",{filename: "Login.ejs"});
 }
 
