@@ -19,7 +19,13 @@
                 <i class="far fa-moon" id="moon"></i>
                 <i class="fas fa-sun" id="sun"></i>
                 <i class="fas fa-wifi" id="wifi"></i>
-                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-shopping-cart" id="cart"></i>
+                <div id="cart-dropdown" class="dropdown-content hide5">
+                    <h3>Your Cart</h3>
+                    <ul id="cart-items">
+                    </ul>
+                    <button id="checkout-button">Checkout</button>
+                </div>
                 <button id="active_battery"><i class="fas fa-battery-three-quarters" id="battery_icon"></i><span id="battery_level">84%</span></button>
             </div>
         </nav>
@@ -38,7 +44,7 @@
                                 <div class="content">
                                     <div class="left">
                                         <h5><%=products[i].name%></h5> 
-                                        <button class="buy_now"><p class="p1">Buy Now</p><p class="p2"><%=products[i].price%> $</p></button>
+                                        <button class="buy_now" data-product-id="<%= i %>" productAll = "<%= products %>"><p class="p1">Buy Now</p><p class="p2"><%=products[i].price%> $</p></button>
                                     </div>
                                 </div>
                             </a>
@@ -56,7 +62,7 @@
                                 <div class="content">
                                     <div class="left">
                                         <h5><%=products[i].name%></h5> 
-                                        <button class="buy_now"><p class="p1">Buy Now</p><p class="p2"><%=products[i].price%> $</p></button>
+                                        <button class="buy_now" data-product-id="<%= i %>" productAll = "<%= products %>"><p class="p1">Buy Now</p><p class="p2"><%=products[i].price%> $</p></button>
                                     </div>
                                 </div>
                             </a>
@@ -74,7 +80,7 @@
                                 <div class="content">
                                     <div class="left">
                                         <h5><%=products[i].name%></h5> 
-                                        <button class="buy_now"><p class="p1">Buy Now</p><p class="p2"><%=products[i].price%> $</p></button>
+                                        <button class="buy_now" data-product-id="<%= i %>" productAll = "<%= products %>"></button><p class="p1">Buy Now</p><p class="p2"><%=products[i].price%> $</p></button>
                                     </div>
                                 </div>
                             </a>
@@ -121,6 +127,55 @@
       }
 </script>     
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const buyNowButtons = document.querySelectorAll('.buy_now');
+        const cartIcon = document.getElementById('cart');
+        const cartDropdown = document.getElementById('cart-dropdown');
+        const cartItems = document.getElementById('cart-items');
+        const cartCount = document.getElementById('cart-count');
+    
+        let cart = [];
+    
+        buyNowButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                const productId = this.getAttribute('data-product-id');
+                const productName = this.parentElement.querySelector('h5').textContent;
+                const productPrice = this.querySelector('.p2').textContent;
+                const productImage = this.closest('.product').querySelector('img').src;
+                addToCart(productId, productName, productPrice, productImage);
+            });
+        });
+    
+        cartIcon.addEventListener('click', function() {
+            cartDropdown.classList.toggle('hide5');
+        });
+    
+        function addToCart(productId, productName, productPrice, productImage) {
+            const existingProduct = cart.find(item => item.id === productId);
+            if (existingProduct) {
+                existingProduct.quantity += 1;
+            } else {
+                cart.push({ id: productId, name: productName, price: productPrice, image: productImage, quantity: 1 });
+            }
+            updateCartDisplay()
+        }
+        function updateCartDisplay() {
+            cartItems.innerHTML = '';
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <span>${item.name} (${item.quantity}) - ${item.price}</span>
+                `;
+                cartItems.appendChild(li);
+            });
+        }    
+    });
+    
+    
+</script>
 
 
 

@@ -11,27 +11,55 @@
                 </h4>
             </div>  
             <div class="purchase_box">
-                <a href="#"><i class='bx bx-cart-add' ></i><p>Purchase</p></a>
+                <a href="#" id="purchase_btn"><i class='bx bx-cart-add'></i><p>Purchase</p></a>
+                <div class="quantity_box">
+                    <span>Quantity</span>
+                    <input type="number" id="product_qty" value="1" min="1">
+                </div>
                 <label class="cost">
                     <p><%=product.price%></p>
-                <label>
-                    <i class='bx bxs-coin' ></i></label></label>
+                    <label><i class='bx bxs-coin'></i></label>
+                </label>
                 <input type="checkbox" id="love" class="but">
                 <label class="luv" for="love" id="<%=productId%>">
                     <span class="heart" id="love"></span>
                 </label>
             </div>
         </div>
-        <!-- <div class="realted_box"></div> -->
+        <div class="realted_box">
+            <h3>List Order</h3>
+            <ul id="purchased_items">
+            </ul>
+        </div>
     </div>
 </section>
 
 <script src="/js/wishlist.js"></script> 
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-<!-- <script>
-    $(document).ready(function(){
-      $('.luv').click(function(){
-        $('.heart').toggleClass("heart-active")
-      });
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const purchaseBtn = document.getElementById('purchase_btn');
+        const quantityInput = document.getElementById('product_qty');
+        const purchasedItemsList = document.getElementById('purchased_items');
+    
+        const productName = "<%=product.name%>";
+        const productPrice = "<%=product.price%>";
+        const productImage = "data:image/<%=product.image.contentType%>;base64,<%=product.image.data.toString('base64')%>";
+    
+        purchaseBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            const quantity = quantityInput.value;
+            addPurchasedItem(productName, productPrice, productImage, quantity);
+        });
+    
+        function addPurchasedItem(name, price, image, quantity) {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <img src="${image}" alt="${name}">
+                <span>${name} - ${quantity} pcs - $${price * quantity}</span>
+            `;
+            purchasedItemsList.appendChild(li);
+        }
     });
- </script> -->
+    
+ </script>

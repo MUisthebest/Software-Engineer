@@ -325,6 +325,7 @@ ul li a p{
   background: linear-gradient(to right, #FF204E, #26355D);
   -webkit-background-clip: text;
   color: transparent;
+  font-weight: bold;
 }
 
 
@@ -355,6 +356,8 @@ ul li a p{
   align-items: center;
   justify-content: space-between;
   position: relative;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
   font-size: 17px;
   background: linear-gradient(to right, #FF204E, #26355D);
   -webkit-background-clip: text;
@@ -374,6 +377,8 @@ ul li a p{
   right: 10%;
   left: 30%;
   width: 60%;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
   pointer-events: none;
   background: linear-gradient(to right, #FF204E, #26355D);
   -webkit-background-clip: text;
@@ -816,11 +821,12 @@ align-items: center;
   width: 100%;
   height: 9%;
   border: none;
+  flex-wrap: wrap;
   border-radius: 0px 10px 0px 0px;
   padding: 0 30px;
-  display: flex;
   align-items: center;
   justify-content: space-between;
+  display: flex;
   z-index: 1;
 }
 
@@ -954,13 +960,67 @@ nav .search-container button:hover {
 
 
 .Buy article nav .right_bx{
-  width: 36%;
+  width: 100%;
   border: 1px solid #2e262600;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+.hide5 {
+  display: none;
+}
+
+#cart-dropdown {
+  position: absolute;
+  right: 0;
+  top: 10%;
+  width: 300px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-height: 320px;
+  overflow-y: scroll;
+}
+
+#cart-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#cart-items li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+#cart-items img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+#checkout-button{
+  background: linear-gradient(to right, #74c5ff, #FF7EE2);
+  -webkit-background-clip: text;
+  font-family: "Poppins", sans-serif;
+  color: transparent;
+  border: 1px solid #f8cd82;
+}
+
+#checkout-button:hover{
+  background: linear-gradient(to right, #74c5ff, #FF7EE2);
+  color: #f8cd82;
+  transition: .1s linear;
+}
+  
+
 
 .Buy article nav .right_bx i{
   font-size: 20px;
@@ -1581,6 +1641,7 @@ margin-bottom: 30px;
   display: flex;
   align-items: center;
   position: relative;
+  display: flex;
   justify-content: space-between;
   padding: 0px 20px;
   border-radius: 10px;
@@ -1590,6 +1651,7 @@ header .buy_realted_box .buy_box, .realted_box{
   width: 45%;
   height: 100%;
   border: 1px solid #fff;
+  position: relative;
 }
 
 header .buy_realted_box .buy_box{
@@ -1607,6 +1669,59 @@ header .buy_realted_box .buy_box .img_product_box {
   margin-top: 20px;
   transition: .3s linear;
 }
+
+.quantity_box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  position: relative;
+  flex-direction: column;
+  margin-left: 1px;
+}
+
+
+.quantity_box span{
+  position: relative;
+}
+
+.quantity_btn {
+  width: 8%;
+  height: 100%;
+  background-color: #f0f0f0;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  font-size: 18px;
+}
+
+#product_qty {
+  width: 50px;
+  text-align: center;
+  margin: 0 5px;
+  position: relative;
+}
+
+.realted_box {
+  margin-top: 20px;
+}
+
+#purchased_items {
+  list-style-type: none;
+  padding: 0;
+}
+
+#purchased_items li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+#purchased_items img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
 
 header .buy_realted_box .buy_box .img_product_box img{
   height: 100%;
@@ -1660,6 +1775,7 @@ header .buy_realted_box .purchase_box{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: nowrap;
   margin-top: 30px;
   width: 100%;
 }
@@ -1677,7 +1793,8 @@ header .buy_realted_box .purchase_box a{
   justify-content: center;
   display: flex;
   transition: .2s linear;
-  width: 35%;
+  width: 100%;
+  max-width: 250px;
 }
 
 header .buy_realted_box .purchase_box a:hover{
@@ -1707,7 +1824,8 @@ header .buy_realted_box .purchase_box label{
   color: #000000;
   font-size: 18px;
   font-weight: 600;
-  width: 45%;
+  width: 100%;
+  max-width: 250px;
   border-radius: 6px;
   transition: .2s linear;
   display: flex;
@@ -1829,6 +1947,60 @@ header .buy_realted_box .purchase_box label label i{
   opacity: 1;
 }
 
+@media (min-width: 768px) {
+
+  .Buy{
+    padding: 1% 1%;
+  }
+
+  .Buy article{
+    padding: 1% 1%;
+  }
+
+  .Buy article nav {
+    padding: 0 20px; 
+  }
+
+  .search_box {
+    width: 60%;
+  }
+
+  .gameBx .product {
+    width: 150px;
+    height: 180px;
+  }
+
+  .result_box ul {
+    width: 50%;
+    height: 270px; 
+  }
+}
+
+@media (min-width: 1024px) {
+  .Buy article nav {
+    padding: 0 30px;
+  }
+
+  .search_box {
+    width: 40%;
+  }
+
+  .gameBx .product {
+    width: 170px;
+    height: 200px;
+  }
+
+  .result_box ul {
+    width: 35%;
+    height: 300px; /* Original height */
+  }
+}
+
+@media (min-width: 1200px) {
+  .Buy article nav .right_bx {
+    width: 30%; /* Increased width for extra large screens */
+  }
+}
 
 
 .home {
@@ -1850,6 +2022,7 @@ header .buy_realted_box .purchase_box label label i{
 .home-content {
   max-width: 700px;
   z-index: 11;
+  height: 70%;
 }
 
 
