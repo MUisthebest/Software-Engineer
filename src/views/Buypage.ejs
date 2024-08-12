@@ -11,7 +11,7 @@
             <div class="search_box">
                 <div class="search-container">
                     <input type="text" id = "input-box" placeholder="Search...">
-                    <button onclick="window.location.href = '/getSearch'"><i class="fas fa-search"></i></button>
+                    <button onclick="resultSearch()"><i class="fas fa-search"></i></button>
                 </div>
                 <div class="result_box"></div>
             </div>
@@ -64,13 +64,62 @@
                     <% } %>              
                 </div>
             </div>
+            <div class="game3 disable">
+                <h3><i class="fas fa-bomb"></i>List Product</h3>
+                <div class="gameBx" id="game_bx_2">       
+                    <% for (let i = 0; i < products.length; i++){ %>
+                        <div class="product">
+                            <a href="/products/<%=products[i].id%>" id="product <%=products[i].id%>">
+                                <img src="data:image/<%=products[i].image.contentType%>;base64,<%=products[i].image.data.toString('base64')%>">
+                                <div class="content">
+                                    <div class="left">
+                                        <h5><%=products[i].name%></h5> 
+                                        <button class="buy_now"><p class="p1">Buy Now</p><p class="p2"><%=products[i].price%> $</p></button>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    <% } %>              
+                </div>
+            </div>            
         </div>
     </article>
 </section>
 <!-- <script src ="/js/importListUser.js"></script> -->
 <script src ="/js/handleScrollBar.js"></script>
 <script src ="/js/handleShopping.js"></script>
-<script src="/js/changeIndicate.js"></script>    
+<script src="/js/changeIndicate.js"></script>
+<script>
+    function resultSearch(){
+        var x = document.querySelector(".game1");
+        AddClass(x, "disable");
+        var y = document.querySelector(".game2");
+        AddClass(y, "disable"); 
+        var z = document.querySelector(".game3");
+        RemoveClass(z, "disable");                
+    }
+
+    function AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+        }
+      }
+      
+      function RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);     
+          }
+        }
+        element.className = arr1.join(" ");
+      }
+</script>     
 
 
 

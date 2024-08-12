@@ -204,6 +204,10 @@ ul li a p{
   visibility: hidden;
 }
 
+.disable{
+  display: none;
+}
+
 
 .nav__list li i{
   align-items: center;
@@ -535,10 +539,10 @@ ul li a p{
   }
 
   .nav__menu{
-      position: absolute;
+      position: relative;
+      display: flex;
       top: 2.5rem;
       width: 100%;
-      height: calc(100vh - 3.5rem);
       overflow: auto;
       pointer-events: none;
       opacity: 0;
@@ -594,6 +598,8 @@ ul li a p{
   .nav__list{
       padding-top: 1rem;
       z-index: 10;
+      position: relative;
+      display: flex;
   }
 
   .header{
@@ -640,12 +646,18 @@ ul li a p{
   pointer-events: initial;
 }
 
+.remove-menu{
+  top: 0;
+}
+
 .show-icon .nav__burger{
+  position: absolute;
   opacity: 0;
   transform: rotate(90deg);
 }
 
 .show-icon .nav__close{
+  position: absolute;
   opacity: 1;
   transform: rotate(90deg);
 }
@@ -792,10 +804,11 @@ align-items: center;
   position: absolute;
   width: 92%;
   height: 92%;
-  margin: 1% 0 5% 0;
+  margin-top: 1%;
+  margin-bottom: 7%;
   border-radius: 10px 10px 10px 10px;
+  background: linear-gradient(45deg, #f2caca, #8baabd);
   border: 1px solid #fff;
-  background-color: var(--color-1);
   z-index: 0;
 }
 
@@ -877,7 +890,7 @@ nav .search-container button{
   right: 0px;
   font-size: 20px;
   border-radius: 10px;
-  background-color: #6DC5D1;
+  background: linear-gradient(45deg, #f2caca, #d7eab0);
   border: none;
   outline: none;
 }
@@ -919,6 +932,10 @@ nav .search-container button:hover {
   border-radius: 5px;
   overflow-y: scroll;
   height: 300px;
+}
+
+.result_box ul::-webkit-scrollbar {
+  display: none;
 }
 
 .result_box ul li{
@@ -982,19 +999,27 @@ nav .search-container button:hover {
   position: relative;
   width: 100%;
   height: 30%;
-  border: 1px solid #fff;
   padding: 0px 30px;
   margin-top: 20px;
   z-index: 12;
 }
 
-.Buy article .game1 h3{
-  color:#B5C18E;
-  font-size: 20px;
-  font-weight: 600;
+.Buy article .game1 h3 i{
+  color: #000;
   transition: .5s linear;
   z-index: 12;
 }
+
+.Buy article .game1 h3{
+  position: relative;
+  width: 50%;
+  font-family: "Poppins", sans-serif;
+  color: #000;
+  transition: .5s linear;
+  z-index: 12;
+}
+
+
 
 .Buy article .game1 .gameBx{
   width: 100%;
@@ -1006,7 +1031,7 @@ nav .search-container button:hover {
   scroll-behavior: smooth;
   overflow-y: hidden;
   z-index: 11;
-  background: #fff;
+  background: linear-gradient(to right, #FDFFC2, #A3D8FF)
 }
 
 .Buy article .game1 .gameBx::-webkit-scrollbar{
@@ -1036,8 +1061,11 @@ nav .search-container button:hover {
 .gameBx .product{
   width: 170px;
   height: 200px;
-  border: 1px solid #000;
   margin-left: 5px;
+  color: #03e9f4;
+  box-shadow: 0 0 0.1rem currentColor,
+  0 0 0.1rem currentColor,
+  0 0 0.1rem currentColor;
   margin-top: 5px;
   z-index: 11;
   box-sizing: border-box;
@@ -1059,7 +1087,6 @@ nav .search-container button:hover {
 .gameBx .product a{
   min-width: 220px;
   height: 160px;
-
   border-radius: 5px;
   margin: 20% 0% 20% 0%;
   outline: none;
@@ -1090,13 +1117,22 @@ nav .search-container button:hover {
 }
 
 .gameBx .product .content .left h5{
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 500;
   width: 150px;
   overflow: hidden;
+  background: linear-gradient(60deg, #0F1035, #000000);
+  -webkit-background-clip: text;
+  font-family:"Poppins", sans-serif;
+  color: transparent;
   text-overflow: ellipsis;
   white-space: nowrap;
   outline: none;
+  font-weight: bold;
+  text-shadow: 
+    0 0 1rem #ffffff66
+    0 0 1.5rem currentColor
+    ;
 }
 
 .left .buy_now{
@@ -1110,19 +1146,33 @@ nav .search-container button:hover {
   cursor: pointer;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #2183a2;
-  line-height: 0.45em;
+  background: linear-gradient(to right, #0B60B0, #81689D);
+  line-height: 0.38em;
 }
 
 
 .left .buy_now .p1{
   opacity: 1;
   text-align: center;
+  color: #C5FFF8;
+  font-family:"Poppins", sans-serif;
+  text-shadow: 
+  0 0 1rem #ffffff66
+  0 0 1.5rem currentColor
+  ;
+  font-weight: 400;
 }
 
 .left .buy_now .p2{
   opacity: 0;
   text-align: center;
+  color: #C5FFF8;
+  font-family:"Poppins", sans-serif;
+  text-shadow: 
+  0 0 1rem #ffffff66
+  0 0 1.5rem currentColor
+  ;
+  font-weight: 400;
 }
 
 .gameBx .product:hover .content .left .buy_now .p1{
@@ -1139,21 +1189,45 @@ nav .search-container button:hover {
   height: 85%;
   border: none;
   border-radius: 10px;
-  padding: 5px 0px;
+  padding: 5px 30px;
   overflow: hidden;
   z-index: 12;
   margin-top: 1%;
 }
 
 .Buy article .game2 h3{
-  color:#B5C18E;
+  color:#000;
+  position: relative;
+  width: 50%;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600px;
+  transition: .5s linear;
+}
+
+.Buy article .game3{
+  position: absolute;
+  width: 100%;
+  height: 75%;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 12;
+  margin-bottom: 10%;
+  border: 1px solid #fff;
+}
+
+.Buy article .game3 h3{
+  color:#000;
+  position: relative;
+  width: 50%;
+  font-family: "Poppins", sans-serif;
   font-size: 20px;
   font-weight: 600px;
   transition: .5s linear;
 }
 
 .Buy article .game1 h3 i{
-  color:#6DC5D1;
   font-size: 20px;
   font-weight: 600px;
   transition: .5s linear;
@@ -1169,13 +1243,13 @@ nav .search-container button:hover {
   display: inline-flex;
   flex-wrap: wrap;
   overflow-y: auto;
-  background: white;
+  background: linear-gradient(to right, #FDFFC2, #A3D8FF);
   gap: 16px;
   justify-content: space-between;
 }
 
 .Buy article .game2 h3 i{
-  color:#6DC5D1;
+  color:#000;
   font-size: 20px;
   font-weight: 600px;
   transition: .5s linear;
@@ -1196,11 +1270,47 @@ nav .search-container button:hover {
   visibility: hidden;  
 }
 
+.Buy article .game3 .gameBx{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  border: 1px solid #000000;
+  display: inline-flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  background: linear-gradient(to right, #FDFFC2, #A3D8FF);
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.Buy article .game3 h3 i{
+  color:#000;
+  font-size: 20px;
+  font-weight: 600px;
+  transition: .5s linear;
+  text-align: left;
+  width: 40px;
+}
+
+.Buy article .game3 .gameBx::-webkit-scrollbar{
+  width: 5px;
+  border-radius: 20px;
+  background-color: #494848;
+  visibility: hidden;
+}
+
+.Buy article .game3 .gameBx::-webkit-scrollbar-thumb{
+  border-radius: 20px;
+  background-color: #494848;
+  visibility: hidden;  
+}
+
 
 
 
 .Login{
-  height: 100vh;
+  height: 95vh;
   width: calc(100%);
   position: relative;
   transition: .05s ease-in-out;
@@ -1467,11 +1577,13 @@ margin-bottom: 30px;
   width: 80%;
   height: 90%;
   border: 1px solid #fff;
+  background: linear-gradient(45deg, #f2caca, #8baabd);
   display: flex;
   align-items: center;
   position: relative;
   justify-content: space-between;
   padding: 0px 20px;
+  border-radius: 10px;
 }
 
 header .buy_realted_box .buy_box, .realted_box{
@@ -1490,6 +1602,7 @@ header .buy_realted_box .buy_box .img_product_box {
   width: 100%;
   height: 50%;
   border: 1px solid #fff;
+  background: linear-gradient(45deg, #36BA98, #E9C46A);
   border-radius: 20px;
   margin-top: 20px;
   transition: .3s linear;
@@ -1511,21 +1624,34 @@ header .buy_realted_box .buy_box .text_box{
   border-radius: 10px;
   margin-top: 20px;
   transition: .3s linear; 
+  background: linear-gradient(to left, #f8cd82, #FFE8C8);
+  overflow-y: scroll;
+}
+
+header .buy_realted_box .buy_box .text_box::-webkit-scrollbar{
+  display: none;
 }
 
 header .buy_realted_box .buy_box .text_box h4 {
-  margin-top: 30px;
+  margin-top: 5px;
   margin-left: 20px;
+  margin-bottom: 2px;
   color: var(--color-1);
-  font-size: 16px;
-  font-weight: 500;
+  background: linear-gradient(to left, #0B60B0, #000);
+  -webkit-background-clip: text;
+  font-family: "Poppins", sans-serif;
+  color: transparent;
+  font-size: 13px;
+  font-weight: bold;
 }
 
 header .buy_realted_box .buy_box .text_box h2{
-  margin: 30px 10px 0px 10px;
+  margin: 20px 10px 0px 10px;
   color: #000;
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
   font-weight: 500;
-  background-color: white;
+  background-color: transparent;
   border-radius: 10px;
   align-items: center;
 }
@@ -1555,8 +1681,11 @@ header .buy_realted_box .purchase_box a{
 }
 
 header .buy_realted_box .purchase_box a:hover{
-  background: #494848;
-}
+  background: transparent;
+  color: #663da6;
+  transition: .2s linear;
+  border: 1px solid #663da6;
+} 
 
 
 header .buy_realted_box .purchase_box a i{
@@ -1700,7 +1829,9 @@ header .buy_realted_box .purchase_box label label i{
   opacity: 1;
 }
 
-.home{
+
+
+.home {
   position: relative;
   width: 100%;
   height: 95vh;
@@ -1710,17 +1841,17 @@ header .buy_realted_box .purchase_box label label i{
   overflow: hidden;
   z-index: 9;
   flex-wrap: wrap;
-  background-image: linear-gradient(to right, #FDFFC2, #A3D8FF),url('../Media/bg_hp.jpeg');
+  background-image: linear-gradient(to right, #FDFFC2, #A3D8FF), url('../Media/bg_hp.jpeg');
   background-position: center;
   background-size: cover;
   overflow-y: scroll;
 }
 
-
-.home-content{
+.home-content {
   max-width: 700px;
   z-index: 11;
 }
+
 
 .home-content h1{
   font-size: 60px;
@@ -1745,6 +1876,7 @@ header .buy_realted_box .purchase_box label label i{
   animation: slideRight 1s ease forwards;
 
 }
+
 
 .home-content p{
   font-size: 18px;
@@ -1773,8 +1905,9 @@ header .buy_realted_box .purchase_box label label i{
   text-decoration: none;
   font-weight: 600px;
   transition: .5s linear;
-  margin-top: 30%;
   font-weight: bold;
+  bottom: 5%;
+  position: absolute;
   cursor: pointer;
   font-family: "Poppins", sans-serif;
   animation: slideTop 1s ease forwards ;
@@ -1786,6 +1919,78 @@ header .buy_realted_box .purchase_box label label i{
   -webkit-background-clip: text;
   color: transparent;}
 
+  @media (max-width: 1200px) {
+    .home-content h1 {
+      font-size: 50px;
+    }
+  
+    .home-content h3 {
+      font-size: 26px;
+    }
+  
+    .home-content p {
+      font-size: 16px;
+      max-width: 800px;
+      width: 60%;
+    }
+  
+    .hp-btn {
+      font-size: 14px;
+      padding: 8px 24px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .home-content h1 {
+      font-size: 40px;
+    }
+  
+    .home-content h3 {
+      font-size: 22px;
+    }
+  
+    .home-content p {
+      font-size: 14px;
+      width: 80%;
+      max-width: 600px;
+    }
+  
+    .hp-btn {
+      font-size: 12px;
+      padding: 6px 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .home {
+      padding: 0% 4%;
+    }
+  
+    .home-content {
+      max-width: 90%;
+    }
+  
+    .home-content h1 {
+      font-size: 32px;
+    }
+  
+    .home-content h3 {
+      font-size: 18px;
+    }
+  
+    .home-content p {
+      font-size: 12px;
+      width: 100%;
+      max-width: 300px;
+      margin: 20px 0 40px;
+    }
+  
+    .hp-btn {
+      font-size: 10px;
+      padding: 4px 16px;
+    }
+  }
+  
 .home-img{
   position: relative;
   height: 450px;
@@ -2235,7 +2440,7 @@ aside > h2 {
   margin-top: 8px;
   border: 1px solid #000000;
   display: inline-flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   overflow-y: auto;
   gap: 16px;
@@ -2386,7 +2591,7 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
 
 .Trendding{
   width: 100%;
-  height: 120vh;
+  height: 130vh;
   text-align: center;
   overflow: hidden;
   position: relative;
@@ -2401,18 +2606,19 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
   position: absolute;
   width: 140px;
   height: 200px;
-  top: 15%;
+  top: 12%;
   left: calc(50%-100px);
   transform-style: preserve-3d;
   transform: perspective(2000px);
-  animation: autoRun 20s linear infinite;
+  animation: autoRun 30s linear infinite;
+  z-index: 2;
 }
 
 .Trendding .slider_trending .itemT{
   position: absolute;
   inset: 0 0 0 0;
   transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(550px);
-  background-color: #969696;
+  background: linear-gradient(to right, #fdb99b, #A3D8FF);
   border-radius: 15px;
 }
 
@@ -2451,8 +2657,68 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
   width: 100%;
   height: 100%;
   position: relative;
-  background-color: #969696;
+  background: linear-gradient(to right, #fdb99b, #A3D8FF);
+  font-family: "Poppins", sans-serif;
   border-radius: 15px;
+  font-size: 12px;
+  color: #000;
+} 
+
+.Trendding .content{
+  position: relative;
+  margin-top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: max-content;
+  padding-bottom: 10px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+.Trendding .content h1{
+  font-family: "Poppins", sans-serif;
+  font-size: 6em;
+  line-height: 1em;
+  color: #25283B;
+  margin-bottom: -5%;
+  position: relative;
+}
+
+.Trendding .content h1::after{
+  position: absolute;
+  inset: 0 0 0 0;
+  content: attr(data-content);
+  -webkit-text-stroke: 2px #fdb99b;
+  color: transparent;
+  z-index: 2;
+}
+
+.Trendding .content .nameStore{
+  font-family: "Poppins", sans-serif;
+  text-align: right;
+  max-width: 200px;
+}
+
+.Trendding .content .nameStore .model{
+  background: url('../Media/model.png') no-repeat;
+  width: 100%;
+  height: 75vh;
+  position: absolute;
+  bottom: -250%;
+  left: 0%;
+  background-size: auto 100%;
+  background-position: top center;
+  z-index: 1;
+}
+
+.Trendding .content h2{
+  font-size: 1em;
+  margin-right: 4em;
+  text-align: center;
 }
 
 .sBx .searchBx{

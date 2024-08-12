@@ -61,4 +61,28 @@
             </div>
         </div>
     </div>
+    <div class="content">
+        <h1 data-content="TRENDING PRODUCT">TRENDING PRODUCT</h1>
+        <div class="nameStore">
+            <h2>ELECTRONIC DEFIANT STORE</h2>
+            <div class="model"></div>
+        </div>
+    </div>
 </section>
+
+<script>
+    const section = document.querySelector('.Trendding');
+    const hahaDiv = document.querySelector('.content');
+
+    const observer = new ResizeObserver(entries => {
+        for (let entry of entries) {
+            if (entry.contentRect.width < 1200 || entry.contentRect.height < 900) {
+                hahaDiv.style.display = 'none';
+            } else {
+                hahaDiv.style.display = 'block';
+            }
+        }
+    });
+
+observer.observe(section);
+</script>
