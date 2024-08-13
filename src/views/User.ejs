@@ -1,8 +1,4 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript"> </script> 
 <section class="Profile w-100  px-4 py-5" style="background: url('../Media/BG-Login.png') no-repeat; border-radius: .5rem .5rem 0 0; height: 100vh;">
     <div class="row d-flex justify-content-center">
       <div class="col col-md-9 col-lg-7 col-xl-6">
@@ -28,7 +24,7 @@
                 </div>
                 <div class="d-flex pt-1">
                   <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary me-1 flex-grow-1 mr-2" onclick="changeURL()">Edit Profile</button>
-                  <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary flex-grow-1" onclick="Logout()">Logout</button>
+                  <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary flex-grow-1" onclick="logout()">Logout</button>
                 </div>
               </div>
             </div>
@@ -36,22 +32,32 @@
         </div>
       </div>
     </div>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>  
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript"> </script> 
+    <script>
+      function changeURL() {
+          const currentURL = window.location.href;
+          const newURL = currentURL.replace('/user/', '/profile/');
+          window.location.href = newURL;
+      }
+    </script>
+    <script>
+      async function logout() {
+        try{
+          await axios.get('/logout')
+          window.location.href = '/Login'
+        }
+        catch(error){
+          console.log(error.response.data.msg)
+        }
+      }
+    </script>
   </section>
-
-  <script>
-    function changeURL() {
-        const currentURL = window.location.href;
-        const newURL = currentURL.replace('/user/', '/profile/');
-        window.location.href = newURL;
-    }
-</script>
-
-  <script>
-    async function Logout() {
-      document.cookie = 'user=; expires=Thu, 01 Jan 1970 00:00:00 UTC';
-      window.location.href = '/Login';
-      const { data } = null
-      formAlertDOM.textContent = null
-      await axios.get('/logout')
-    }
-  </script>
