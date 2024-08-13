@@ -11,13 +11,6 @@ const showMenu = (idToggle,Idnav) =>{
 
 showMenu('nav-toggle','nav-menu');
 
-let cards = document.querySelectorAll('.card');
-cards.forEach((card, index) => {
-    card.addEventListener('click', () => {
-        let selectedMonster = joinData[index];
-        console.log(`You clicked on: ${selectedMonster.name}`);
-    });
-});
 
 function adjustNavMenu() {
     const navList = document.querySelector('.nav__list');

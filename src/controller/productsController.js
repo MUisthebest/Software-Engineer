@@ -1,4 +1,5 @@
 const Product = require('../models/Product')
+const Cart = require('../models/Cart')
 const {StatusCodes} = require('http-status-codes')
 const {NotFoundError} = require('../errors')
 const fs = require('fs')
@@ -79,7 +80,6 @@ const createProduct = async (req,res)=>{
 const getProduct = async (req,res)=>{
     const {id:productId} = req.params
     const product = await Product.findOne({_id:productId})
-
     if (!product){
         throw new NotFoundError(`No product with id: ${productId}`)
     }

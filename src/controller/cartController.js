@@ -27,7 +27,7 @@ const createCart = async (req, res) => {
     }
 
     if (quantity > productQuantity){
-        throw new BadRequestError('Invalid quantity')
+        throw new BadRequestError('Out of stock!')
     }
 
     if (cart){
@@ -69,14 +69,27 @@ const removeItemFromCart = async (req, res) =>{
     const userId = req.user.userId;
     const productId = req.body.productId
     
-    const cart = await Cart.findOneAndUpdate(
-        {user: userId},
-        {$pull:{cartItems: {product: productId}}}
+    const cart = await Cart.findOne(
+        {user: userId}
     )
 
     if (!cart){
         throw new NotFoundError('Your cart has no items!')
     }
+
+    const itemIndex = cart.cartItems.findIndex(
+        (item) => item.product.toString() === productId
+    );
+
+    if (itemIndex === -1) {
+        throw new NotFoundError('Item not found in the cart!');
+    }
+
+    // Remove the item from the cart
+    cart.cartItems.splice(itemIndex, 1);
+
+    // Save the updated cart
+    await cart.save();
 
     res.status(200).json({cart})
 }

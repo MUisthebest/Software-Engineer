@@ -47,10 +47,11 @@
 </script>
 
   <script>
-    function Logout() {
+    async function Logout() {
       document.cookie = 'user=; expires=Thu, 01 Jan 1970 00:00:00 UTC';
       window.location.href = '/Login';
       const { data } = null
       formAlertDOM.textContent = null
+      await axios.get('/logout')
     }
   </script>

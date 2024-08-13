@@ -42,7 +42,7 @@
                                                 <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> 
                                                     <i class="fa fa-heart"></i>
                                                 </a> 
-                                                <a href="#" class="btn btn-light" class="remove_btn" data-abc="true" id="<%=products[i].product.id%>">Remove</a> 
+                                                <a href="#" class="btn btn-light remove_btn" data-abc="true" id="<%=products[i].product.id%>">Remove</a> 
                                             </td>
                                         </tr>
                                     <% } %>    
@@ -82,7 +82,7 @@
             </div>
         </div>
     <%} else{ %>
-        <div>Your cart has no items</div>    
+        <div class="no_item"><p>Your cart has no items</p></div>    
     <%} %>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
