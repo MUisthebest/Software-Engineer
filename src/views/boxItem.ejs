@@ -32,86 +32,13 @@
             </ul>
         </div>
     </div>
-</section>
-
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+  integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
 <script src="/js/wishlist.js"></script> 
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const purchaseBtn = document.getElementById('purchase_btn');
-        const quantityInput = document.getElementById('product_qty');
-        const purchasedItemsList = document.getElementById('purchased_items');
-    
-        const productName = "<%=product.name%>";
-        const productPrice = "<%=product.price%>";
-        const productImage = "data:image/<%=product.image.contentType%>;base64,<%=product.image.data.toString('base64')%>";
-        let purchasedItems = {};
-    
-        // Load cart from localStorage
-        loadCartFromStorage();
-    
-        purchaseBtn.addEventListener('click', function(event) {
-            event.preventDefault();
-            const quantity = parseInt(quantityInput.value);
-            if (quantity > 0) {
-                addOrUpdatePurchasedItem(productName, productPrice, productImage, quantity);
-            }
-        });
-    
-        function addOrUpdatePurchasedItem(name, price, image, quantity) {
-            if (purchasedItems[name]) {
-                purchasedItems[name].quantity += quantity;
-            } else {
-                purchasedItems[name] = { name, price, image, quantity };
-            }
-    
-            if (purchasedItems[name].quantity <= 0) {
-                delete purchasedItems[name];
-            }
-    
-            updatePurchasedItemsDisplay();
-            saveCartToStorage();
-        }
-    
-        function updatePurchasedItemsDisplay() {
-            purchasedItemsList.innerHTML = '';
-            Object.values(purchasedItems).forEach(item => {
-                const li = document.createElement('li');
-                li.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}">
-                    <span>${item.name} - ${item.quantity} pcs - $${item.price * item.quantity}</span>
-                    <button class="remove-item" data-item-name="${item.name}">Remove</button>
-                `;
-                purchasedItemsList.appendChild(li);
-            });
-    
-            // Add event listeners to remove buttons
-            document.querySelectorAll('.remove-item').forEach(button => {
-                button.addEventListener('click', function() {
-                    const itemName = this.getAttribute('data-item-name');
-                    removePurchasedItem(itemName);
-                });
-            });
-        }
-    
-        function removePurchasedItem(name) {
-            delete purchasedItems[name];
-            updatePurchasedItemsDisplay();
-            saveCartToStorage();
-        }
-    
-        function saveCartToStorage() {
-            localStorage.setItem('cart', JSON.stringify(purchasedItems));
-        }
-    
-        function loadCartFromStorage() {
-            const storedCart = localStorage.getItem('cart');
-            if (storedCart) {
-                purchasedItems = JSON.parse(storedCart);
-                updatePurchasedItemsDisplay();
-            }
-        }
-    });
-    
-    
- </script>
+<script src="/js/productHandler.js"></script>
+</section>

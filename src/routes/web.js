@@ -6,7 +6,6 @@ const {
     getShopBuyPage, 
     getLovePage, 
     getTrendding, 
-    getCart, 
     getBoxItem, 
     getAdmin, 
     getAdminProduct, 
@@ -24,8 +23,6 @@ router.get('/', getHomePage);
 router.get('/Trending', getTrendding);
 
 router.get('/Love', getLovePage);
-
-router.get('/Cart', getCart);
 
 router.get('/boxItem', getBoxItem);
 

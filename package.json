@@ -4,7 +4,7 @@
   "description": "Project Shop Web",
   "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "nodemon src/server.js"
   },
   "repository": {
@@ -36,5 +36,8 @@
     "mongoose": "^8.4.1",
     "nodemon": "^3.1.3",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }

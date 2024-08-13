@@ -29,9 +29,9 @@ const getLogin = (req, res) =>{
     res.render("Layout.ejs",{filename: "Login.ejs"});
 }
 
-const getCart = (req, res) =>{
-    res.render("Layout.ejs",{filename: "Cartpage.ejs"});
-}
+// const getCart = (req, res) =>{
+//     res.render("Layout.ejs",{filename: "Cartpage.ejs"});
+// }
 
 const getRegister =(req, res) =>{
     res.render("Layout.ejs",{filename: "Register.ejs"});
@@ -99,7 +99,6 @@ module.exports = {
     // getShopBuyPage, 
     getLovePage, 
     getLogin, 
-    getCart, 
     getRegister, 
     getBoxItem, 
     getAdmin, 
