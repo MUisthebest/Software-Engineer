@@ -1681,7 +1681,6 @@ margin-bottom: 30px;
 header .buy_realted_box .buy_box, .realted_box{
   width: 45%;
   height: 100%;
-  border: 1px solid #fff;
   position: relative;
 }
 
@@ -1739,12 +1738,29 @@ header .buy_realted_box .buy_box .img_product_box {
 #purchased_items {
   list-style-type: none;
   padding: 0;
+  width: 100%;
+  height: 70%;
+  position: absolute;
+  min-height: 300px;
+  overflow-y: scroll;
+  justify-content: center;
+  padding: 0 2%;
+  border: 1px solid #000;
+  background-color: #fff;
+  border-radius: 15px;
+  margin-top: 10%;
+}
+
+#purchased_items::-webkit-scrollbar{
+  display: none;
 }
 
 #purchased_items li {
   margin-bottom: 10px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
 }
 
 #purchased_items img {
