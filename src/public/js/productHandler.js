@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     purchaseBtn.addEventListener('click', async (e) => {
         e.preventDefault();
-        const quantity = quantityInput.value;
+        const quantity = Number(quantityInput.value);
         try {
             await axios.post('/cart', {productId: productId, quantity: quantity});
             window.location.href = `/products/${productId}`
@@ -22,9 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
     removeBtns.forEach(button=>{
         button.addEventListener('click', async (e)=>{
             e.preventDefault();
-            const productId = button.getAttribute('data-item-id');
+            const id = button.getAttribute('data-item-id');
             try {
-                await axios.patch('/cart', { productId: productId });
+                await axios.patch('/cart', { productId: id });
                 window.location.href = `/products/${productId}`
             } catch (error) {
                 alert(error.response.data.msg);
