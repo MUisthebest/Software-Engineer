@@ -18,6 +18,10 @@ const CartSchema = mongoose.Schema({
         type: mongoose.Schema.ObjectId,
         ref: 'User',
         required: true,
+    },
+    totalPrice:{
+        type:Number,
+        required:true,
     }
 }, {timestamps:true});
 

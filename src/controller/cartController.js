@@ -7,10 +7,10 @@ const getCart = async (req,res)=>{
     const cart = await Cart.findOne({user:req.user.userId}).populate('cartItems.product')
 
     if (!cart || cart.cartItems.length < 1) {
-        return res.status(StatusCodes.OK).render('Layout.ejs',{filename: "Cartpage.ejs", products:null})
+        return res.status(StatusCodes.OK).render('Layout.ejs',{filename: "Cartpage.ejs", cart:null})
     }
 
-    res.status(StatusCodes.OK).render('Layout.ejs', {filename: "Cartpage.ejs", products: cart.cartItems})
+    res.status(StatusCodes.OK).render('Layout.ejs', {filename: "Cartpage.ejs", cart: cart})
     // res.status(StatusCodes.OK).json({products: cart.cartItems})
 }
 
@@ -38,11 +38,12 @@ const createCart = async (req, res) => {
             if (existingProduct.quantity > productQuantity){
                 existingProduct.quantity = productQuantity;
             }
+            cart.totalPrice += quantity * product.price
+
             await cart.save()
 
             return res.status(StatusCodes.OK).json({cart})
         }
-
         const singleCartItem = {
             product: productId,
             quantity: quantity,
@@ -59,7 +60,8 @@ const createCart = async (req, res) => {
             product: productId,
             quantity: quantity,
         }],
-        user: userId
+        user: userId,
+        totalPrice: quantity * product.price
     })
 
     return res.status(StatusCodes.CREATED).json({newCart})
