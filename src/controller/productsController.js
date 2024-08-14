@@ -78,12 +78,21 @@ const createProduct = async (req,res)=>{
 }
 
 const getProduct = async (req,res)=>{
+    const cookies = req.cookies
     const {id:productId} = req.params
     const product = await Product.findOne({_id:productId})
+
     if (!product){
         throw new NotFoundError(`No product with id: ${productId}`)
     }
-    res.status(StatusCodes.OK).render("Layout.ejs",{filename: "boxItem.ejs", product:product, productId})
+    
+    if (cookies && Object.keys(req.cookies).length !== 0){
+        const userId = JSON.parse(cookies.user).userId
+        const cart = await Cart.findOne({user: userId}).populate('cartItems.product')
+        
+        return res.status(StatusCodes.OK).render("Layout.ejs",{filename: "boxItem.ejs", product:product, productId, cart: cart})
+    }
+    res.status(StatusCodes.OK).render("Layout.ejs",{filename: "boxItem.ejs", product:product, productId, cart: null})
 }
 
 

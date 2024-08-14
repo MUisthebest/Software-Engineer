@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 await axios.patch('/cart', { productId: productId });
                 window.location.href = '/Cart';
             } catch (error) {
-                console.log(error.response.data.msg);
+                alert(error.response.data.msg);
             }
         });
     });
