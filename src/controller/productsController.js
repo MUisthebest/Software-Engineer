@@ -57,7 +57,8 @@ const getAllProducts = async(req,res)=>{
 
     result = result.skip(skip).limit(limit)
     const products = await result
-    res.status(StatusCodes.OK).json({products})
+    // res.status(StatusCodes.OK).json({products})
+    res.status(StatusCodes.OK).render("Layout.ejs",{filename: "search.ejs", products:products})
 }
 
 const createProduct = async (req,res)=>{

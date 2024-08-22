@@ -1,13 +1,23 @@
 <section class="Buy">
     <article>
         <nav>
+            <label for="cost"></label>
+            <form action="/search">
+                <select name="numericFilters" id="cars">
+                    <option value="price>20">>20</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                  </select>
+                  <input type="hidden" name="name" value="">
+                  <button>Filter</button>
+            </form>
             <div class="search_box">
                 <div class="search-container">
                     <form action="/search">
                         <input type="search" id = "input-box" name="name" placeholder="Search...">
                         <button><i class="fas fa-search"></i></button>
                     </form>
-                    
                 </div>
                 <div class="result_box"></div>
             </div>
@@ -26,29 +36,7 @@
             </div>
         </nav>
         <div class="main">
-            <div class="game1">
-                <div class="scroll_item_bt">
-                   <i class="fas fa-caret-left" id="game_bx_1_left_bt"></i>
-                   <i class="fas fa-caret-right" id="game_bx_1_right_bt"></i>
-                </div>
-                <h3><i class="fab fa-bandcamp"></i>Recommend For You</h3>
-                <div class="gameBx" id="game_bx_1">
-                    <% for (let i = 0; i < products.length; i++){ %>
-                        <div class="product">
-                            <a href="/products/<%=products[i].id%>" id="<%=products[i].id%>">
-                                <img src="data:image/<%=products[i].image.contentType%>;base64,<%=products[i].image.data.toString('base64')%>">
-                                <div class="content">
-                                    <div class="left">
-                                        <h5><%=products[i].name%></h5> 
-                                        <button class="buy_now" data-product-id="<%= i %>" productAll = "<%= products %>"><p class="p1">Buy Now</p><p class="p2"><%=products[i].price%> $</p></button>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    <% } %>  
-                </div>
-            </div>
-            <div class="game2">
+            <div class="game3">
                 <h3><i class="fas fa-bomb"></i>List Product</h3>
                 <div class="gameBx" id="game_bx_2">       
                     <% for (let i = 0; i < products.length; i++){ %>
@@ -58,21 +46,21 @@
                                 <div class="content">
                                     <div class="left">
                                         <h5><%=products[i].name%></h5> 
-                                        <button class="buy_now" data-product-id="<%= i %>" productAll = "<%= products %>"><p class="p1">Buy Now</p><p class="p2"><%=products[i].price%> $</p></button>
+                                        <button class="buy_now" data-product-id="<%= i %>" productAll = "<%= products %>"></button><p class="p1">Buy Now</p><p class="p2"><%=products[i].price%> $</p></button>
                                     </div>
                                 </div>
                             </a>
                         </div>
                     <% } %>              
                 </div>
-            </div>           
+            </div>      
         </div>
     </article>
 </section>
 <!-- <script src ="/js/importListUser.js"></script> -->
 <script src ="/js/handleScrollBar.js"></script>
 <script src ="/js/handleShopping.js"></script>
-<script src="/js/changeIndicate.js"></script>
+<script src="/js/changeIndicate.js"></script>  
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {

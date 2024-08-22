@@ -11,7 +11,6 @@ const {
     getAdminProduct, 
     getAdminUser, 
     getAdminOrder, 
-    getSearch,
     getContact
 } = require("../controller/routeController");
 const dotenv = require('dotenv');
@@ -35,8 +34,6 @@ router.get('/User_Admin', getAdminUser);
 router.get('/Product_Admin', getAdminProduct);
 
 router.get('/Order-Admin', getAdminOrder);
-
-router.get('/getSearch', getSearch);
 
 router.get('/Contact', getContact);
 

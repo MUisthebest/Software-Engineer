@@ -84,13 +84,14 @@ const getUser = async(req, res) =>{
     res.render("Layout.ejs",{filename: "User.ejs", products:products});
 }
 
-const getSearch = async(req, res) =>{
-    res.render("Layout.ejs",{ filename: "resultSearch.ejs"});
-}
-
 const getTrendding = async(req, res) =>{
     const products = await Product.find({}).sort('createdAt')
     res.render("Layout.ejs",{ filename: "Trendingpage.ejs", products:products});
+}
+
+const getSearch = async(req, res) =>{
+    const products = await Product.find({}).sort('createdAt')
+    res.render("Layout.ejs",{ filename: "search.ejs", products:products});
 }
 
 module.exports = {
