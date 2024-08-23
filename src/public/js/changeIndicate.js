@@ -8,16 +8,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     function updateSelectedButton(selected) {
-        buy.classList.remove('select');
-        cart.classList.remove('select');
-        login.classList.remove('select');
-        if (currentUrl.includes("Buy")) {
-            buy.classList.add('select');
-        } else if (currentUrl.includes("Cart")) {
-            cart.classList.add('select');
-        } else if (currentUrl.includes("Login")||currentUrl.includes("user")||currentUrl.includes("Register")) {
-            login.classList.add('select');
-        } 
+        if (buy || cart || login){
+            buy.classList.remove('select');
+            cart.classList.remove('select');
+            login.classList.remove('select');
+            if (currentUrl.includes("Buy")) {
+                buy.classList.add('select');
+            } else if (currentUrl.includes("Cart")) {
+                cart.classList.add('select');
+            } else if (currentUrl.includes("Login")||currentUrl.includes("user")||currentUrl.includes("Register")) {
+                login.classList.add('select');
+            } 
+        }
+            
+
         
     }
 

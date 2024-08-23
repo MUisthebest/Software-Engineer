@@ -116,6 +116,66 @@ ul{
   color: white;
 }
 
+.menu{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 480px;
+  height: 200px;
+  width: 200px;
+  bottom: 0%;
+  right: 0%;
+  z-index: 20;
+}
+
+.menu li{
+  position: absolute;
+  list-style: none;
+  border-radius: 50%;
+  left: 0;
+  transform-origin: 100px;
+  transition: 0.5s;
+  transition-delay: calc(0.05s * var(--i));
+  transform: rotate(0deg) translateX(80px);
+}
+
+.menu li a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: rotate(calc(360deg/-7*var(--i)));
+}
+
+.toggle{
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, .15);
+  font-size: 27px;
+  transition: 1.2s;
+}
+
+.menu.open .toggle{
+  transform: rotate(315deg);
+}
+
+.menu.open li{
+  transform: rotate(calc(360deg/7*var(--i)));
+  transition: .8s;
+}
+
 
 .indicate{
   position: absolute;
@@ -825,7 +885,6 @@ align-items: center;
   border-radius: 0px 10px 0px 0px;
   padding: 0 30px;
   align-items: center;
-  justify-content: space-between;
   display: flex;
   z-index: 1;
 }
@@ -859,10 +918,12 @@ align-items: center;
 }
 
 .search_box{
-  width: 40%;
   background: transparent;
   margin: 0% auto 0;
+  margin-right: 10%;
   border-radius: 5px;
+  flex-grow: 0.5;
+  flex-basis: 200;
 }
 
 nav .search-container {
@@ -873,9 +934,16 @@ nav .search-container {
   height: 3.5;
   margin: 5px 0 0 0;
   transition: .5s linear;
+  flex-grow: 2;
+  flex-basis: 200;
   justify-content: space-between;
   border-radius: 10px;
   display: flex;
+}
+
+nav .search-container form{
+  width: 100%;
+  cursor: pointer;
 }
 
 nav .search-container input {
@@ -919,6 +987,9 @@ nav .search-container button:hover {
   z-index: 15;
   position: absolute;
   justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 100px;
   align-items: center;
 }
 
@@ -939,7 +1010,7 @@ nav .search-container button:hover {
 
 .realted_box h3{
   width: 100%;
-  position: absolute;
+  position: relative;
   align-items: center;
   text-align: center;
 }
@@ -997,6 +1068,7 @@ nav .search-container button:hover {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  flex-grow: 1;
 }
 
 .hide5 {
@@ -1299,7 +1371,7 @@ nav .search-container button:hover {
   position: relative;
   width: 100%;
   height: 100%;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border: none;
   border-radius: 10px;
@@ -1332,9 +1404,11 @@ nav .search-container button:hover {
   height: 60%;
   position: relative;
   border: 1px solid #000000;
-  display: inline-flex;
   flex-wrap: wrap;
   overflow-y: auto;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
   background: linear-gradient(to right, #FDFFC2, #A3D8FF);
   gap: 16px;
   padding: 0px 2%;
@@ -1366,13 +1440,17 @@ nav .search-container button:hover {
   width: 100%;
   height: 80%;
   margin-top: 2%;
-  position: absolute;
+  position: relative;
   border: 1px solid #000000;
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 200px;
   flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  grid-gap: 10px;
   overflow-y: auto;
   background: linear-gradient(to right, #FDFFC2, #A3D8FF);
-  gap: 16px;
   padding: 0px 2%;
 }
 
@@ -1819,9 +1897,9 @@ header .buy_realted_box .buy_box .text_box h2{
 }
 
 header .buy_realted_box .purchase_box{
-  display: flex;
   align-items: center;
-  justify-content: center;
+  display: flex;
+  flex-direction: row;
   flex-wrap: nowrap;
   margin-top: 30px;
   width: 100%;
@@ -1831,6 +1909,7 @@ header .buy_realted_box .purchase_box a{
   text-decoration: none;
   padding: 10px 10px;
   background: #663da6;
+  flex-grow: 1;
   color: #fff;
   font-size: 18px;
   font-weight: 600;
@@ -1870,6 +1949,7 @@ header .buy_realted_box .purchase_box label{
   background: #ffffff;
   color: #000000;
   font-size: 18px;
+  flex-grow: 1;
   font-weight: 600;
   width: 100%;
   max-width: 250px;
@@ -1910,6 +1990,7 @@ header .buy_realted_box .purchase_box label label i{
   width: 10%;
   height: 35px;
   margin-right: 5px;
+  flex-grow: 1;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -1993,6 +2074,19 @@ header .buy_realted_box .purchase_box label label i{
   border: none;
   opacity: 1;
 }
+
+@media (max-width: 750px){
+  .Buy article .game2 .gameBx{
+    justify-content: center;
+    display: flex;
+  }
+  .Buy article .game3 .gameBx{
+    justify-content: center;
+    display: flex;
+  }
+}
+
+
 
 @media (min-width: 768px) {
 
