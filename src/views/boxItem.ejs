@@ -20,10 +20,20 @@
                     <p><%=product.price%></p>
                     <label><i class='bx bxs-coin'></i></label>
                 </label>
-                <input type="checkbox" id="love" class="but">
-                <label class="luv" for="love" id="<%=productId%>">
-                    <span class="heart" id="love"></span>
-                </label>
+                <% let products = wishlist.wishlist; %>
+                <% let isProductInWishlist = products.some(product => product.product.id === productId); %>
+                <% if (isProductInWishlist) { %>
+                    <input type="checkbox" id="love" class="but" checked>
+                    <label class="luv" for="love" id="<%= productId %>">
+                        <span class="heart heart-active" id="love"></span>
+                    </label>                    
+                    <% } 
+                    else { %>
+                    <input type="checkbox" id="love" class="but">
+                    <label class="luv" for="love" id="<%= productId %>">
+                        <span class="heart" id="love"></span>
+                    </label>
+                <% } %>                     
             </div>
         </div>
         <div class="realted_box">

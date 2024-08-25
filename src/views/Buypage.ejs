@@ -20,8 +20,21 @@
                 <div id="cart-dropdown" class="dropdown-content hide5">
                     <h3>Your Cart</h3>
                     <ul id="cart-items">
+                        <% if (cart && cart.cartItems) { %>
+                            <%let products = cart.cartItems%>
+                            <%for (let i = 0; i < products.length; i++) { %>
+                                <li>
+                                    <img src="data:image/<%=products[i].product.image.contentType%>;base64,<%=products[i].product.image.data.toString('base64')%>" alt="<%=products[i].product.name%>">
+                                    <span><%=products[i].product.name%> - <%= products[i].product.price %> * <%= products[i].quantity %> = <%= products[i].product.price * products[i].quantity %></span>
+                                    <button class="remove-item" data-item-id="<%=products[i].product.id%>">Remove</button>
+                                </li>
+                            <%} %>
+        
+                        <%} else { %>
+                            <div>You have to login to view your cart</div>
+                        <%} %>                        
                     </ul>
-                    <button id="checkout-button">Checkout</button>
+                    <button id="checkout-button" onclick="toCart()">Checkout</button>
                 </div>
                 <button id="active_battery"><i class="fas fa-battery-three-quarters" id="battery_icon"></i><span id="battery_level">84%</span></button>
             </div>
@@ -33,15 +46,25 @@
                    <i class="fas fa-caret-right" id="game_bx_1_right_bt"></i>
                 </div>
                 <h3><i class="fab fa-bandcamp"></i>Recommend For You</h3>
+                <% 
+                    function shuffleArray(array) {
+                        for (let i = array.length - 1; i > 0; i--) {
+                            const j = Math.floor(Math.random() * (i + 1));
+                            [array[i], array[j]] = [array[j], array[i]];
+                        }
+                        return array;
+                    }
+                    const randomProducts = shuffleArray([...products]).slice(0, 10);
+                %>
                 <div class="gameBx" id="game_bx_1">
-                    <% for (let i = 0; i < products.length; i++){ %>
+                    <% for (let i = 0; i < randomProducts.length; i++){ %>
                         <div class="product">
-                            <a href="/products/<%=products[i].id%>" id="<%=products[i].id%>">
-                                <img src="data:image/<%=products[i].image.contentType%>;base64,<%=products[i].image.data.toString('base64')%>">
+                            <a href="/products/<%=randomProducts[i].id%>" id="<%=randomProducts[i].id%>">
+                                <img src="data:image/<%=randomProducts[i].image.contentType%>;base64,<%=randomProducts[i].image.data.toString('base64')%>">
                                 <div class="content">
                                     <div class="left">
                                         <h5><%=products[i].name%></h5> 
-                                        <button class="buy_now" data-product-id="<%= i %>" productAll = "<%= products %>"><p class="p1">Buy Now</p><p class="p2"><%=products[i].price%> $</p></button>
+                                        <button class="buy_now" data-product-id="<%=randomProducts[i].id%>" productAll = "<%= randomProducts %>"><p class="p1">Buy Now</p><p class="p2"><%=randomProducts[i].price%> $</p></button>
                                     </div>
                                 </div>
                             </a>
@@ -59,7 +82,7 @@
                                 <div class="content">
                                     <div class="left">
                                         <h5><%=products[i].name%></h5> 
-                                        <button class="buy_now" data-product-id="<%= i %>" productAll = "<%= products %>"><p class="p1">Buy Now</p><p class="p2"><%=products[i].price%> $</p></button>
+                                        <button class="buy_now" data-product-id="<%=products[i].id%>" productAll = "<%= products %>"><p class="p1">Buy Now</p><p class="p2"><%=products[i].price%> $</p></button>
                                     </div>
                                 </div>
                             </a>
@@ -70,61 +93,22 @@
         </div>
     </article>
 </section>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+  integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
 <!-- <script src ="/js/importListUser.js"></script> -->
 <script src ="/js/handleScrollBar.js"></script>
 <script src ="/js/handleShopping.js"></script>
 <script src="/js/changeIndicate.js"></script>
-
+<script src="/js/addOnetoCart.js"> </script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const buyNowButtons = document.querySelectorAll('.buy_now');
-        const cartIcon = document.getElementById('cart');
-        const cartDropdown = document.getElementById('cart-dropdown');
-        const cartItems = document.getElementById('cart-items');
-        const cartCount = document.getElementById('cart-count');
-    
-        let cart = [];
-    
-        buyNowButtons.forEach(button => {
-            button.addEventListener('click', function(event) {
-                event.preventDefault();
-                const productId = this.getAttribute('data-product-id');
-                const productName = this.parentElement.querySelector('h5').textContent;
-                const productPrice = this.querySelector('.p2').textContent;
-                const productImage = this.closest('.product').querySelector('img').src;
-                addToCart(productId, productName, productPrice, productImage);
-            });
-        });
-    
-        cartIcon.addEventListener('click', function() {
-            cartDropdown.classList.toggle('hide5');
-        });
-    
-        function addToCart(productId, productName, productPrice, productImage) {
-            const existingProduct = cart.find(item => item.id === productId);
-            if (existingProduct) {
-                existingProduct.quantity += 1;
-            } else {
-                cart.push({ id: productId, name: productName, price: productPrice, image: productImage, quantity: 1 });
-            }
-            updateCartDisplay()
-        }
-        function updateCartDisplay() {
-            cartItems.innerHTML = '';
-            cart.forEach(item => {
-                const li = document.createElement('li');
-                li.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}">
-                    <span>${item.name} (${item.quantity}) - ${item.price}</span>
-                `;
-                cartItems.appendChild(li);
-            });
-        }    
-    });
-    
-    
+    function toCart(){
+        window.location.href = "/Cart"
+    }
 </script>
-
 
 
 

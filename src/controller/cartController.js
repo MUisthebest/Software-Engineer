@@ -50,6 +50,7 @@ const createCart = async (req, res) => {
         }
 
         cart.cartItems.push(singleCartItem)
+        cart.totalPrice += quantity * product.price
         await cart.save()
         
         return res.status(StatusCodes.OK).json({cart})
@@ -86,11 +87,12 @@ const removeItemFromCart = async (req, res) =>{
     if (itemIndex === -1) {
         throw new NotFoundError('Item not found in the cart!');
     }
-
-    // Remove the item from the cart
+    const itemPrice = cart.cartItems[itemIndex].product;
+    const quantity = cart.cartItems[itemIndex].quantity;
+    const product = await Product.findOne({_id: itemPrice});
+    const priceMove = product.price * quantity;
+    cart.totalPrice -= priceMove;
     cart.cartItems.splice(itemIndex, 1);
-
-    // Save the updated cart
     await cart.save();
 
     res.status(200).json({cart})

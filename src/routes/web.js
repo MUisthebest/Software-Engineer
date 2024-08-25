@@ -2,9 +2,6 @@ const express = require('express');
 const router = express.Router();
 const { 
     getHomePage, 
-    getShopFreePage, 
-    getShopBuyPage, 
-    getLovePage, 
     getTrendding, 
     getBoxItem, 
     getAdmin, 
@@ -13,6 +10,8 @@ const {
     getAdminOrder, 
     getContact
 } = require("../controller/routeController");
+const {createWishlist, removeItemFromWishlist, getWishlist} = require('../controller/wishlistController')
+
 const dotenv = require('dotenv');
 
 
@@ -21,7 +20,6 @@ router.get('/', getHomePage);
 
 router.get('/Trending', getTrendding);
 
-router.get('/Love', getLovePage);
 
 router.get('/boxItem', getBoxItem);
 
