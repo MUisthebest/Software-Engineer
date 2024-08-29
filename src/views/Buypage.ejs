@@ -63,7 +63,7 @@
                                 <img src="data:image/<%=randomProducts[i].image.contentType%>;base64,<%=randomProducts[i].image.data.toString('base64')%>">
                                 <div class="content">
                                     <div class="left">
-                                        <h5><%=products[i].name%></h5> 
+                                        <h5><%=randomProducts[i].name%></h5> 
                                         <button class="buy_now" data-product-id="<%=randomProducts[i].id%>" productAll = "<%= randomProducts %>"><p class="p1">Buy Now</p><p class="p2"><%=randomProducts[i].price%> $</p></button>
                                     </div>
                                 </div>
