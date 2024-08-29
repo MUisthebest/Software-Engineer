@@ -2,9 +2,9 @@
     <aside id = "wishlist">
         <h2 class="center">My Wishlist</h2>
     </aside>    
-    <% if (wishlist && wishlist.wishlist) { %>
+    <% if (wishlist && wishlist.items) { %>
     <div class="gameBx" id="game_bx_2">     
-        <%let products = wishlist.wishlist%>  
+        <%let products = wishlist.items%>  
         <% for (let i = 0; i < products.length; i++){ %>
             <div class="product">
                 <a href="/products/<%=products[i].product.id%>" id="<%=products[i].product.id%>" class="wish">

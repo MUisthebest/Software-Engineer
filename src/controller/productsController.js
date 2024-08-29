@@ -103,7 +103,7 @@ const getProduct = async (req,res)=>{
     if (cookies && Object.keys(req.cookies).length !== 0){
         const userId = JSON.parse(cookies.user).userId
         const cart = await Cart.findOne({user: userId}).populate('cartItems.product')
-        let wishlist = await Wishlist.findOne({ userID: userId }).populate('wishlist.product');
+        const wishlist = await Wishlist.findOne({ userID: userId }).populate('items.product');
         return res.status(StatusCodes.OK).render("Layout.ejs",{filename: "boxItem.ejs", product:product, productId, cart: cart, wishlist: wishlist})
     }
     res.status(StatusCodes.OK).render("Layout.ejs",{filename: "boxItem.ejs", product:product, productId, cart: null, wishlist: null})

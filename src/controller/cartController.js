@@ -11,7 +11,7 @@ const getCart = async (req,res)=>{
     }
 
     res.status(StatusCodes.OK).render('Layout.ejs', {filename: "Cartpage.ejs", cart: cart})
-    // res.status(StatusCodes.OK).json({products: cart.cartItems})
+    // res.status(StatusCodes.OK).json({cart})
 }
 
 const createCart = async (req, res) => {
@@ -71,10 +71,8 @@ const createCart = async (req, res) => {
 const removeItemFromCart = async (req, res) =>{
     const userId = req.user.userId;
     const productId = req.body.productId
-    
-    const cart = await Cart.findOne(
-        {user: userId}
-    )
+
+    const cart = await Cart.findOne({user: userId})
 
     if (!cart){
         throw new NotFoundError('Your cart has no items!')
@@ -87,9 +85,8 @@ const removeItemFromCart = async (req, res) =>{
     if (itemIndex === -1) {
         throw new NotFoundError('Item not found in the cart!');
     }
-    const itemPrice = cart.cartItems[itemIndex].product;
     const quantity = cart.cartItems[itemIndex].quantity;
-    const product = await Product.findOne({_id: itemPrice});
+    const product = await Product.findOne({_id: productId});
     const priceMove = product.price * quantity;
     cart.totalPrice -= priceMove;
     cart.cartItems.splice(itemIndex, 1);

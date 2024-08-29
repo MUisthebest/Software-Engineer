@@ -5,70 +5,77 @@ const {NotFoundError, BadRequestError} = require('../errors')
 
 const getWishlist = async (req,res)=>{
     const userId = req.user.userId;
-    try {
-        let wishlist = await Wishlist.findOne({ userID: userId }).populate('wishlist.product');
-        if (wishlist) {
-            return res.status(StatusCodes.OK).render('Layout.ejs', {filename: "Lovepage.ejs", wishlist: wishlist})
-        } else {
-            return res.status(StatusCodes.OK).render('Layout.ejs', {filename: "Lovepage.ejs", wishlist: null})
-        }
-    } catch (error) {
-        console.error('Error fetching wishlist:', error);
+    const wishlist = await Wishlist.findOne({userID: userId}).populate('items.product')
+
+    if (!wishlist || wishlist.items.length < 1){
+        return res.status(StatusCodes.OK).render('Layout.ejs',{filename: "Lovepage.ejs", wishlist:null})
     }
+
+    res.status(StatusCodes.OK).render('Layout.ejs', {filename: "Lovepage.ejs", wishlist: wishlist})
 }
 
 const createWishlist = async (req, res) => {
     const userId = req.user.userId;
     const {productId} = req.body;
+    const wishlist = await Wishlist.findOne({userID: userId});
     const product = await Product.findOne({_id: productId});
 
     if (!product){
         throw new NotFoundError(`No product with id ${productId}`)
     }
 
-    try {
-        let wishlist = await Wishlist.findOne({ userID: userId });
-        const existingProduct = await wishlist.wishlist.find((wishlist)=>wishlist.product == productId)
-        if (!wishlist) {
-            const newWishList = await Wishlist.create({                
-            wishlist:[{
-                product: productId,
-            }],
-            user: userId
-        })
-            return res.status(StatusCodes.CREATED).json({newWishList})
-        }
-        const SingleProductSchema = {
-            product: productId
-            }
-        if (!existingProduct){
-            wishlist.wishlist.push(SingleProductSchema);
+    if (wishlist){
+        const existingProduct = await wishlist.items.find((item)=>item.product == productId)
+        if (existingProduct){
+            const itemIndex = wishlist.items.findIndex(
+                (item) => item.product.toString() === productId
+            );
+            wishlist.items.splice(itemIndex, 1);
             await wishlist.save();
+
+            return res.status(StatusCodes.OK).json({wishlist})
         }
-        return res.status(StatusCodes.CREATED).json({wishlist})
-    } catch (error) {
-        console.error('Error adding item to wishlist:', error);
+        const singleCartItem = {
+            product: productId,
+        }
+
+        wishlist.items.push(singleCartItem)
+        await wishlist.save()
+        
+        return res.status(StatusCodes.OK).json({wishlist})
     }
 
+    const newWishlist = await Wishlist.create({
+        items:[{
+            product: productId,
+        }],
+        userID: userId,
+    })
+
+    res.status(StatusCodes.CREATED).json({newWishlist})
 }
 
 const removeItemFromWishlist = async (req, res) =>{
     const userId = req.user.userId;
     const productId = req.body.productId
     
-    try {
-        const wishlist = await Wishlist.findOne({ userID: userId });
+    const wishlist = await Wishlist.findOne({user: userId})
 
-        if (wishlist) {
-            wishlist.wishlist = wishlist.wishlist.filter(item => item.product.toString() !== productId);
-            await wishlist.save();
-        } else {
-            alert('Wishlist not found');
-        }
-    } catch (error) {
-        console.error('Error removing item from wishlist:', error);
+    if (!wishlist){
+        throw new NotFoundError('Your wishlist has no items!')
     }
-    res.status(200).json({cart})
+
+    const itemIndex = wishlist.items.findIndex(
+        (item) => item.product.toString() === productId
+    );
+
+    if (itemIndex === -1) {
+        throw new NotFoundError('Item not found in the wishlist!');
+    }
+    wishlist.items.splice(itemIndex, 1);
+    await wishlist.save();
+
+    res.status(200).json({wishlist})
 }
 
 module.exports = {
