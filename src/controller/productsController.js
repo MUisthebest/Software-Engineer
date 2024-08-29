@@ -67,9 +67,12 @@ const getAllProducts = async(req,res)=>{
     const products = await result
     // res.status(StatusCodes.OK).json({products})
     const cookies = req.cookies
-    const userId = JSON.parse(cookies.user).userId
-    const cart = await Cart.findOne({user: userId}).populate('cartItems.product')
-    res.status(StatusCodes.OK).render("Layout.ejs",{filename: "search.ejs", products:products, cart: cart})
+    if (cookies && Object.keys(req.cookies).length !== 0){
+        const userId = JSON.parse(cookies.user).userId
+        const cart = await Cart.findOne({user: userId}).populate('cartItems.product')
+        return res.status(StatusCodes.OK).render("Layout.ejs",{filename: "search.ejs", products:products, cart: cart})
+    }
+    res.status(StatusCodes.OK).render("Layout.ejs",{filename: "search.ejs", products:products, cart: null})
 }
 
 const createProduct = async (req,res)=>{
