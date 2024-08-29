@@ -15,9 +15,10 @@ const connectDB = require('./db/connect')
 // routes
 const webRoutes = require('./routes/web');
 const authRouter = require('./routes/auth');
-const productsRouter = require('./routes/products')
-const usersRouter = require('./routes/users')
-const cartRouter = require('./routes/cart')
+const productsRouter = require('./routes/products');
+const usersRouter = require('./routes/users');
+const cartRouter = require('./routes/cart');
+const wishlistRouter = require('./routes/wishlist');
 
 // error handler
 const notFoundMiddleware = require('./middleware/not-found');
@@ -49,6 +50,7 @@ app.use('/', authRouter);
 app.use('/', productsRouter);
 app.use('/', usersRouter);
 app.use('/', cartRouter);
+app.use('/', wishlistRouter);
 
 configViewEngine(app);
 
