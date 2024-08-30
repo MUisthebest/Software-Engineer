@@ -1,24 +1,13 @@
 const mongoose = require('mongoose');
-
-const SingleProductSchema = mongoose.Schema({
-    product: {
-        type: mongoose.Schema.ObjectId,
-        ref: 'Product',
-        required: true,
-    },
-    quantity: {
-        type: Number,
-        required: true,
-    }
-});
+const SingleItemSchema = require('./SingleItem')
 
 const OrderSchema = mongoose.Schema({
-    userID: {
+    user: {
         type: mongoose.Schema.ObjectId,
         ref: 'User',
         required: true,
     },
-    products: [SingleProductSchema],
+    products: [SingleItemSchema],
     totalPrice: {
         type: Number,
         required: true,

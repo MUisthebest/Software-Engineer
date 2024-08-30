@@ -95,8 +95,19 @@ const removeItemFromCart = async (req, res) =>{
     res.status(200).json({cart})
 }
 
+const removeSingleCart = async (req, res)=>{
+    const userId = req.user.userId;
+    const cart = await Cart.findOneAndDelete({user: userId});
+    if (!cart){
+        throw new NotFoundError(`There is no carts of user ${userId}`)
+    }
+
+    res.status(StatusCodes.OK).json({cart})
+}
+
 module.exports = {
     getCart,
     createCart,
-    removeItemFromCart
+    removeItemFromCart,
+    removeSingleCart,
 }
