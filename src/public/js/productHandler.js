@@ -5,7 +5,6 @@ const removeBtns = document.querySelectorAll('.remove-item')
 document.addEventListener('DOMContentLoaded', function() {
 
     const productId = window.location.pathname.split('/').pop();
-    let purchasedItems = {};
 
     purchaseBtn.addEventListener('click', async (e) => {
         e.preventDefault();

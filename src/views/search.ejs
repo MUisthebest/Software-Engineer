@@ -2,20 +2,10 @@
     <article >
         <nav>
             <label for="cost"></label>
-            <form action="/search">
-                <select name="numericFilters" id="cars">
-                    <option value="price>20">>20</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
-                    <option value="audi">Audi</option>
-                  </select>
-                  <input type="hidden" name="name" value="">
-                  <button>Filter</button>
-            </form>
             <div class="search_box">
                 <div class="search-container">
                     <form action="/search">
-                        <input type="search" id = "input-box" name="name" placeholder="Search...">
+                        <input type="search" id="input-box" name="name" placeholder="Search...">
                         <button><i class="fas fa-search"></i></button>
                     </form>
                 </div>
@@ -50,6 +40,17 @@
         </nav>
         <div class="game3">
             <h3><i class="fas fa-bomb"></i>List Product</h3>
+            <form action="/search">
+                <input type="hidden" name="name" id="hidden-search" value="">
+                <select name="numericFilters" id="price">
+                    <option value="">Price</option>
+                    <option value="price<50">Under $50</option>
+                    <option value="price<100">Under $100</option>
+                    <option value="price<200">Under $200</option>
+                    <option value="price>=200">Above $200</option>
+                </select>
+                <button id="filter">Filter</button>
+            </form>
             <div class="gameBx" id="game_bx_2">       
                 <% for (let i = 0; i < products.length; i++){ %>
                     <div class="product">
@@ -84,4 +85,10 @@
         window.location.href = "/Cart"
     }
 </script>
+<script>
+    const url = new URL(window.location.href)
+    const params = new URLSearchParams(url.search)
+    const nameValue = params.get('name');
 
+    document.getElementById('hidden-search').value = nameValue
+</script>
