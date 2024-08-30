@@ -19,6 +19,7 @@ const productsRouter = require('./routes/products');
 const usersRouter = require('./routes/users');
 const cartRouter = require('./routes/cart');
 const wishlistRouter = require('./routes/wishlist');
+const orderRouter = require('./routes/orders');
 
 // error handler
 const notFoundMiddleware = require('./middleware/not-found');
@@ -45,12 +46,15 @@ app.use(cookieParser(process.env.JWT_SECRET));
 
 
 
-app.use('/', webRoutes);
-app.use('/', authRouter);
-app.use('/', productsRouter);
-app.use('/', usersRouter);
-app.use('/', cartRouter);
-app.use('/', wishlistRouter);
+app.use('/', 
+    webRoutes, 
+    authRouter, 
+    productsRouter, 
+    usersRouter, 
+    cartRouter, 
+    wishlistRouter, 
+    orderRouter
+);
 
 configViewEngine(app);
 

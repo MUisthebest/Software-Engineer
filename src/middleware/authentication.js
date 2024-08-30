@@ -1,4 +1,4 @@
-const {UnauthenticatedError, ForbiddenError} = require('../errors')
+const {UnauthenticatedError, ForbiddenError, CustomAPIError} = require('../errors')
 const {isTokenValid} = require('../utils')
 
 const authenticationMiddleware = async (req,res,next)=>{
@@ -16,4 +16,13 @@ const authenticationMiddleware = async (req,res,next)=>{
     }
 }
 
-module.exports = authenticationMiddleware
+const authorizePermissions = (...roles)=>{
+    return (req, res, next) => {
+        if (!roles.includes(req.user.role)){
+            throw new ForbiddenError('Unauthorized to access this route');
+        }
+        next();
+    }
+}
+
+module.exports = {authenticationMiddleware, authorizePermissions}

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {register, login, logout, dashboard} = require('../controller/authController')
-const authMiddleware = require('../middleware/authentication')
+const {authenticationMiddleware} = require('../middleware/authentication')
 
 
 const {
@@ -10,7 +10,7 @@ const {
 
 router.route('/login').get(getLogin).post(login)
 router.route('/register').get(getRegister).post(register)
-router.route('/dashboard').get(authMiddleware, dashboard)
+router.route('/dashboard').get(authenticationMiddleware, dashboard)
 router.route('/logout').get(logout)
 
 module.exports = router

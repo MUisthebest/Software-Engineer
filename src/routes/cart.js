@@ -1,9 +1,13 @@
 const express = require('express');
 const router = express.Router()
-const authMiddleware = require('../middleware/authentication')
+const {authenticationMiddleware} = require('../middleware/authentication')
 
-const {createCart, getCart, removeItemFromCart} = require('../controller/cartController')
+const {createCart, getCart, removeItemFromCart, removeSingleCart} = require('../controller/cartController')
 
-router.route('/cart').post(authMiddleware, createCart).get(authMiddleware, getCart).patch(authMiddleware, removeItemFromCart);
+router.route('/cart')
+.post(authenticationMiddleware, createCart)
+.get(authenticationMiddleware, getCart)
+.patch(authenticationMiddleware, removeItemFromCart)
+.delete(authenticationMiddleware, removeSingleCart);
 
 module.exports = router
