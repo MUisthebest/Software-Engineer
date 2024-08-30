@@ -9,8 +9,7 @@ const getAllOrders = async(req,res)=>{
     if (!orders){
         throw new NotFoundError('There is no orders!')
     }
-
-    res.status(StatusCodes.OK).json({orders})
+    res.status(StatusCodes.OK).render("Admin.ejs",{filename: "Order-Admin.ejs", orders: orders})
 }
 
 const getAllOrdersOfUser = async(req, res)=>{
@@ -18,8 +17,7 @@ const getAllOrdersOfUser = async(req, res)=>{
     if (!orders){
         throw new NotFoundError('You currently have no orders!')
     }
-
-    res.status(StatusCodes.OK).json({orders})
+    res.status(StatusCodes.OK).render("Layout.ejs",{filename: "Profile.ejs", orders: orders})
 }
 
 const createOrder = async(req,res)=>{

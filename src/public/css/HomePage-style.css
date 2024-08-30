@@ -828,7 +828,7 @@ align-items: center;
 
 #BG_Login{
   min-height: 100vh;
-  background: url('../Media/BG-Login.png') no-repeat;
+  background: #A3D8FF;
   z-index: var(0);
   background-position: center;
   background-size: cover;
@@ -1486,7 +1486,7 @@ nav .search-container button:hover {
   position: relative;
   transition: .05s ease-in-out;
   background-color: var(--color-2);
-  background-image: linear-gradient(rgb(0,0,0,0.15),rgba(0, 0, 0, 0.1)),url("../Media/BG-Login.png");
+  background: #A3D8FF;
   outline: none;
   backdrop-filter: blur(100px);
   background-size: cover;
@@ -1499,7 +1499,7 @@ nav .search-container button:hover {
 
 .wrapper{
   width: 320px;
-  background-color: rgba(82, 126, 222, 0.25);
+  background: linear-gradient(45deg, #9c9078, #87abc5);
   color: #fff;
   border-radius: 10px;
   backdrop-filter: blur(35px);
@@ -1509,6 +1509,7 @@ nav .search-container button:hover {
 .wrapper h1{
 font-size: 36px;
 text-align: center;
+font-family: "Poppins", sans-serif;
 }
 
 .wrapper .input-box{
@@ -1516,6 +1517,7 @@ position: relative;
 width: 100%;
 height: 50px;
 margin: 30px 0px;
+font-family: "Poppins", sans-serif;
 }
 
 .input-box input{
@@ -1528,10 +1530,12 @@ border: 2px solid rgb(255,255,255,.2);
 border-radius: 40px;
 padding: 20px 45px 20px 20px;
 color: #fff;
+font-family: "Poppins", sans-serif;
 }
 
 .input-box input::placeholder{
 color: #fff;
+font-family: "Poppins", sans-serif;
 }
 
 .input-box i{
@@ -1548,6 +1552,7 @@ color: #fff;
   font-size: 14.5px;
   margin: -15px 5px 15px;
   padding: 0 10px;
+  font-family: "Poppins", sans-serif;
 }
 
 .remmeber-forgot label input{
@@ -1558,6 +1563,7 @@ color: #fff;
 .remmeber-forgot a{
 color: #fff;
 text-decoration: none;
+font-family: "Poppins", sans-serif;
 }
 
 .remmeber-forgot a:hover{
@@ -1568,11 +1574,10 @@ text-decoration: underline;
   width: 100%;
   height: 45px;
   background: transparent;
-  border: none;
+  border: 1px solid #fff;
   outline: none;
   border-radius: 40px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  border: 1px solid #000;
   cursor: pointer;
   font-size: 16px;
   color: #ffffff;
@@ -1585,12 +1590,14 @@ text-align: center;
 margin-top: 20px;
 padding: 10px 20px;
 justify-content: space-between;
+font-family: "Poppins", sans-serif;
 }
 
 .wrapper .register_link p{
   width: 100%;
   justify-content: space-around;
   display: flex;
+  font-family: "Poppins", sans-serif;
 }
 
 .wrapper .location_users{
@@ -1665,7 +1672,7 @@ margin-bottom: 30px;
   left:0;
   width: 100%;
   height: 100%;
-  background: url('../Media/BG-Login.png') no-repeat;
+  background: linear-gradient(45deg, #f2caca, #8baabd);
   box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
   z-index: var(-100);
   background-position: center;
@@ -2032,13 +2039,13 @@ header .buy_realted_box .purchase_box label label i{
 
 .nav__menu ul li:nth-child(3).select ~ .indicate{
   transform: translateX(160px);
-  background: linear-gradient(to right,var(--color-6), #912e2e);
+  background: #A3D8FF;
   opacity: 1;
   backdrop-filter: blur(50px);
 }
 
 .nav__menu ul li:nth-child(3).select ~ .indicate::after{
-  box-shadow: -13px 0 0 #912e2e;
+  box-shadow: -13px 0 0 #A3D8FF;
   outline: none;
   backdrop-filter: blur(50px);
   border: none;
@@ -2046,7 +2053,7 @@ header .buy_realted_box .purchase_box label label i{
 }
 
 .nav__menu ul li:nth-child(3).select ~ .indicate::before{
-  box-shadow: 13px 0 0 var(--color-6);
+  box-shadow: 13px 0 0 #A3D8FF;
   outline: none;
   backdrop-filter: blur(50px);
   border: none;
@@ -2877,7 +2884,7 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
   width: calc(100%);
   position: relative;
   transition: .05s ease-in-out;
-  background: url('../Media/BG-Login.png') no-repeat;
+  background: #A3D8FF;
   z-index: var(0);
   background-position: center;
   background-size: cover;

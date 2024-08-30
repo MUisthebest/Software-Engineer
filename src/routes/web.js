@@ -31,8 +31,6 @@ router.get('/User_Admin', getAdminUser);
 
 router.get('/Product_Admin', getAdminProduct);
 
-router.get('/Order-Admin', getAdminOrder);
-
 router.get('/Contact', getContact);
 
 module.exports = router;

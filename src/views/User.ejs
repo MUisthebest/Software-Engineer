@@ -1,5 +1,5 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<section class="Profile w-100  px-4 py-5" style="background: url('../Media/BG-Login.png') no-repeat; border-radius: .5rem .5rem 0 0; height: 100vh;">
+<section class="Profile w-100  px-4 py-5" style="background: #A3D8FF; border-radius: .5rem .5rem 0 0; height: 100vh;">
     <div class="row d-flex justify-content-center">
       <div class="col col-md-9 col-lg-7 col-xl-6">
         <div class="card" style="border-radius: 15px;">
@@ -23,7 +23,8 @@
                   </div>
                 </div>
                 <div class="d-flex pt-1">
-                  <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary me-1 flex-grow-1 mr-2" onclick="changeURL()">Edit Profile</button>
+                  <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary me-1 flex-grow-1 mr-2" onclick="changeEdit()">Edit Profile</button>
+                  <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary me-1 flex-grow-1 mr-2" onclick="changeView()">View Ordered</button>
                   <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary flex-grow-1" onclick="logout()">Logout</button>
                 </div>
               </div>
@@ -43,11 +44,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript"> </script> 
     <script>
-      function changeURL() {
+      function changeView() {
           const currentURL = window.location.href;
-          const newURL = currentURL.replace('/user/', '/profile/');
+          const newURL = currentURL.replace('/user/', '/order/');
           window.location.href = newURL;
       }
+      function changeEdit() {
+        const currentURL = window.location.href;
+        const newURL = currentURL.replace('/user/', '/profile/');
+        window.location.href = newURL;
+      }
+      
     </script>
     <script>
       async function logout() {

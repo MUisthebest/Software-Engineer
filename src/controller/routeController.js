@@ -71,10 +71,6 @@ const getAdminProduct = async(req, res) =>{
     res.render("Admin.ejs",{filename: "Product-Admin.ejs", products: products});
 }
 
-const getAdminOrder = (req, res) =>{
-    res.render("Admin.ejs",{filename: "Order-Admin.ejs"});
-}
-
 // const displayDatabase = (req, res) =>{
 //     res.render("Database.ejs",{listItems: listOfItems});
 // }
@@ -105,7 +101,6 @@ module.exports = {
     getAdmin, 
     getAdminProduct, 
     getAdminUser, 
-    getAdminOrder,
     getTrendding,
     getUser,
     getSearch,

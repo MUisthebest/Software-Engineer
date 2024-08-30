@@ -19,7 +19,7 @@ const getSingleProfile = async (req,res)=>{
     if (!user){
         throw new NotFoundError(`No user with id: ${userId}`)
     }
-    res.status(StatusCodes.OK).render("Layout.ejs",{filename: "Profile.ejs", user:user, userId})
+    res.status(StatusCodes.OK).render("Layout.ejs",{filename: "editProfile.ejs", user:user, userId})
 }
 
 const updateUserPassword = async (req,res)=>{
