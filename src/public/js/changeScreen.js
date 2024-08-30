@@ -32,55 +32,36 @@ const handleResize = () => {
     }
 }
 
+let newX = 0, newY = 0, startX = 0, startY = 0;
+
+const card = document.querySelector('.menu')
+
 document.addEventListener("DOMContentLoaded", function() {
+
+card.addEventListener('mousedown', mouseDown)
+
+function mouseDown(e){
+    startX = e.clientX
+    startY = e.clientY
+
+    document.addEventListener('mousemove', mouseMove)
+    document.addEventListener('mouseup', mouseUp)
+}
+
+function mouseMove(e){
+    newX = startX - e.clientX 
+    newY = startY - e.clientY 
+  
+    startX = e.clientX
+    startY = e.clientY
+
+    card.style.top = (card.offsetTop - newY) + 'px'
+    card.style.left = (card.offsetLeft - newX) + 'px'
+}
+
+function mouseUp(e){
+    document.removeEventListener('mousemove', mouseMove)
+}
     window.addEventListener('resize', handleResize);
     handleResize()
 });
-
-
-// function adjustNavMenu() {
-//     const navList = document.querySelector('.nav__list');
-//     const screenWidth = window.innerWidth;
-//     const navMenu = document.querySelector('.nav__menu');
-//     navMenu.classList.toggle('remove-menu')
-//     if (screenWidth <= 1118) {
-//         if (!document.querySelector('.choose4')) {
-//             const btn4 = document.createElement('li');
-//             btn4.className = 'choose4';
-//             btn4.innerHTML = '<a href="/Trending" class="nav__link"><i class="bx bx-trending-up"></i></a>';
-            
-//             const btn5 = document.createElement('li');
-//             btn5.className = 'choose5';
-//             btn5.innerHTML = '<a href="/Contact" class="nav__link"><i class="bx bxs-contact"></i></a>';
-            
-//             const btn6 = document.createElement('li');
-//             btn6.className = 'choose6';
-//             btn6.innerHTML = '<a href="/" class="nav__link"><i class="bx bxs-home-circle"></i></a>';
-
-//             const btn7 = document.createElement('li');
-//             btn7.className = 'choose7';
-//             btn7.innerHTML = '<a href="/Love" class="nav__link"><i class="bx bxs-book-heart"></i></a>';
-            
-//             const indicate = document.querySelector('.indicate');
-//             navList.insertBefore(btn4, indicate);
-//             navList.insertBefore(btn5, indicate);
-//             navList.insertBefore(btn6, indicate);
-//             navList.insertBefore(btn7, indicate);
-//         }
-//     } else {
-//         const btn4 = document.querySelector('.choose4');
-//         const btn5 = document.querySelector('.choose5');
-//         const btn6 = document.querySelector('.choose6');
-//         const btn7 = document.querySelector('.choose7');
-//         navMenu.classList.toggle('remove-menu')
-//         if (btn4) btn4.remove();
-//         if (btn5) btn5.remove();
-//         if (btn6) btn6.remove();
-//         if (btn7) btn7.remove();
-//     }
-
-// }
-
-// adjustNavMenu();
-
-// window.addEventListener('resize', adjustNavMenu);
