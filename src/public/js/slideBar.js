@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const userId = jsonData.userId;
             changeObject.innerHTML = `
                 <li class="choose3">
-                    <a href="/user/${userId}" class="nav__link"><i class='bx bxs-user-badge'></i></a>
+                    <a href="/user" class="nav__link"><i class='bx bxs-user-badge'></i></a>
                 </li> 
             `
         }

@@ -23,7 +23,7 @@
                 <div class="tab-content">
                     <div class="tab-pane fade active show" id="account-general">
                         <div class="card-body media align-items-center">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp" alt
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt
                                 class="d-block ui-w-80">
                             <div class="media-body ml-4">
                                 <label class="btn btn-outline-primary">
@@ -36,22 +36,24 @@
                         </div>
                         <hr class="border-light m-0">
                         <div class="card-body">
-                            <div class="form-group">
-                                <label class="form-label">Username</label>
-                                <input type="text" class="form-control mb-1" value="<%=user.username%>">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Name</label>
-                                <input type="text" class="form-control" value="<%=user.name%>">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Phone</label>
-                                <input type="text" class="form-control mb-1" value="<%=user.phone%>">
-                             </div>
-                            <div class="form-group">
-                                <label class="form-label">ID</label>
-                                <input type="text" class="form-control" value="Company Ltd.">
-                            </div>
+                            <form id="profile-form">
+                                <div class="form-group">
+                                    <label class="form-label">ID</label>
+                                    <P><%=userId%></P>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Username</label>
+                                    <input id="username" type="text" class="form-control mb-1" value="<%=user.username%>">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Name</label>
+                                    <input id="name" type="text" class="form-control" value="<%=user.name%>">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Phone</label>
+                                    <input id="phone" type="text" class="form-control mb-1" value="<%=user.phone%>">
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="account-change-password">
@@ -234,8 +236,6 @@
 
 <script>
     function changeURL() {
-        const currentURL = window.location.href;
-        const newURL = currentURL.replace('/profile/', '/user/');
-        window.location.href = newURL;
+        window.location.href = '/user';
     }
 </script>
