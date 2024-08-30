@@ -17,8 +17,11 @@ loginFormDOM.addEventListener('submit', async (e) =>{
         usernameInput.value = ''
         passwordInput.value = ''
         formAlertDOM.textContent = 'success'
-
-        window.location.href = '/'
+        if (data.user.role === 'user'){
+            window.location.href = '/'
+        } else {
+            window.location.href = '/admin'
+        }
 
     } catch (error) {
         document.cookie = 'user=; expires=Thu, 01 Jan 1970 00:00:00 UTC'

@@ -3,7 +3,7 @@ const {StatusCodes} = require('http-status-codes')
 const {NotFoundError, BadRequestError, UnauthenticatedError} = require('../errors')
 
 const getSingleUser = async (req,res)=>{
-    const {id: userId} = req.params
+    const userId = req.user.userId
     const user = await User.findOne({_id: userId});
 
     if (!user){
@@ -12,14 +12,14 @@ const getSingleUser = async (req,res)=>{
     res.status(StatusCodes.OK).render("Layout.ejs",{filename: "User.ejs", user:user, userId})
 }
 
-const getSingleProfile = async (req,res)=>{
-    const {id: userId} = req.params
+const getEditProfile = async (req,res)=>{
+    const userId = req.user.userId
     const user = await User.findOne({_id: userId});
 
     if (!user){
         throw new NotFoundError(`No user with id: ${userId}`)
     }
-    res.status(StatusCodes.OK).render("Layout.ejs",{filename: "editProfile.ejs", user:user, userId})
+    res.status(StatusCodes.OK).render("Layout.ejs",{filename: "Profile.ejs", user:user, userId})
 }
 
 const updateUserPassword = async (req,res)=>{
@@ -44,6 +44,7 @@ const updateUserPassword = async (req,res)=>{
 
 module.exports = {
     getSingleUser,
+    getEditProfile,
     updateUserPassword,
-    getSingleProfile
+    updateProfile,
 }

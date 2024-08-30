@@ -13,7 +13,7 @@ changePasswordFormDOM.addEventListener('submit', async(e)=>{
     const confirmPassword = confirmPasswordField.value;
 
     try {
-        const {data} = await axios.patch(`/user/changePassword`, {currentPassword, newPassword, confirmPassword})
+        const {data} = await axios.patch(`/user/change-password`, {currentPassword, newPassword, confirmPassword})
         curPasswordField.value = '';
         newPasswordField.value = '';
         confirmPasswordField.value = '';
