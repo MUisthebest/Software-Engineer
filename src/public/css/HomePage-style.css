@@ -1499,7 +1499,7 @@ nav .search-container button:hover {
 
 .wrapper{
   width: 320px;
-  background: linear-gradient(45deg, #9c9078, #87abc5);
+  background: linear-gradient(to right, #b55669, #26355D);
   color: #fff;
   border-radius: 10px;
   backdrop-filter: blur(35px);
@@ -2911,6 +2911,20 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
 
 .list_product::-webkit-scrollbar-thumb{
   visibility: hidden;  
+}
+
+.content-review{
+  width: 100%;
+  justify-content: flex-start;
+  display: flex;
+}
+
+.review-order{
+  position: relative;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: scroll;
 }
 
 

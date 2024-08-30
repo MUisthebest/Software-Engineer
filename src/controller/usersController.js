@@ -19,7 +19,7 @@ const getEditProfile = async (req,res)=>{
     if (!user){
         throw new NotFoundError(`No user with id: ${userId}`)
     }
-    res.status(StatusCodes.OK).render("Layout.ejs",{filename: "Profile.ejs", user:user, userId})
+    res.status(StatusCodes.OK).render("Layout.ejs",{filename: "editProfile.ejs", user:user, userId})
 }
 
 const updateUserPassword = async (req,res)=>{
@@ -40,6 +40,20 @@ const updateUserPassword = async (req,res)=>{
     user.password = newPassword;
     await user.save();
     res.status(StatusCodes.OK).json({msg:'Password changed!'})
+}
+
+const updateProfile = async (req, res)=>{
+    const userId = req.user.userId
+    const user = await User.findOneAndUpdate({_id: userId}, req.body, {
+        new: true,
+        runValidators:true
+    })
+
+    if (!user){
+        throw new NotFoundError('No user found with id: ${userId}');
+    }
+
+    res.status(StatusCodes.OK).json({user})
 }
 
 module.exports = {

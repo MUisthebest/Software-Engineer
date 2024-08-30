@@ -13,11 +13,11 @@ const getAllOrders = async(req,res)=>{
 }
 
 const getAllOrdersOfUser = async(req, res)=>{
-    const orders = await Order.find({user: req.user.userId})
+    const orders = await Order.find({user: req.user.userId}).populate('products.product')
     if (!orders){
         throw new NotFoundError('You currently have no orders!')
     }
-    res.status(StatusCodes.OK).render("Layout.ejs",{filename: "Profile.ejs", orders: orders})
+    res.status(StatusCodes.OK).render("Layout.ejs",{filename: "Order.ejs", orders: orders})
 }
 
 const createOrder = async(req,res)=>{

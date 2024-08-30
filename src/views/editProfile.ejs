@@ -13,10 +13,6 @@
                         href="#account-general">General</a>
                     <a class="list-group-item list-group-item-action" data-toggle="list"
                         href="#account-change-password">Change password</a>
-                    <a class="list-group-item list-group-item-action" data-toggle="list"
-                        href="#account-info">Info</a>
-                    <a class="list-group-item list-group-item-action" data-toggle="list"
-                        href="#account-social-links">Social links</a>
                 </div>
             </div>
             <div class="col-md-9">
@@ -96,8 +92,6 @@
 
 <script>
     function changeURL() {
-        const currentURL = window.location.href;
-        const newURL = currentURL.replace('/profile/', '/user/');
-        window.location.href = newURL;
+        window.location.href = '/user';
     }
 </script>
