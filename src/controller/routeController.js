@@ -42,10 +42,6 @@ const getLovePage = async(req,res) =>{
     res.render("Layout.ejs", {filename: "Lovepage.ejs", products: products});
 }
 
-const getBoxItem = (req, res) =>{
-    res.render("Layout.ejs",{filename: "boxItem.ejs"});
-}
-
 const getAdmin= async(req, res) =>{
     try {
         const users = await User.find({});
@@ -101,7 +97,6 @@ module.exports = {
     getLovePage, 
     getLogin, 
     getRegister, 
-    getBoxItem, 
     getAdmin, 
     getAdminProduct, 
     getAdminUser, 

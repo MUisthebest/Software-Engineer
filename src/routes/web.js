@@ -3,7 +3,6 @@ const router = express.Router();
 const { 
     getHomePage, 
     getTrendding, 
-    getBoxItem, 
     getAdmin, 
     getAdminProduct, 
     getAdminUser, 
@@ -11,6 +10,7 @@ const {
     getContact
 } = require("../controller/routeController");
 const {createWishlist, removeItemFromWishlist, getWishlist} = require('../controller/wishlistController')
+const {authenticationMiddleware, authorizePermissions} = require('../middleware/authentication')
 
 const dotenv = require('dotenv');
 
@@ -20,12 +20,7 @@ router.get('/', getHomePage);
 
 router.get('/Trending', getTrendding);
 
-
-router.get('/boxItem', getBoxItem);
-
-router.get('/Admin', getAdmin);
-
-router.post('Admin/', getAdmin);
+router.route('/Admin').get(authenticationMiddleware, authorizePermissions('admin'), getAdmin);
 
 router.get('/User_Admin', getAdminUser);
 
