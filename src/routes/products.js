@@ -5,12 +5,15 @@ const {
     getAllProductsStatic,
     getAllProducts,
     createProduct,
-    getProduct
+    getProduct,
+    addProduct,
+    removeProduct
 } = require('../controller/productsController')
 
 router.route('/products').get(getAllProducts).post(createProduct)
 router.get('/Buy', getAllProductsStatic)
 router.get('/products/:id',getProduct)
 router.get('/search', getAllProducts)
+
 
 module.exports = router

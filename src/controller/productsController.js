@@ -114,5 +114,5 @@ module.exports = {
     getAllProductsStatic,
     getAllProducts,
     createProduct,
-    getProduct,
+    getProduct
 }

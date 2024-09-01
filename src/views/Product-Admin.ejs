@@ -2,43 +2,78 @@
     <div class="top">
         <i class="fas fa-bars slidebar-toggle"></i>
     </div>
-        <div class="Activity">
-            <div class="title">
-                <i class='bx bxs-user'></i>
-                <span class="text">Manage Product</span>
+    <div class="Activity">
+        <div class="title">
+            <i class='bx bxs-user'></i>
+            <span class="text">Manage Product</span>
+        </div>
+        <div class="content">
+            <div class="Btns">
+                <button id="addProductBtn">Add Product</button>
+                <button id="removeProductBtn">Remove Product</button>
             </div>
-            <div class="content">
-                <div class="Btns">
-                    <a>Add Product</a>
-                    <a>Remove Product</a>
-                </div>
+        </div>
+        <div class="ProductData">
+            <div class="box_title">
+                <span class="data-title">ID</span>
+                <span class="data-title">Product Name</span>
+                <span class="data-title">Cost</span>
+                <span class="data-title">Image</span>      
             </div>
-            <div class="ProductData">
-                <div class="box_title">
-                    <span class="data-title">ID</span>
-                    <span class="data-title">Product Name</span>
-                    <span class="data-title">Cost</span>
-                    <span class="data-title">Image</span>      
-                </div>
-                <div class="box_data">
-                    <% for (let i = 0; i < products.length; i++){ %>
-                        <div class = "item">
-                            <div class="data ID">
-                                <span class="data-list"><%=products[i].id%></span>
-                            </div>
-                            <div class="data name">
-                                <span class="data-list"><%=products[i].name%></span>
-                            </div>
-                            <div class="data phone">
-                                <span class="data-list"><%=products[i].price%></span>
-                            </div>   
-                            <div class="data address">
-                                <span class="data-list"><img src="data:image/<%=products[i].image.contentType%>;base64,<%=products[i].image.data.toString('base64')%>" alt=""></span>
-                            </div>  
-                        </div> 
-                        <% } %> 
-                    </div>     
-            </div>
-        </div>             
-    </div>
-</section>
+            <div class="box_data">
+                <% for (let i = 0; i < products.length; i++){ %>
+                    <div class="item">
+                        <div class="data ID">
+                            <span class="data-list"><%=products[i].id%></span>
+                        </div>
+                        <div class="data name">
+                            <span class="data-list"><%=products[i].name%></span>
+                        </div>
+                        <div class="data phone">
+                            <span class="data-list"><%=products[i].price%></span>
+                        </div>   
+                        <div class="data address">
+                            <span class="data-list"><img src="data:image/<%=products[i].image.contentType%>;base64,<%=products[i].image.data.toString('base64')%>" alt=""></span>
+                        </div>  
+                    </div> 
+                <% } %> 
+            </div>     
+        </div>
+    </div>             
+</div>
+<div class="overlay" id="overlay"></div>
+<div class="form-panel" id="formPanel">
+    <form id="productForm">
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" name="productName" required><br><br>
+        <label for="productCost">Cost:</label>
+        <input type="number" id="productCost" name="productCost" required><br><br>
+        <label for="productImage">Image URL:</label>
+        <input type="text" id="productImage" name="productImage" required><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+<div class="form-panel" id="removeFormPanel">
+    <form id="removeProductForm">
+        <label for="productId">Product ID:</label>
+        <input type="text" id="productId" name="productId" required><br><br>
+        <button type="submit">Remove</button>
+    </form>
+</div>
+<script>
+    document.getElementById('addProductBtn').addEventListener('click', function() {
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('formPanel').style.display = 'block';
+    });
+
+    document.getElementById('removeProductBtn').addEventListener('click', function() {
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('removeFormPanel').style.display = 'block';
+    });
+
+    document.getElementById('overlay').addEventListener('click', function() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('formPanel').style.display = 'none';
+        document.getElementById('removeFormPanel').style.display = 'none';
+    });
+</script>

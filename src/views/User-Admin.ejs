@@ -2,44 +2,74 @@
     <div class="top">
         <i class="fas fa-bars slidebar-toggle"></i>
     </div>
-        <div class="Activity">
-            <div class="title">
-                <i class='bx bxs-user'></i>
-                <span class="text">Manage User</span>
+    <div class="Activity">
+        <div class="title">
+            <i class='bx bxs-user'></i>
+            <span class="text">Manage User</span>
+        </div>
+        <div class="content">
+            <div class="Btns">
+                <button id="removeUserBtn">Remove User</button>
+                <button id="authorityUserBtn">Authority User</button>
             </div>
-            <div class="content">
-                <div class="Btns">
-                    <a>Add User</a>
-                    <a>Remove User</a>
-                    <a>Authority User</a>
-                </div>
+        </div>
+        <div class="UserData">
+            <div class="box_title">
+                <span class="data-title">ID</span>
+                <span class="data-title">User Name</span>
+                <span class="data-title">Phone</span>
+                <span class="data-title">Address</span>      
             </div>
-            <div class="UserData">
-                <div class="box_title">
-                    <span class="data-title">ID</span>
-                    <span class="data-title">User Name</span>
-                    <span class="data-title">Phone</span>
-                    <span class="data-title">Address</span>      
-                </div>
-                <div class="box_data">
-                    <% for (let i = 0; i < users.length; i++){ %>
-                    <div class="item">
-                        <div class="data ID">
-                            <span class="data-list"><%=users[i].id%></span>
-                        </div>
-                        <div class="data name">
-                            <span class="data-list"><%=users[i].username%></span>
-                        </div>
-                        <div class="data phone">
-                            <span class="data-list"><%=users[i].phone%></span>
-                        </div>   
-                        <div class="data address">
-                            <span class="data-list"><%=users[i].address.city%></span>
-                        </div> 
-                    </div>  
-                    <% } %>                          
-                </div>
+            <div class="box_data">
+                <% for (let i = 0; i < users.length; i++){ %>
+                <div class="item">
+                    <div class="data ID">
+                        <span class="data-list"><%=users[i].id%></span>
+                    </div>
+                    <div class="data name">
+                        <span class="data-list"><%=users[i].username%></span>
+                    </div>
+                    <div class="data phone">
+                        <span class="data-list"><%=users[i].phone%></span>
+                    </div>   
+                    <div class="data address">
+                        <span class="data-list"><%=users[i].address.city%></span>
+                    </div> 
+                </div>  
+                <% } %>                          
             </div>
-        </div>             
-    </div>
-</section>
+        </div>
+    </div>             
+</div>
+<div class="overlay" id="overlay"></div>
+<div class="form-panel" id="removeFormPanel">
+    <form id="removeUserForm">
+        <label for="userId">User ID:</label>
+        <input type="text" id="userId" name="userId" required><br><br>
+        <button type="submit">Remove</button>
+    </form>
+</div>
+<div class="form-panel" id="authorityFormPanel">
+    <form id="authorityUserForm">
+        <label for="userId">User ID:</label>
+        <input type="text" id="userId" name="userId" required><br><br>
+        <button type="submit">Set Authority</button>
+    </form>
+</div>
+<script>
+    document.getElementById('removeUserBtn').addEventListener('click', function() {
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('removeFormPanel').style.display = 'block';
+    });
+
+    document.getElementById('authorityUserBtn').addEventListener('click', function() {
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('authorityFormPanel').style.display = 'block';
+    });
+
+    document.getElementById('overlay').addEventListener('click', function() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('removeFormPanel').style.display = 'none';
+        document.getElementById('authorityFormPanel').style.display = 'none';
+    });
+</script>
