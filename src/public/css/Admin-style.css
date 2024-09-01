@@ -496,3 +496,10 @@ nav.close ~ .Users .top{
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
 }
+
+.form-panel label,
+.form-panel input,
+.form-panel textarea {
+    display: block;
+    margin-bottom: 10px;
+}

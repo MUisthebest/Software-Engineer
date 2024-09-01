@@ -1,7 +1,8 @@
 const fs = require("node:fs");
 const ejs = require('ejs');
 const Product = require('../models/Product')
-const User = require('../models/User')
+const User = require('../models/User');
+const { StatusCodes } = require("http-status-codes");
 
 
 var listOfItems = [];
@@ -45,7 +46,7 @@ const getLovePage = async(req,res) =>{
 const getAdmin= async(req, res) =>{
     try {
         const users = await User.find({});
-        res.render("Admin.ejs", { filename: "User-Admin.ejs", users: users });
+        res.status(StatusCodes.OK).render("Admin.ejs", { filename: "User-Admin.ejs", users: users });
     } catch (error) {
         console.error("Error fetching users:", error);
         res.status(500).send("Internal Server Error");
@@ -55,7 +56,7 @@ const getAdmin= async(req, res) =>{
 const getAdminUser = async (req, res) => {
     try {
         const users = await User.find({});
-        res.render("Admin.ejs", { filename: "User-Admin.ejs", users: users });
+        res.status(StatusCodes.OK).render("Admin.ejs", { filename: "User-Admin.ejs", users: users });
     } catch (error) {
         console.error("Error fetching users:", error);
         res.status(500).send("Internal Server Error");
@@ -64,7 +65,7 @@ const getAdminUser = async (req, res) => {
 
 const getAdminProduct = async(req, res) =>{
     const products = await Product.find({}).sort('createdAt')
-    res.render("Admin.ejs",{filename: "Product-Admin.ejs", products: products});
+    res.status(StatusCodes.OK).render("Admin.ejs",{filename: "Product-Admin.ejs", products: products});
 }
 
 // const displayDatabase = (req, res) =>{

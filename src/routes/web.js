@@ -20,11 +20,11 @@ router.get('/', getHomePage);
 
 router.get('/Trending', getTrendding);
 
-router.route('/Admin').get(authenticationMiddleware, authorizePermissions('admin'), getAdmin);
+router.route('/admin').get(authenticationMiddleware, authorizePermissions('admin'), getAdmin);
 
-router.get('/User_Admin', getAdminUser);
+router.get('/admin/users-management', authenticationMiddleware, authorizePermissions('admin'), getAdminUser);
 
-router.get('/Product_Admin', getAdminProduct);
+router.get('/admin/products-management', authenticationMiddleware, authorizePermissions('admin'), getAdminProduct);
 
 router.get('/Contact', getContact);
 
