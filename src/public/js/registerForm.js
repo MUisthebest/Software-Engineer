@@ -41,24 +41,20 @@ function renderCity(data) {
 // Register Form
 registerFormDOM.addEventListener('submit', async(e)=>{
     e.preventDefault();
-    if (!nameInput.value || !usernameInput.value || !passwordInput.value || !confirmInput.value || !phoneInput.value || !citis.value || !districts.value || !wards.value)
-        return;
     const name = nameInput.value
     const username = usernameInput.value
     const password = passwordInput.value
+    const confirmPassword = confirmInput.value
     const phone = phoneInput.value
     const city = citis.value;
     const district = districts.value
     const ward = wards.value
     const user = {
-        name, username, password, phone,
-        address:{
-            city,district,ward
-        }
+        name, username, password, confirmPassword, phone, city, district, ward
     }
 
     try {
-        axios.post('/register', {...user})
+        const {data} = await axios.post('/register', {...user})
         nameInput.value = '';
         usernameInput.value = '';
         passwordInput.value = '';
@@ -67,9 +63,11 @@ registerFormDOM.addEventListener('submit', async(e)=>{
         citis.value = '';
         districts.value = '';
         wards.value = '';
-
+        alert('Successfully registered account!')
+        console.log(data);
+        
         window.location.href = '/login'
     } catch (error) {
-        console.log(error);        
+        alert(error.response.data.msg)
     }   
 })

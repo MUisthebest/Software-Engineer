@@ -16,7 +16,7 @@ loginFormDOM.addEventListener('submit', async (e) =>{
         document.cookie = `user=${JSON.stringify(data.user)}; expires=${new Date(Date.now() + oneDay)}`
         usernameInput.value = ''
         passwordInput.value = ''
-        formAlertDOM.textContent = 'success'
+        alert('Successfully logged in!')
         if (data.user.role === 'user'){
             window.location.href = '/'
         } else {
@@ -25,7 +25,7 @@ loginFormDOM.addEventListener('submit', async (e) =>{
 
     } catch (error) {
         document.cookie = 'user=; expires=Thu, 01 Jan 1970 00:00:00 UTC'
-        formAlertDOM.textContent = error.response.data.msg
+        alert(error.response.data.msg)
         passwordInput.value = ''
     }
 })
