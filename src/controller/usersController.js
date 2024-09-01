@@ -39,7 +39,7 @@ const updateUserPassword = async (req,res)=>{
     }
     user.password = newPassword;
     await user.save();
-    res.status(StatusCodes.OK).json({msg:'Password changed!'})
+    res.status(StatusCodes.OK).json({msg:'Password successfully changed!'})
 }
 
 const updateProfile = async (req, res)=>{
@@ -53,7 +53,7 @@ const updateProfile = async (req, res)=>{
         throw new NotFoundError('No user found with id: ${userId}');
     }
 
-    res.status(StatusCodes.OK).json({user})
+    res.status(StatusCodes.OK).json({msg:'Profile successfully changed!'})
 }
 
 module.exports = {
