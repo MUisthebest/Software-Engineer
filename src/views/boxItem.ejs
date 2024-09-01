@@ -47,16 +47,17 @@
         <div class="realted_box">
             <h3>Your Cart</h3>
             <ul id="purchased_items">
-                <% if (cart && cart.cartItems) { %>
-                    <%let products = cart.cartItems%>
-                    <%for (let i = 0; i < products.length; i++) { %>
-                        <li>
-                            <img src="data:image/<%=products[i].product.image.contentType%>;base64,<%=products[i].product.image.data.toString('base64')%>" alt="<%=products[i].product.name%>">
-                            <span><%=products[i].product.name%> - <%=products[i].quantity%> pcs - <%=products[i].product.price%> * <%=products[i].quantity%></span>
-                            <button class="remove-item" data-item-id="<%=products[i].product.id%>">Remove</button>
-                        </li>
+                <% if (cart) { %>
+                    <% if (cart.cartItems) { %>
+                        <%let products = cart.cartItems%>
+                        <%for (let i = 0; i < products.length; i++) { %>
+                            <li>
+                                <img src="data:image/<%=products[i].product.image.contentType%>;base64,<%=products[i].product.image.data.toString('base64')%>" alt="<%=products[i].product.name%>">
+                                <span><%=products[i].product.name%> - <%=products[i].quantity%> pcs - <%=products[i].product.price%> * <%=products[i].quantity%></span>
+                                <button class="remove-item" data-item-id="<%=products[i].product.id%>">Remove</button>
+                            </li>
+                        <%} %>  
                     <%} %>
-
                 <%} else { %>
                     <div>You have to login to view your cart</div>
                 <%} %>
