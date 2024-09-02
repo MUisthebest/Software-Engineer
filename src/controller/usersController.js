@@ -56,9 +56,20 @@ const updateProfile = async (req, res)=>{
     res.status(StatusCodes.OK).json({msg:'Profile successfully changed!'})
 }
 
+const deleteUser = async(req, res) => {
+    const userId = req.body.userId
+    const user = await User.findOneAndDelete({_id: userId})
+    if (!user){
+        throw new NotFoundError(`There is no users with the id: ${userId}`)
+    }
+
+    res.status(StatusCodes.OK).json({user})
+}
+
 module.exports = {
     getSingleUser,
     getEditProfile,
     updateUserPassword,
     updateProfile,
+    deleteUser,
 }
