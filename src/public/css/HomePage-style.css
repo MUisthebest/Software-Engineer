@@ -2962,6 +2962,7 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
   z-index: var(0);
   background-position: center;
   background-size: cover;
+  justify-content: flex-start;
   overflow-y: scroll;
 }
 
@@ -3157,4 +3158,26 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
   background: white;
 }
 
+@media (max-height: 900px) {
+  section{
+    height: 100vh;
+  }
+}
 
+@media (max-height: 700px) {
+  .User{
+    height: 91vh;
+  }
+}
+
+@media (max-height: 580px) {
+  .User{
+    height: 90vh;
+  }
+}
+
+@media (max-height: 400px) {
+  .User{
+    height: 83vh;
+  }
+}
