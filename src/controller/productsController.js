@@ -103,7 +103,7 @@ const createProductWithMulter = async (req, res) => {
         price: req.body.price,
         desc: req.body.desc,
         image:{
-            data: fs.readFileSync(path.join(__dirname, '../uploads/' + file.filename)),
+            data: fs.readFileSync(path.join(__dirname, '../public/Media/' + file.filename)),
             contentType: 'image/png'
         },
         quantity: req.body.quantity
