@@ -295,11 +295,11 @@ ul li a p{
   background-color: var(--color-1);
   border-radius: 1px;
   transition: .01s linear;
+  flex-direction: row;
   border: none;
   outline: none;
   z-index: 15;
   display: flex;
-  border: 1px solid #000;
 }
 
 .Box_Item{
@@ -320,6 +320,7 @@ ul li a p{
 .slide-bar.hidden{
   width: 18%;
   height: 100%;
+  flex-direction: row;
   transition: 0.2s linear;
 }
 
@@ -1481,7 +1482,7 @@ nav .search-container button:hover {
 
 
 .Login{
-  height: 95vh;
+  height: 93vh;
   width: calc(100%);
   position: relative;
   transition: .05s ease-in-out;
@@ -1499,6 +1500,7 @@ nav .search-container button:hover {
 
 .wrapper{
   width: 320px;
+  max-height: fit-content;
   background: linear-gradient(to right, #b55669, #26355D);
   color: #fff;
   border-radius: 10px;
@@ -1656,6 +1658,75 @@ font-size: 16px;
 color: #333;
 font-weight: 600px; 
 margin-bottom: 30px;
+}
+
+@media (max-height: 700px) {
+  .wrapper {
+    height: 85%;
+    padding: 15px;
+  }
+
+  .wrapper h1 {
+    font-size: 25px;
+  }
+
+  .wrapper .input-box {
+    height: 30px;
+    margin: 20px 0;
+  }
+
+  .remmeber-forgot {
+    font-size: 13px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .wrapper .btn_register {
+    font-size: 14px;
+    height: 15px;
+    margin-bottom: 15px;
+  }
+
+  .register_link {
+    font-size: 13px;
+  }
+
+  .location_users {
+    height: auto;
+    left: 0;
+  }
+}
+
+@media (height: 480px) {
+  .wrapper {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .wrapper h1 {
+    font-size: 24px;
+  }
+
+  .input-box input {
+    padding: 15px 40px 15px 15px;
+  }
+
+  .input-box i {
+    right: 15px;
+  }
+
+  .remmeber-forgot {
+    font-size: 12px;
+    margin: -10px 0 10px;
+  }
+
+  .wrapper .btn {
+    font-size: 14px;
+  }
+
+  .register_link {
+    font-size: 12px;
+  }
 }
 
 
@@ -1909,9 +1980,11 @@ header .buy_realted_box .buy_box .text_box h2{
 header .buy_realted_box .purchase_box{
   align-items: center;
   display: flex;
+  position: relative;
   flex-direction: row;
   flex-wrap: nowrap;
-  margin-top: 30px;
+  margin-bottom: 15px;
+  margin-top: 15px;
   width: 100%;
 }
 
