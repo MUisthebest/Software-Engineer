@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const quantity = 1;
             try {
                 await axios.post('/cart', {productId: productId, quantity: quantity});
-                window.location.href = `/Buy`
+                window.location.reload()
             } catch(error){
                 alert(error.response.data.msg)
             }
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const id = button.getAttribute('data-item-id');
             try {
                 await axios.patch('/cart', { productId: id });
-                window.location.href = `/Buy`
+                window.location.reload()
             } catch (error) {
                 alert(error.response.data.msg);
             }
