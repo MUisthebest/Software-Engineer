@@ -1445,18 +1445,15 @@ nav .search-container button:hover {
 .Buy article .game3 .gameBx{
   width: 100%;
   height: 80%;
-  margin-top: 2%;
   position: relative;
   border: 1px solid #000000;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-auto-rows: 200px;
   flex-wrap: wrap;
-  flex-direction: row;
-  align-items: flex-start;
-  grid-gap: 10px;
   overflow-y: auto;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
   background: linear-gradient(to right, #FDFFC2, #A3D8FF);
+  gap: 16px;
   padding: 0px 2%;
 }
 
